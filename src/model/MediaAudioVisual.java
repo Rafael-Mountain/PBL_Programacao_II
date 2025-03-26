@@ -1,18 +1,45 @@
 package model;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-public class MediaAudioVisual extends Media{
+public class MediaAudioVisual extends Media {
     private List<String> elenco;
     private String tituloOriginal;
     private String localDisponivel;
 
+    // Construtor padrão
+    public MediaAudioVisual() {
+        super();
+        this.elenco = new ArrayList<>();
+    }
+
+    // Construtor com parâmetros
+    public MediaAudioVisual(String titulo, LocalDateTime dataLancamento, boolean consumido, List<Genero> generos,
+                            String tituloOriginal, String localDisponivel, List<String> elenco) {
+
+        super(titulo, dataLancamento,consumido,generos); // Chama o construtor da classe pai
+        this.tituloOriginal = tituloOriginal;
+        this.localDisponivel = localDisponivel;
+        this.elenco = (elenco != null) ? new ArrayList<>(elenco) : new ArrayList<>();
+    }
+
     public List<String> getElenco() {
-        return elenco;
+        return new ArrayList<>(elenco); // Retorna uma cópia para evitar modificações externas
     }
 
     public void setElenco(List<String> elenco) {
-        this.elenco = elenco;
+        if (elenco != null) {
+            this.elenco = new ArrayList<>(elenco);
+        }
+    }
+
+    public void addElenco(String ator) {
+        if (ator != null && !ator.trim().isEmpty()) {
+            this.elenco.add(ator);
+        }
     }
 
     public String getTituloOriginal() {

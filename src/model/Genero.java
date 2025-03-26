@@ -1,18 +1,19 @@
 package model;
 
-public enum Genero {
-    ACAO("Ação"),
-    AVENTURA("Aventura"),
-    COMEDIA("Comédia"),
-    DRAMA("Drama");
+public class Genero {
+    String nome;
 
-    private final String descricao;
-
-    Genero(String descricao) {
-        this.descricao = descricao;
+    public  Genero(String nome){
+        this.nome = nome;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getNome() {
+        return nome;
     }
+
+    @Override
+    public String toString(){
+        return this.nome;
+    }
+
 }

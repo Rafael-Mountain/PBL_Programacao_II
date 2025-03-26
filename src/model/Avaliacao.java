@@ -1,15 +1,16 @@
 package model;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Avaliacao {
-    private Date dataAvaliacao;
+    private LocalDateTime dataAvaliacao;
     private int pontuacao;
     private String review;
     private Date dataConsumo;
 
 
-    public Avaliacao(Date dataAvaliacao, int pontuacao, String review, Date dataConsumo) {
+    public Avaliacao(LocalDateTime dataAvaliacao, int pontuacao, String review, Date dataConsumo) {
         this.dataAvaliacao = dataAvaliacao;
         this.pontuacao = pontuacao;
         this.review = review;
@@ -17,11 +18,11 @@ public class Avaliacao {
     }
 
     // Getters e Setters
-    public Date getDataAvaliacao() {
+    public LocalDateTime getDataAvaliacao() {
         return dataAvaliacao;
     }
 
-    public void setDataAvaliacao(Date dataAvaliacao) {
+    public void setDataAvaliacao(LocalDateTime dataAvaliacao) {
         this.dataAvaliacao = dataAvaliacao;
     }
 
