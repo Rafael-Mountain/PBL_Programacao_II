@@ -3,7 +3,7 @@ package model;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-public class Livro extends Media implements IAvaliavel{
+public class Livro extends Media {
     private String autor;
     private String editora;
     private boolean possui;

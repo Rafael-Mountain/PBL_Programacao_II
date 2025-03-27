@@ -1,3 +1,7 @@
+import controller.DataBase.FilmeRepository;
+import controller.action.Filme.CreateFilmeAction;
+import controller.action.Filme.CreateFilmeValidation;
+import controller.action.commons.ActionResult;
 import model.Filme;
 import model.Genero;
 
@@ -8,6 +12,25 @@ import java.util.List;
 public class Testes {
 
     static void rodar() {
+        Filme filme1 = new Filme();
+
+        LocalDateTime dataLancamento = LocalDateTime.now();
+        List<Genero> generos = new ArrayList<>();
+        generos.add(new Genero("Ação"));
+        generos.add(new Genero("Fantasia"));
+        List<String> elenco = new ArrayList<>();
+        elenco.add("Robert downey jr");
+        elenco.add("Scarlett Johansson");
+
+        Filme filme2 = new Filme("Avengers",dataLancamento,true,generos,"Avengers Ultimato",
+                "Prime Video",elenco,"Alguem",120,"Filme muito Bom");
+
+        System.out.println(filme1);
+        System.out.println("");
+        System.out.println(filme2);
+    }
+
+    static void rodarTeste2() {
         Filme filme1 = new Filme();
 
         filme1.setDirecao("Steven Spielberg");
@@ -40,8 +63,16 @@ public class Testes {
         Filme filme2 = new Filme("Avengers",dataLancamento,true,generos,"Avengers Ultimato",
                 "Prime Video",elenco,"Alguem",120,"Filme muito Bom");
 
-        System.out.println(filme1);
-        System.out.println("");
-        System.out.println(filme2);
+        CreateFilmeAction action = new CreateFilmeAction(new CreateFilmeValidation());
+        ActionResult result2 = action.execute(filme1);
+        ActionResult result = action.execute(filme2);
+
+        FilmeRepository repository = FilmeRepository.getInstance();
+
+        System.out.println(result.getMessage());
+        System.out.println(result2.getMessage());
+        System.out.println(repository.getItems());
+
+        //rodar();
     }
 }

@@ -57,6 +57,7 @@ public class Filme extends MediaAudioVisual {
 
         return "Filme{\n" +
                 "titulo='" + getTitulo() + "'\n" +
+                ", id='" + ((getId() == -1) ? "N/A": getId()) + "'\n" +
                 ", tituloOriginal='" + getTituloOriginal() + "'\n" +
                 ", dataLancamento=" + (getDataLancamento() != null ? getDataLancamento().format(formatter) : "N/A") + "\n" +
                 ", consumido=" + (isConsumido() ? "Sim" : "Não") + "\n" +

@@ -1,15 +1,14 @@
 package model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-public class Media {
+public class Media implements IAvaliavel, Identifiable {
+    private int id = -1;
     private String titulo;
     private LocalDateTime dataLancamento;
     private List<Genero> generos;
     private boolean consumido;
-    private Avaliacao avaliacao;
     private TipoMedia tipoMedia;
 
     // Construtor padrão
@@ -29,6 +28,16 @@ public class Media {
         this.titulo = titulo;
         this.dataLancamento = dataLancamento;
         this.consumido = consumido;
+    }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitulo() {
@@ -70,15 +79,17 @@ public class Media {
         this.consumido = consumido;
     }
 
-    public Avaliacao getAvaliacao() {
-        return avaliacao;
-    }
-
-    public void setAvaliacao(Avaliacao avaliacao) {
-        this.avaliacao = avaliacao;
-    }
-
     public TipoMedia getTipoMedia() {
         return tipoMedia;
+    }
+
+    @Override
+    public int getPontuacao() {
+        return 0;
+    }
+
+    @Override
+    public void Avaliar(LocalDateTime dataAvaliacao, int pontuacao, String review, LocalDateTime dataConsumo) {
+
     }
 }

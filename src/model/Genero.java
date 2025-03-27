@@ -1,7 +1,8 @@
 package model;
 
-public class Genero {
-    String nome;
+public class Genero implements Identifiable {
+    private int id;
+    private String nome;
 
     public  Genero(String nome){
         this.nome = nome;
@@ -16,4 +17,13 @@ public class Genero {
         return this.nome;
     }
 
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
 }
