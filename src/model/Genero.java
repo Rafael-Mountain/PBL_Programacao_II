@@ -1,5 +1,7 @@
 package model;
 
+import model.commons.Identifiable;
+
 public class Genero implements Identifiable {
     private int id;
     private String nome;

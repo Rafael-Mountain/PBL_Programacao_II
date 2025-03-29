@@ -1,4 +1,4 @@
-package model;
+package model.commons;
 
 public interface Identifiable {
     public int getId();

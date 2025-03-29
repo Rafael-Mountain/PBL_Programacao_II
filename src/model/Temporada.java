@@ -1,8 +1,10 @@
 package model;
 
+import model.commons.IAvaliavel;
+
 import java.time.LocalDateTime;
 
-public class Temporada  implements  IAvaliavel{
+public class Temporada  implements IAvaliavel {
     private LocalDateTime ano;
     private int qEpisodios;
 

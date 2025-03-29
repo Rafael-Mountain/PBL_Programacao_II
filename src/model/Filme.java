@@ -69,5 +69,22 @@ public class Filme extends MediaAudioVisual {
                 ", duracao=" + duracao + " min\n" +
                 '}';
     }
+    
+    @Override
+    public Filme clone() {
+        Filme clone = new Filme();
+        clone.setId(this.getId());
+        clone.setTitulo(this.getTitulo());
+        clone.setDataLancamento(this.getDataLancamento());
+        clone.setConsumido(this.isConsumido());
+        clone.setGeneros(this.getGeneros());
+        clone.setTituloOriginal(this.getTituloOriginal());
+        clone.setLocalDisponivel(this.getLocalDisponivel());
+        clone.setElenco(this.getElenco());
+        clone.setDirecao(this.direcao);
+        clone.setDuracao(this.duracao);
+        clone.setRoteiro(this.roteiro);
+        return clone;
+    }
 
 }

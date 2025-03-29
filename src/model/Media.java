@@ -1,9 +1,12 @@
 package model;
+import model.commons.IAvaliavel;
+import model.commons.Identifiable;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Media implements IAvaliavel, Identifiable {
+public abstract class Media implements IAvaliavel, Identifiable {
     private int id = -1;
     private String titulo;
     private LocalDateTime dataLancamento;
@@ -83,13 +86,5 @@ public class Media implements IAvaliavel, Identifiable {
         return tipoMedia;
     }
 
-    @Override
-    public int getPontuacao() {
-        return 0;
-    }
-
-    @Override
-    public void Avaliar(LocalDateTime dataAvaliacao, int pontuacao, String review, LocalDateTime dataConsumo) {
-
-    }
 }
+
