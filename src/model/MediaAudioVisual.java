@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class MediaAudioVisual extends Media {
+public abstract class MediaAudioVisual extends Media {
     private List<String> elenco;
     private String tituloOriginal;
     private String localDisponivel;
