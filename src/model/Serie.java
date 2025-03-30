@@ -3,7 +3,7 @@ package model;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Serie extends MediaAudioVisual{
+public class Serie extends MediaAudioVisual {
     private LocalDateTime dataFim;
     private List<Temporada> temporadas;
 
@@ -27,6 +27,31 @@ public class Serie extends MediaAudioVisual{
     public void setTemporadas(List<Temporada> temporadas) {
         this.temporadas = temporadas;
     }
+
+    public void updateTemporadaById(int id, Temporada temporada) {
+        for (int i = 0; i < temporadas.size(); i++) {
+            if (temporadas.get(i).getId() == id) {
+                temporadas.set(i, temporada);
+                break;
+            }
+        }
+
+    }
+
+    public void getTemporadaById(int id) {
+        for (int i = 0; i < temporadas.size(); i++) {
+            if (temporadas.get(i).getId() == id) {
+                System.out.println(temporadas.get(i));
+                break;
+            }
+        }
+
+    }
+
+    public void addTemporada(Temporada t) {
+        temporadas.add(t);
+    }
+
 
     @Override
     public void Avaliar(LocalDateTime dataAvaliacao, int pontuacao, String review, LocalDateTime dataConsumo) {
