@@ -1,4 +1,4 @@
-package controller.DataBase;
+package controller.dataBase;
 
 import model.Serie;
 import java.util.ArrayList;

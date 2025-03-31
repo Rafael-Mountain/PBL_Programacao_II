@@ -1,6 +1,6 @@
 package controller.action.temporada;
 
-import controller.DataBase.SerieRepository;
+import controller.dataBase.SerieRepository;
 import controller.action.commons.ActionResult;
 import controller.action.commons.BaseAction;
 import controller.action.commons.Validation;

@@ -7,6 +7,12 @@ public class Serie extends MediaAudioVisual {
     private LocalDateTime dataFim;
     private List<Temporada> temporadas;
 
+    public Serie(String titulo, LocalDateTime dataLancamento, boolean consumido,
+                 List<Genero> generos, String tituloOriginal, String localDisponivel,
+                 List<String> elenco) {
+        super(titulo, dataLancamento, consumido, generos, tituloOriginal, localDisponivel, elenco);
+    }
+
     @Override
     public int getPontuacao() {
         return 0;

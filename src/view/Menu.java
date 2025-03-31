@@ -1,17 +1,21 @@
 package view;
 
+import view.commons.IScreen;
+import view.commons.Screen;
+import view.genero.GeneroMenu;
+
 import java.util.Scanner;
 
-public class TelaMenu {
+public class Menu extends Screen {
 
-    public static void makeTela() {
-        Scanner terminal = new Scanner(System.in);
+    @Override
+    public void draw(Scanner terminal) {
         String opcao;
 
         do {
             System.out.println("\n=== Bem-Vindo ao Sistema ===");
             System.out.println("1 - Criar Media");
-            System.out.println("2 - Opção 2");
+            System.out.println("2 - Criar Genero");
             System.out.println("3 - Opção 3");
             System.out.println("4 - Opção 4");
             System.out.println("5 - Sair");
@@ -21,10 +25,10 @@ public class TelaMenu {
 
             switch (opcao) {
                 case "1":
-                    TelaCriacao.makeTela();
+                    new MenuMedia().draw(terminal);
                     break;
                 case "2":
-                    System.out.println("Executando opção 2...");
+                    new GeneroMenu().draw(terminal);
                     break;
                 case "3":
                     System.out.println("Executando opção 3...");
@@ -40,7 +44,6 @@ public class TelaMenu {
             }
         } while (!opcao.equals("5"));
 
-        terminal.close(); // Fecha o Scanner para evitar vazamento de recursos
     }
 
 }

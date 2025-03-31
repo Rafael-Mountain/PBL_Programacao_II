@@ -1,6 +1,6 @@
-import controller.DataBase.FilmeRepository;
-import controller.action.Filme.CreateFilmeAction;
-import controller.action.Filme.CreateFilmeValidation;
+import controller.dataBase.FilmeRepository;
+import controller.action.filme.CreateFilmeAction;
+import controller.action.filme.CreateFilmeValidation;
 import controller.action.commons.ActionResult;
 import model.Filme;
 import model.Genero;

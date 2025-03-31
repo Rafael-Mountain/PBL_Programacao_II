@@ -1,10 +1,14 @@
 package view;
 
+import view.commons.IScreen;
+import view.commons.Screen;
+import view.filme.CreateFilmeForm;
+
 import java.util.Scanner;
 
-public class TelaCriacao {
-    public static void makeTela() {
-        Scanner terminal = new Scanner(System.in);
+public class MenuMedia extends Screen {
+    @Override
+    public void draw(Scanner terminal) {
         String opcao;
 
         do {
@@ -19,7 +23,7 @@ public class TelaCriacao {
 
             switch (opcao) {
                 case "1":
-                    System.out.println("Executando opção 1...");
+                    new CreateFilmeForm().draw(terminal);
                     break;
                 case "2":
                     System.out.println("Executando opção 2...");
@@ -35,7 +39,6 @@ public class TelaCriacao {
             }
         } while (!opcao.equals("4"));
 
-        terminal.close(); // Fecha o Scanner para evitar vazamento de recursos
     }
 
 }
