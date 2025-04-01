@@ -11,7 +11,7 @@ public class ViewCommons {
     public static List<Genero> inputGenero(Scanner terminal) {
         List<Genero>  generos = new ArrayList<>();
         GeneroRepository generoRepository = GeneroRepository.getInstance();
-        String genero;
+        int generoId;
 
         System.out.println("=== Gêneros disponíveis ");
         for (Genero g : generoRepository.getItems()) {
@@ -20,14 +20,12 @@ public class ViewCommons {
 
         do {
             System.out.println("Lista atual: " + generos);
-            System.out.print("Selecione o genero(ou 'sair' para finalizar): ");
-            genero = terminal.nextLine();
+            generoId = inputInt(terminal, "Selecione o genero(ou '-1' para finalizar): ");
 
-            if (genero.equalsIgnoreCase("sair")) {
+            if (generoId == -1) {
                 break;
             }
 
-            int generoId = Integer.parseInt(genero);
             Genero generoSelecionado = generoRepository.getItemById(generoId);
 
             if (generoSelecionado != null) {
