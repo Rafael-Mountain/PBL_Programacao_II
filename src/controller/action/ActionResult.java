@@ -1,4 +1,4 @@
-package controller.action.commons;
+package controller.action;
 
 public class ActionResult {
     private final boolean success;

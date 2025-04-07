@@ -1,6 +1,6 @@
 package view.genero;
 
-import controller.action.commons.ActionResult;
+import controller.action.ActionResult;
 import controller.action.genero.CreateGeneroAction;
 import controller.action.genero.CreateGeneroValidation;
 import model.Genero;

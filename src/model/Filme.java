@@ -51,6 +51,10 @@ public class Filme extends MediaAudioVisual {
         this.roteiro = roteiro;
     }
 
+    public TipoMedia getTipoMedia() {
+        return this.tipoMedia;
+    }
+
     //Todo: Copiar a avaliação
     @Override
     public Filme clone() {
@@ -75,7 +79,27 @@ public class Filme extends MediaAudioVisual {
     }
 
     @Override
-    public void Avaliar(LocalDateTime dataAvaliacao, int pontuacao, String review, LocalDateTime dataConsumo) {
+    public void Avaliar(Avaliacao avaliacao) {
 
     }
+
+    @Override
+    public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        return "Filme{\n" +
+                "titulo='" + getTitulo() + "'\n" +
+                ", id='" + ((getId() == -1) ? "N/A": getId()) + "'\n" +
+                ", tituloOriginal='" + getTituloOriginal() + "'\n" +
+                ", dataLancamento=" + (getDataLancamento() != null ? getDataLancamento().format(formatter) : "N/A") + "\n" +
+                ", consumido=" + (isConsumido() ? "Sim" : "Não") + "\n" +
+                ", generos=" + (getGeneros() != null ? getGeneros() : "N/A") + "\n" +
+                ", localDisponivel='" + (getLocalDisponivel() != null ? getLocalDisponivel() : "N/A") + "'\n" +
+                ", elenco=" + (getElenco() != null && !getElenco().isEmpty() ? getElenco() : "Sem elenco") + "\n" +
+                ", direcao='" + (direcao != null ? direcao : "N/A") + "'\n" +
+                ", roteiro='" + (roteiro != null ? roteiro : "N/A") + "'\n" +
+                ", duracao=" + duracao + " min\n" +
+                '}';
+    }
+
 }

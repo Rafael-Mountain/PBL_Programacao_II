@@ -1,6 +1,6 @@
 package controller.action.filme;
 
-import controller.action.commons.Validation;
+import controller.action.Validation;
 import model.Filme;
 
 public class UpdateFilmValidation implements Validation<Filme> {

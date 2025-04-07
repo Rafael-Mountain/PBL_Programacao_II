@@ -1,5 +1,7 @@
 package view;
 
+import controller.search.SearchController;
+import controller.search.SearchFields;
 import view.commons.IScreen;
 import view.commons.Screen;
 import view.genero.GeneroMenu;
@@ -14,9 +16,9 @@ public class Menu extends Screen {
 
         do {
             System.out.println("\n=== Bem-Vindo ao Sistema ===");
-            System.out.println("1 - Criar Media");
+            System.out.println("1 - Criar Midia");
             System.out.println("2 - Criar Genero");
-            System.out.println("3 - Opção 3");
+            System.out.println("3 - Listar Midias ");
             System.out.println("4 - Opção 4");
             System.out.println("5 - Sair");
             System.out.print("Escolha uma opção: ");
@@ -31,7 +33,9 @@ public class Menu extends Screen {
                     new GeneroMenu().draw(terminal);
                     break;
                 case "3":
-                    System.out.println("Executando opção 3...");
+                    SearchController searchController = new SearchController(null, SearchFields.TUDO);
+                    searchController.execute();
+                    new ListMidia(searchController.getSearchResults()).draw(terminal);
                     break;
                 case "4":
                     System.out.println("Executando opção 4...");

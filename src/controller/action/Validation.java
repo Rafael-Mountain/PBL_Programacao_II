@@ -1,6 +1,4 @@
-package controller.action.commons;
-
-import model.Filme;
+package controller.action;
 
 public interface Validation<T> {
     boolean isValid(T model);

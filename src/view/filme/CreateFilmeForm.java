@@ -3,7 +3,7 @@ package view.filme;
 import controller.dataBase.GeneroRepository;
 import controller.action.filme.CreateFilmeAction;
 import controller.action.filme.CreateFilmeValidation;
-import controller.action.commons.ActionResult;
+import controller.action.ActionResult;
 import model.Filme;
 import model.Genero;
 import view.commons.Screen;
@@ -50,6 +50,7 @@ public class CreateFilmeForm extends Screen {
             filme = new Filme(nome, LocalDateTime.of(AnoLancamento, 1, 1, 0, 0),
                     consumido, generosFilme, nomeOriginal, localDisponivel,
                     elenco, diretor, duracao, roteiro);
+
             CreateFilmeAction createFilme = new CreateFilmeAction(new CreateFilmeValidation());
             result = createFilme.execute(filme);
 

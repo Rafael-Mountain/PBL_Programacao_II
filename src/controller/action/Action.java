@@ -1,4 +1,4 @@
-package controller.action.commons;
+package controller.action;
 
 public interface Action<T> {
     ActionResult execute(T model);

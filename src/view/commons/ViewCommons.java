@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ViewCommons {
+    
     public static List<Genero> inputGenero(Scanner terminal) {
         List<Genero>  generos = new ArrayList<>();
         GeneroRepository generoRepository = GeneroRepository.getInstance();
@@ -84,6 +85,9 @@ public class ViewCommons {
     }
 
     public static int inputInt(Scanner terminal, String message) {
+
+//        Todo: Arrumar o tratamento de erro ta dando pau pq o regex não ta pegando o -1
+//          Ou Cria um regex que aceite o -1 (Isso pode dar problema) ou faz um tratamento de erro
         String input;
         int value;
         do {
@@ -116,5 +120,24 @@ public class ViewCommons {
         System.out.println("Valor selecionado: " + (value ? "Sim" : "Não"));
         return value;
     }
+
+    public static int inputIntWRange(Scanner terminal, String message, int min, int max) {
+        int input;
+        do {
+            input = inputInt(terminal, message);
+
+            if(input == -1){
+             break;
+            }
+            if (input < min || input > max) {
+                    System.out.println("Valor fora do intervalo. Tente novamente.");
+            }
+
+        } while (input < min || input > max );
+        return input;
+    }
 }
+
+
+
 

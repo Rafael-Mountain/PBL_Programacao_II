@@ -16,7 +16,7 @@ public class Livro extends Media {
     }
 
     @Override
-    public void Avaliar(LocalDateTime dataAvaliacao, int pontuacao, String review, LocalDateTime dataConsumo) {
+    public void Avaliar(Avaliacao avaliacao) {
 
     }
 
@@ -50,5 +50,9 @@ public class Livro extends Media {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+
+    public TipoMedia getTipoMedia() {
+        return this.tipoMedia;
     }
 }

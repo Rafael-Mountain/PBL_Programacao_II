@@ -1,8 +1,7 @@
 package controller.action.serie;
 
-import controller.action.commons.Validation;
+import controller.action.Validation;
 import controller.dataBase.SerieRepository;
-import model.Filme;
 import model.Serie;
 
 public class CreateSerieValidation implements Validation<Serie> {

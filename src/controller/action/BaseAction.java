@@ -1,4 +1,4 @@
-package controller.action.commons;
+package controller.action;
 
 public abstract class BaseAction<T> implements Action<T> {
     protected final Validation<T> validation;

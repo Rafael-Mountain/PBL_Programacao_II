@@ -1,8 +1,12 @@
 package model.commons;
 
+import model.Avaliacao;
+import model.TipoMedia;
+
 import java.time.LocalDateTime;
 
-public interface IAvaliavel {
+public interface IAvaliavel extends Identifiable {
     int getPontuacao();
-    void Avaliar(LocalDateTime dataAvaliacao, int pontuacao, String review, LocalDateTime dataConsumo);
+    TipoMedia getTipoMedia();
+    void Avaliar(Avaliacao avaliacao);
 }

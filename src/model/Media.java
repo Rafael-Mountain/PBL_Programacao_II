@@ -1,12 +1,11 @@
 package model;
 import model.commons.IAvaliavel;
-import model.commons.Identifiable;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Media implements IAvaliavel, Identifiable {
+public abstract class Media implements IAvaliavel{
     private int id = -1;
     private String titulo;
     private LocalDateTime dataLancamento;
@@ -82,9 +81,6 @@ public abstract class Media implements IAvaliavel, Identifiable {
         this.consumido = consumido;
     }
 
-    public TipoMedia getTipoMedia() {
-        return tipoMedia;
-    }
 
 }
 

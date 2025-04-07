@@ -1,9 +1,10 @@
 package model;
 
 public enum TipoMedia {
-    LIVRO("livro"),
+    LIVRO("Livro"),
     FILME("Filme"),
-    SERIE("livro");
+    SERIE("Serie"),
+    TEMPORADA("Temporada");
 
     String descricao;
     TipoMedia(String descricao){

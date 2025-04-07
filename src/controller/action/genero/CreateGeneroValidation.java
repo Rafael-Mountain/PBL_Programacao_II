@@ -1,7 +1,7 @@
 package controller.action.genero;
 
 import controller.dataBase.GeneroRepository;
-import controller.action.commons.Validation;
+import controller.action.Validation;
 import model.Genero;
 
 public class CreateGeneroValidation implements Validation<Genero> {

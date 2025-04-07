@@ -1,14 +1,14 @@
 package model;
 
 import model.commons.IAvaliavel;
-import model.commons.Identifiable;
 
 import java.time.LocalDateTime;
 
-public class Temporada  implements IAvaliavel, Identifiable {
+public class Temporada  implements IAvaliavel{
     private LocalDateTime ano;
     private int qEpisodios;
-    private int idSerie;
+    private int serieId;
+    private TipoMedia tipoMedia = TipoMedia.TEMPORADA;
 
     @Override
     public int getId() {
@@ -21,7 +21,7 @@ public class Temporada  implements IAvaliavel, Identifiable {
     }
 
     @Override
-    public void Avaliar(LocalDateTime dataAvaliacao, int pontuacao, String review, LocalDateTime dataConsumo) {
+    public void Avaliar(Avaliacao avaliacao) {
 
     }
 
@@ -47,12 +47,17 @@ public class Temporada  implements IAvaliavel, Identifiable {
         this.qEpisodios = qEpisodios;
     }
 
-    public int getIdSerie() {
-        return idSerie;
+    public int getSerieId() {
+        return serieId;
     }
 
-    public void setIdSerie(int idSerie) {
-        this.idSerie = idSerie;
+    public void setSerieId(int serieId) {
+        this.serieId = serieId;
+    }
+
+    @Override
+    public TipoMedia getTipoMedia() {
+        return tipoMedia;
     }
 }
 

@@ -6,6 +6,7 @@ import java.util.List;
 public class Serie extends MediaAudioVisual {
     private LocalDateTime dataFim;
     private List<Temporada> temporadas;
+    private TipoMedia tipoMedia = TipoMedia.SERIE;
 
     public Serie(String titulo, LocalDateTime dataLancamento, boolean consumido,
                  List<Genero> generos, String tituloOriginal, String localDisponivel,
@@ -16,6 +17,10 @@ public class Serie extends MediaAudioVisual {
     @Override
     public int getPontuacao() {
         return 0;
+    }
+
+    public TipoMedia getTipoMedia() {
+        return this.tipoMedia;
     }
 
     public LocalDateTime getDataFim() {
@@ -60,7 +65,7 @@ public class Serie extends MediaAudioVisual {
 
 
     @Override
-    public void Avaliar(LocalDateTime dataAvaliacao, int pontuacao, String review, LocalDateTime dataConsumo) {
+    public void Avaliar(Avaliacao avaliacao) {
 
     }
 }
