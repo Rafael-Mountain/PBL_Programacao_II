@@ -21,7 +21,7 @@ public class ViewCommons {
 
         do {
             System.out.println("Lista atual: " + generos);
-            generoId = inputNegativeInt(terminal, "Selecione o genero(ou '-1' para finalizar): ");
+            generoId = inputIntOrExit(terminal, "Selecione o genero(ou '-1' para finalizar): ");
 
             if (generoId == -1) {
                 break;
@@ -97,6 +97,22 @@ public class ViewCommons {
         value = Integer.parseInt(input);
         return value;
     }
+
+    public static int inputIntOrExit(Scanner terminal, String message) {
+
+        String input;
+        int value;
+        do {
+            System.out.print(message);
+            input = terminal.nextLine();
+            if (!input.matches("^(-1|\\d+)$")) {
+                System.out.println("Valor inválido. Tente novamente.");
+            }
+        } while (!input.matches("^(-1|\\d+)$"));
+        value = Integer.parseInt(input);
+        return value;
+    }
+
 
     public static boolean inputBoolean(Scanner terminal, String message) {
         String input;
