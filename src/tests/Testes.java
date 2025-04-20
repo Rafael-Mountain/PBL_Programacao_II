@@ -1,3 +1,5 @@
+package tests;
+
 import controller.action.genero.CreateGeneroAction;
 import controller.action.genero.CreateGeneroValidation;
 import controller.dataBase.FilmeRepository;
@@ -7,7 +9,6 @@ import controller.action.ActionResult;
 import controller.dataBase.GeneroRepository;
 import model.Filme;
 import model.Genero;
-import view.ListGridMedia;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

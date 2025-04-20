@@ -20,7 +20,7 @@ public class GenreFilter extends Filter {
     @Override
     void apply() {
         switch (filterType) {
-            case CONTEM_UM:
+             case CONTEM_UM:
                 medias = medias.stream()
                         .filter(media -> !Collections.disjoint(media.getGeneros(), filterValue))
                         .collect(Collectors.toList());

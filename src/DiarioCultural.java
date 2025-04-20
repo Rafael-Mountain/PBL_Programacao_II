@@ -1,3 +1,4 @@
+import tests.Testes;
 import view.Menu;
 
 import java.util.Scanner;
