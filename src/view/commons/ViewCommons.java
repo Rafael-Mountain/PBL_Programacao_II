@@ -21,7 +21,7 @@ public class ViewCommons {
 
         do {
             System.out.println("Lista atual: " + generos);
-            generoId = inputInt(terminal, "Selecione o genero(ou '-1' para finalizar): ");
+            generoId = inputNegativeInt(terminal, "Selecione o genero(ou '-1' para finalizar): ");
 
             if (generoId == -1) {
                 break;
@@ -85,9 +85,6 @@ public class ViewCommons {
     }
 
     public static int inputInt(Scanner terminal, String message) {
-
-//        Todo: Arrumar o tratamento de erro ta dando pau pq o regex não ta pegando o -1
-//          Ou Cria um regex que aceite o -1 (Isso pode dar problema) ou faz um tratamento de erro
         String input;
         int value;
         do {
@@ -135,6 +132,20 @@ public class ViewCommons {
 
         } while (input < min || input > max );
         return input;
+    }
+
+    public static int inputNegativeInt(Scanner terminal, String message) {
+        String input;
+        int value;
+        do {
+            System.out.print(message);
+            input = terminal.nextLine();
+            if (!input.matches("-?[0-9]+")) {
+                System.out.println("Valor inválido. Tente novamente.");
+            }
+        } while (!input.matches("-?[0-9]+"));
+        value = Integer.parseInt(input);
+        return value;
     }
 }
 

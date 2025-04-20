@@ -40,7 +40,7 @@ public class SearchView {
             filterChain.addFilter(filterGenreView(terminal));
         }
 
-        boolean FilterAno = ViewCommons.inputBoolean(terminal, "Deseja filtrar por Ano?");
+        boolean FilterAno = ViewCommons.inputBoolean(terminal, "\nDeseja filtrar por Ano?");
         if (FilterAno) {
             filterChain.addFilter(filterYearView(terminal));
         }
