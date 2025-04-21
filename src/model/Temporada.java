@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Temporada  implements IAvaliavel{
+    private int id;
     private LocalDateTime ano;
     private int qEpisodios;
     private int serieId;
@@ -16,17 +17,17 @@ public class Temporada  implements IAvaliavel{
 
     @Override
     public int getId() {
-        return 0;
+        return id;
     }
 
     @Override
     public void setId(int id) {
-
+        this.id = id;
     }
 
     @Override
     public void Avaliar(Avaliacao avaliacao) {
-
+        avaliacoes.add(avaliacao);
     }
 
     @Override

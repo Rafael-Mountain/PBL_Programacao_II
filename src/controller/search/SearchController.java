@@ -33,7 +33,7 @@ public abstract class SearchController {
         Search search = searchFactory.createSearch(searchField);
         searchResults = search.execute(searchTerm);
 
-        if (filterChain != null) {
+        if (filterChain != null || searchResults.isEmpty()) {
             filterChain.setSearchResults(searchResults);
             filterChain.applyFilters();
             searchResults = filterChain.getSearchResults();

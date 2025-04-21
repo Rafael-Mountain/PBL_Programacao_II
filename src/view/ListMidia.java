@@ -7,10 +7,11 @@ import view.commons.IScreen;
 import java.util.List;
 import java.util.Scanner;
 
-public class ListMidia implements IScreen {
-    List<Media> medias;
-    boolean reset = true;
-    String message;
+public abstract class ListMidia implements IScreen {
+    private List<Media> medias;
+    private boolean reset = true;
+    private String message;
+
 
     public ListMidia (SearchResults searchResults){
         medias = searchResults.getMediaList();
@@ -27,33 +28,29 @@ public class ListMidia implements IScreen {
         do {
             if (reset) {
                 if (medias.isEmpty()) {
-                    System.out.println("\n=== Lista de Mídias ===");
+                    System.out.println("\n=== Lista de "+ getNomeMidia() + " ===");
                     System.out.println("Nenhuma mídia encontrada.");
                     reset = false;
                 } else {
-                    System.out.println("\n === Lista de Mídias ===");
+                    System.out.println("\n=== Lista de "+ getNomeMidia() + " ===");
                     new ListGridMedia().draw(medias);
                     reset = false;
                 }
             }
 
-            System.out.println("\n 1 - Buscar Mídia");
-            System.out.println(" 2 - Filtrar Mídia");
-            System.out.println(" 3 - Selecionar Mídia");
-            System.out.println(" 4 - Voltar");
+            System.out.println("\n 1 - Buscar " + getNomeMidia());
+            System.out.println(" 2 - Selecionar " + getNomeMidia());
+            System.out.println(" 3 - Voltar");
             System.out.print("Escolha uma opção: ");
             input = terminal.nextLine();
             switch (input) {
                 case "1":
-//                    SearchResults searchResults= new SearchView().draw(terminal);
-                    break;
+                    goToSearch(terminal);
+                    return;
                 case "2":
                     // Implementar filtro
                     break;
                 case "3":
-                    // Implementar seleção de mídia
-                    break;
-                case "4":
                     return;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
@@ -65,6 +62,10 @@ public class ListMidia implements IScreen {
         this.medias = medias.getMediaList();
         this.message = medias.getMessage();
     }
+
+    public abstract void goToSearch(Scanner terminal);
+
+    public abstract String getNomeMidia();
 }
 
 

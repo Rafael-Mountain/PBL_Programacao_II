@@ -1,5 +1,6 @@
-package view;
+package view.avaliacao;
 
+import controller.util.DateFormater;
 import model.Avaliacao;
 
 public class AvaliacaoDisplay {
@@ -10,13 +11,11 @@ public class AvaliacaoDisplay {
     }
 
     public void draw(){
-        System.out.println("======================================");
-        System.out.println("Data da Avaliação " + avaliacao.getDataAvaliacao());
+        System.out.println("Data da Avaliação " + DateFormater.DataHora(avaliacao.getDataAvaliacao()));
         System.out.println("--------------------");
-        System.out.println("Dia do consumo: " + avaliacao.getDataConsumo());
+        System.out.println("Dia que assistiu/leu: " + avaliacao.getDataConsumo());
         System.out.println("Avaliação: " + avaliacao.getPontuacao());
         System.out.println("Comentário: " + avaliacao.getReview());
-        System.out.println("======================================");
     }
 }
 

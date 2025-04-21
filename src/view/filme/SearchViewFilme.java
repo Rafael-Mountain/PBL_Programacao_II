@@ -1,9 +1,10 @@
-package view;
+package view.filme;
 
 import controller.filter.FilterChain;
 import controller.search.SearchFields;
 import controller.search.SearchFilmeController;
 import controller.search.SearchResults;
+import view.SearchView;
 
 import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;

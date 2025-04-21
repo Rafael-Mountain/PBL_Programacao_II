@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
 
-public class SerieCreateForm extends Screen {
+public class CreateSerieForm extends Screen {
     //todo: Testar to com muito sono para ver se funciona
     @Override
     public void draw(Scanner terminal) {
@@ -32,7 +32,8 @@ public class SerieCreateForm extends Screen {
             System.out.print("Titulo Original: ");
             String nomeOriginal = terminal.nextLine();
 
-            int AnoLancamento = ViewCommons.inputAnoLancamento(terminal);
+            int anoLancamento = ViewCommons.inputAno(terminal, "Ano de Lançamento: ");
+            int datafim = ViewCommons.inputAno(terminal, "Ano de Encerramento: ");
             System.out.print("Local disponível: ");
             String localDisponivel = terminal.nextLine();
 
@@ -41,9 +42,9 @@ public class SerieCreateForm extends Screen {
 
             boolean consumido = ViewCommons.inputBoolean(terminal, "Já Assisti? ");
 
-            serie = new Serie(nome, LocalDateTime.of(AnoLancamento, 1, 1, 0, 0),
+            serie = new Serie(nome, LocalDateTime.of(anoLancamento, 1, 1, 0, 0),
                     consumido, generosSerie, nomeOriginal, localDisponivel,
-                    elenco);
+                    elenco, LocalDateTime.of(datafim, 1, 1, 0, 0));
             CreateSerieAction createSerie = new CreateSerieAction(new CreateSerieValidation());
             result = createSerie.execute(serie);
 

@@ -73,11 +73,11 @@ public class ViewCommons {
         return elenco;
     }
 
-    public static int inputAnoLancamento(Scanner terminal) {
+    public static int inputAno(Scanner terminal, String message) {
         String anoLancamento;
         int ano;
         do {
-            System.out.print("Ano de lançamento (YYYY): ");
+            System.out.print(message + " (YYYY): ");
             anoLancamento = terminal.nextLine();
             if (anoLancamento.length() != 4 || !anoLancamento.matches("[0-9]+")) {
                 System.out.println("Ano inválido. Tente novamente.");

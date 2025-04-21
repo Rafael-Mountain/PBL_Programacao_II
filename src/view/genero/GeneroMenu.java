@@ -12,10 +12,8 @@ public class GeneroMenu extends Screen {
         do {
             System.out.println("\n=== Gênero ===");
             System.out.println("1. Adicionar Gênero");
-            System.out.println("2. Editar Gênero");
-            System.out.println("3. Excluir Gênero");
-            System.out.println("4. Listar Gêneros");
-            System.out.println("5. Voltar ao Menu Principal");
+            System.out.println("2. Listar Gêneros");
+            System.out.println("3. Voltar");
             System.out.print("Escolha uma opção: ");
 
 
@@ -25,18 +23,14 @@ public class GeneroMenu extends Screen {
                     new CreateGeneroForm().draw(terminal);
                     break;
                 case "2":
+                    new ListGenero().draw(terminal);
                     break;
                 case "3":
-                    // Excluir Gênero
-                    break;
-                case "4":
-                    // Listar Gêneros
-                    break;
-                case "5":
+
                     return;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
             }
-        } while (opcao != "5");
+        } while (opcao != "3");
     }
 }

@@ -6,9 +6,7 @@ import model.TipoMedia;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public interface IAvaliavel extends Identifiable {
-    int getPontuacao();
-    TipoMedia getTipoMedia();
-    List<Avaliacao> getAvaliacoes();
+public interface IAvaliavel extends ITemAvaliacao{
     void Avaliar(Avaliacao avaliacao);
+    List<Avaliacao> getAvaliacoes();
 }

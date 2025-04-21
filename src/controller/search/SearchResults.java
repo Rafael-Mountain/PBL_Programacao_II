@@ -28,4 +28,8 @@ public class SearchResults {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    public boolean isEmpty() {
+        return mediaList.isEmpty();
+    }
 }

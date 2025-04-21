@@ -2,7 +2,7 @@ package view.filme;
 
 import controller.dataBase.FilmeRepository;
 import model.Filme;
-import view.AvaliacaoDisplay;
+import view.avaliacao.AvaliacaoDisplay;
 import view.avaliacao.CreateAvaliacaoForm;
 import view.commons.Screen;
 
@@ -17,8 +17,7 @@ public class FilmeDisplay extends Screen {
 
     @Override
     public void draw(Scanner terminal) {
-        clear();
-        System.out.println("=== Detalhes do Filme ===");
+        System.out.println("\n=== Detalhes do Filme ===");
         System.out.println("Título " + filme.getTitulo());
         System.out.println("Título Original: " + filme.getTituloOriginal());
         System.out.println("Pontuação: " + filme.getPontuacao());
@@ -31,12 +30,14 @@ public class FilmeDisplay extends Screen {
         System.out.println("Já assisti: " + (filme.isConsumido() ? "Sim" : "Não"));
         System.out.println("Roteiro: " + filme.getRoteiro());
 
-        System.out.println("=== Avaliações ===");
+        System.out.println("\n=== Avaliações ===");
         if (filme.getAvaliacoes().isEmpty()) {
             System.out.println("Nenhuma avaliação ainda.");
         } else {
+            System.out.println("======================================");
             filme.getAvaliacoes().forEach(avaliacao -> {
                 new AvaliacaoDisplay(avaliacao).draw();
+                System.out.println("======================================");
             });
         }
 
@@ -59,22 +60,22 @@ public class FilmeDisplay extends Screen {
                     break;
                 case "2":
                     // Avaliar filme
-                   if (!filme.isConsumido()){
-                       System.out.println("Você precisa assistir o filme antes de avaliá-lo.");
-                     }else {
-                       CreateAvaliacaoForm createAvaliacaoFormn = new CreateAvaliacaoForm();
-                       createAvaliacaoFormn.draw(terminal);
-                       Filme filmeAvaliado = filmeRepository.getItemById(filme.getId());
-                       new FilmeDisplay(filmeAvaliado).draw(terminal);
-                       return ;
-                   }
+                    if (!filme.isConsumido()) {
+                        System.out.println("Você precisa assistir o filme antes de avaliá-lo.");
+                    } else {
+                        CreateAvaliacaoForm createAvaliacaoForm = new CreateAvaliacaoForm();
+                        createAvaliacaoForm.setObjAvaliavel(filme);
+                        createAvaliacaoForm.draw(terminal);
+                        Filme filmeAvaliado = filmeRepository.getItemById(filme.getId());
+                        new FilmeDisplay(filmeAvaliado).draw(terminal);
+                        return;
+                    }
                 case "3":
-                    // Sair
                     break;
                 default:
                     System.out.println("Opção inválida.");
             }
-        } while (!input.equals("4"));
+        } while (!input.equals("3"));
 
 
     }

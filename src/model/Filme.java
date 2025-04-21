@@ -1,5 +1,7 @@
 package model;
 
+import model.commons.IAvaliavel;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -7,7 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Filme extends MediaAudioVisual {
+public class Filme extends MediaAudioVisual implements IAvaliavel {
     private String direcao;
     private int duracao; // Duração em minutos
     private String roteiro;

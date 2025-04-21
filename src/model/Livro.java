@@ -1,12 +1,14 @@
 package model;
 
+import model.commons.IAvaliavel;
+
 import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Livro extends Media {
+public class Livro extends Media  implements IAvaliavel {
     private String autor;
     private String editora;
     private boolean possui;

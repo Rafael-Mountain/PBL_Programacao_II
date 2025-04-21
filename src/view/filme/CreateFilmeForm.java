@@ -31,7 +31,7 @@ public class CreateFilmeForm extends Screen {
             System.out.print("Titulo Original: ");
             String nomeOriginal = terminal.nextLine();
 
-            int AnoLancamento = ViewCommons.inputAnoLancamento(terminal);
+            int AnoLancamento = ViewCommons.inputAno(terminal, "Ano de Lançamento: ");
             int duracao = ViewCommons.inputInt(terminal, "Duração (em minutos): ");
 
             System.out.print("Diretor: ");

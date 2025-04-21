@@ -32,15 +32,17 @@ public class CreateAvaliacaoForm extends Screen {
             System.out.print("Review: ");
             String review = terminal.nextLine();
 
-            int pontuacao = ViewCommons.inputIntWRange(terminal, "Pontuação", 1, 5);
-            LocalDate data_consumo = ViewCommons.inputData(terminal, "Data de consumo:");
+            int pontuacao = ViewCommons.inputIntWRange(terminal, "Pontuação(1-5): ", 1, 5);
+            LocalDate data_consumo = ViewCommons.inputData(terminal, "Data de consumo: ");
 
 
             avaliacao = new Avaliacao(null, pontuacao, review, data_consumo);
 
             CreateAvaliacaoAction createAvaliacao = new CreateAvaliacaoAction(new CreateAvaliacaoValidation());
+
             createAvaliacao.SetModel(objAvaliavel);
             result = createAvaliacao.execute(avaliacao);
+            System.out.println(result.getMessage());
 
         } while (!result.isSuccess());
     }

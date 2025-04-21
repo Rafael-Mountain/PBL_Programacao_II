@@ -3,7 +3,7 @@ package view;
 import controller.search.SearchFields;
 import controller.search.SearchFilmeController;
 import view.commons.Screen;
-import view.filme.CreateFilmeForm;
+import view.filme.FilmeListMidia;
 
 import java.util.Scanner;
 
@@ -26,7 +26,7 @@ public class MenuListMedia extends Screen {
                 case "1":
                     SearchFilmeController searchController = new SearchFilmeController(null, SearchFields.TUDO);
                     searchController.execute();
-                    new ListMidia(searchController.getSearchResults()).draw(terminal);
+                    new FilmeListMidia(searchController.getSearchResults()).draw(terminal);
                     break;
                 case "2":
                     System.out.println("Executando opção 2...");

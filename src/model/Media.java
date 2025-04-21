@@ -1,11 +1,12 @@
 package model;
 import model.commons.IAvaliavel;
+import model.commons.ITemAvaliacao;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Media implements IAvaliavel{
+public abstract class Media implements ITemAvaliacao {
     private int id = -1;
     private String titulo;
     private LocalDateTime dataLancamento;
