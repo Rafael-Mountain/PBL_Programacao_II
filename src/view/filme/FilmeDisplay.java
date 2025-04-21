@@ -1,6 +1,8 @@
 package view.filme;
 
+import controller.dataBase.FilmeRepository;
 import model.Filme;
+import view.avaliacao.CreateAvaliacaoForm;
 import view.commons.Screen;
 
 import java.util.Scanner;
@@ -35,24 +37,35 @@ public class FilmeDisplay extends Screen {
 
         String input;
         do {
-            System.out.print("Escolha uma opção");
+            System.out.print("Escolha uma opção: ");
             input = terminal.nextLine();
+            FilmeRepository filmeRepository = FilmeRepository.getInstance();
 
             switch (input) {
                 case "1":
-                    // Editar filme
+                    // TODO: Fazer que nem gente.
+                    filme.setConsumido(true);
                     break;
                 case "2":
                     // Excluir filme
                     break;
                 case "3":
                     // Avaliar filme
-                    break;
+                    // TODO: Verificação de filme consumido antes de avaliar.
+                    CreateAvaliacaoForm createAvaliacaoFormn = new CreateAvaliacaoForm();
+                    createAvaliacaoFormn.draw(terminal);
+                    Filme filmeAvaliado = filmeRepository.getItemById(filme.getId());
+
+                    new FilmeDisplay(filmeAvaliado).draw(terminal);
+                    return;
                 case "4":
+                    // Sair
                     break;
+                default:
+                    System.out.println("Opção inválida.");
             }
-        }
-        while (input != "4");
+        } while (!input.equals("4"));
+
 
     }
 }

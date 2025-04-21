@@ -1,12 +1,11 @@
 package view;
 
-import view.commons.IScreen;
 import view.commons.Screen;
 import view.filme.CreateFilmeForm;
 
 import java.util.Scanner;
 
-public class MenuMedia extends Screen {
+public class MenuCreateMedia extends Screen {
     @Override
     public void draw(Scanner terminal) {
         String opcao;
@@ -33,7 +32,7 @@ public class MenuMedia extends Screen {
                     break;
                 case "4":
                     System.out.println("Voltando");
-                    break;
+                    return;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
             }

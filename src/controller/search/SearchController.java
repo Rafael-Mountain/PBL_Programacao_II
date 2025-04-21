@@ -2,10 +2,11 @@ package controller.search;
 
 import controller.filter.FilterChain;
 
-public class SearchController {
+public abstract class SearchController {
     private SearchFields searchField;
     private String searchTerm;
     private SearchResults searchResults;
+    protected SearchFactory searchFactory;
     private FilterChain filterChain;
 
 
@@ -22,7 +23,6 @@ public class SearchController {
             searchResults = new SearchResults(null,"Error: Termo de pesquisa não pode ser nulo");
         }
 
-        SearchFactory searchFactory = new SearchFactory();
         Search search = searchFactory.createSearch(searchField);
         searchResults = search.execute(searchTerm);
 

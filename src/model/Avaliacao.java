@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -7,10 +8,10 @@ public class Avaliacao {
     private LocalDateTime dataAvaliacao;
     private int pontuacao;
     private String review;
-    private Date dataConsumo;
+    private LocalDate dataConsumo;
 
 
-    public Avaliacao(LocalDateTime dataAvaliacao, int pontuacao, String review, Date dataConsumo) {
+    public Avaliacao(LocalDateTime dataAvaliacao, int pontuacao, String review, LocalDate dataConsumo) {
         this.dataAvaliacao = dataAvaliacao;
         this.pontuacao = pontuacao;
         this.review = review;
@@ -43,11 +44,11 @@ public class Avaliacao {
         this.review = review;
     }
 
-    public Date getDataConsumo() {
+    public LocalDate getDataConsumo() {
         return dataConsumo;
     }
 
-    public void setDataConsumo(Date dataConsumo) {
+    public void setDataConsumo(LocalDate dataConsumo) {
         this.dataConsumo = dataConsumo;
     }
 

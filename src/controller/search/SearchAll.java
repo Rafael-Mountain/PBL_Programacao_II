@@ -1,6 +1,7 @@
 package controller.search;
 
 import controller.dataBase.FilmeRepository;
+import controller.dataBase.IRepository;
 import controller.dataBase.LivroRepository;
 import controller.dataBase.SerieRepository;
 import model.Media;
@@ -10,18 +11,15 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SearchAll implements Search{
+    IRepository repository;
+
     @Override
     public SearchResults execute(String SearchTerm) {
         SearchResults searchResults;
 
-        FilmeRepository filmeRepository = FilmeRepository.getInstance();
-        LivroRepository livroRepository = LivroRepository.getInstance();
-        SerieRepository serieRepository = SerieRepository.getInstance();
         List<Media> medias = new ArrayList<>();
 
-        medias.addAll(filmeRepository.getItems());
-        medias.addAll(livroRepository.getItems());
-        medias.addAll(serieRepository.getItems());
+        medias.addAll(repository.getItems());
 
         if (medias.isEmpty()){
             searchResults = new SearchResults(medias,"Medias não encontradas");
@@ -30,4 +28,9 @@ public class SearchAll implements Search{
 
         return searchResults;
     }
+
+    public void setRepository(IRepository repository) {
+        this.repository = repository;
+    }
 }
+

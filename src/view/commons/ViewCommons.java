@@ -3,6 +3,9 @@ package view.commons;
 import controller.dataBase.GeneroRepository;
 import model.Genero;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -163,6 +166,26 @@ public class ViewCommons {
         value = Integer.parseInt(input);
         return value;
     }
+
+    public static LocalDate inputData(Scanner terminal, String message) {
+        LocalDate data = null;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        while (true) {
+            System.out.print(message + " (formato: dd/MM/yyyy): ");
+            String input = terminal.nextLine();
+
+            try {
+                data = LocalDate.parse(input, formatter);
+                break;
+            } catch (DateTimeParseException e) {
+                System.out.println("Data inválida. Tente novamente.");
+            }
+        }
+
+        return data;
+    }
+
 }
 
 

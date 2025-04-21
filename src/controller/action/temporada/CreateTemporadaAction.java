@@ -15,6 +15,10 @@ public class CreateTemporadaAction extends BaseSetAction<Temporada, Serie> {
 
     @Override
     public ActionResult execute(Temporada model) {
+        if (superModel == null){
+            return new ActionResult(false, "Set super model");
+        }
+
         if (!isValid(model)) {
             return new ActionResult(false, getErrorMessage());
         }
@@ -22,7 +26,6 @@ public class CreateTemporadaAction extends BaseSetAction<Temporada, Serie> {
         model.setSerieId(superModel.getId());
         superModel.updateTemporadaById(model.getId(), model);
         repository.update(superModel);
-
 
         return new ActionResult(true, "Temporada created successfully");
     }

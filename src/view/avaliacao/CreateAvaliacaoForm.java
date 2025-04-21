@@ -1,0 +1,55 @@
+package view.avaliacao;
+
+import controller.action.ActionResult;
+import controller.action.avaliacao.CreateAvaliacaoAction;
+import controller.action.avaliacao.CreateAvaliacaoValidation;
+import controller.action.filme.CreateFilmeAction;
+import controller.action.filme.CreateFilmeValidation;
+import controller.dataBase.GeneroRepository;
+import model.Avaliacao;
+import model.Filme;
+import model.Genero;
+import model.commons.IAvaliavel;
+import view.commons.Screen;
+import view.commons.ViewCommons;
+import view.filme.FilmeDisplay;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Scanner;
+
+public class CreateAvaliacaoForm extends Screen {
+    IAvaliavel objAvaliavel;
+
+    @Override
+    public void draw(Scanner terminal) {
+        ActionResult result;
+        Avaliacao avaliacao;
+
+        do {
+            System.out.println("\n=== Avaliar Midia ===\n");
+            System.out.print("Review: ");
+            String review = terminal.nextLine();
+
+            int pontuacao = ViewCommons.inputIntWRange(terminal, "Pontuação", 1, 5);
+            LocalDate data_consumo = ViewCommons.inputData(terminal, "Data de consumo:");
+
+
+            avaliacao = new Avaliacao(null, pontuacao, review, data_consumo);
+
+            CreateAvaliacaoAction createAvaliacao = new CreateAvaliacaoAction(new CreateAvaliacaoValidation());
+            createAvaliacao.SetModel(objAvaliavel);
+            result = createAvaliacao.execute(avaliacao);
+
+        } while (!result.isSuccess());
+    }
+
+    public void setObjAvaliavel(IAvaliavel objAvaliavel) {
+        this.objAvaliavel = objAvaliavel;
+    }
+
+    public IAvaliavel getObjAvaliavel() {
+        return objAvaliavel;
+    }
+}

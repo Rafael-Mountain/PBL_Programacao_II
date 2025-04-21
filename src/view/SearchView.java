@@ -13,7 +13,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-
+// TODO: Separar essa view em 3 tipos de mídia diferentes.
+/*
 public class SearchView {
     public SearchResults draw(Scanner terminal) {
         String valor = null;
@@ -56,6 +57,7 @@ public class SearchView {
     }
 
     public List<SimpleEntry<String, SearchFields>> getSearchFields(){
+        // Transforma enum em um dicionário
         return Arrays.stream(SearchFields.values()).map(field -> new SimpleEntry<>(field.getFieldName(), field)).collect(Collectors.toList());
     }
 
@@ -103,3 +105,5 @@ public class SearchView {
     }
 }
 
+
+*/
