@@ -1,11 +1,8 @@
 package controller.search;
 
-import controller.dataBase.FilmeRepository;
 import controller.dataBase.IRepository;
 import model.Filme;
 import model.Media;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
