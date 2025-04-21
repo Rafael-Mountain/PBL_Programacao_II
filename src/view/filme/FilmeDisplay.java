@@ -43,9 +43,8 @@ public class FilmeDisplay extends Screen {
 
         System.out.println("\n=== Ações ===");
         System.out.println("1. Editar");
-        System.out.println("2. Excluir");
-        System.out.println("3. Avaliar");
-        System.out.println("4. Voltar");
+        System.out.println("2. Avaliar");
+        System.out.println("3. Voltar");
 
         String input;
         do {
@@ -59,18 +58,17 @@ public class FilmeDisplay extends Screen {
                     filme.setConsumido(true);
                     break;
                 case "2":
-                    // Excluir filme
-                    break;
-                case "3":
                     // Avaliar filme
-                    // TODO: Verificação de filme consumido antes de avaliar.
-                    CreateAvaliacaoForm createAvaliacaoFormn = new CreateAvaliacaoForm();
-                    createAvaliacaoFormn.draw(terminal);
-                    Filme filmeAvaliado = filmeRepository.getItemById(filme.getId());
-
-                    new FilmeDisplay(filmeAvaliado).draw(terminal);
-                    return;
-                case "4":
+                   if (!filme.isConsumido()){
+                       System.out.println("Você precisa assistir o filme antes de avaliá-lo.");
+                     }else {
+                       CreateAvaliacaoForm createAvaliacaoFormn = new CreateAvaliacaoForm();
+                       createAvaliacaoFormn.draw(terminal);
+                       Filme filmeAvaliado = filmeRepository.getItemById(filme.getId());
+                       new FilmeDisplay(filmeAvaliado).draw(terminal);
+                       return ;
+                   }
+                case "3":
                     // Sair
                     break;
                 default:

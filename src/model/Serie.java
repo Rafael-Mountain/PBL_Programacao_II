@@ -23,6 +23,11 @@ public class Serie extends MediaAudioVisual {
         return this.tipoMedia;
     }
 
+    @Override
+    public List<Avaliacao> getAvaliacoes() {
+        return List.of();
+    }
+
     public LocalDateTime getDataFim() {
         return dataFim;
     }

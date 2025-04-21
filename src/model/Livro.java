@@ -1,7 +1,10 @@
 package model;
 
 import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Livro extends Media {
     private String autor;
@@ -9,15 +12,20 @@ public class Livro extends Media {
     private boolean possui;
     private String isbn;
     private TipoMedia tipoMedia = TipoMedia.LIVRO;
+    private List<Avaliacao> avaliacoes;
 
     @Override
     public int getPontuacao() {
-        return 0;
+        return avaliacoes.stream()
+                .max(Comparator.comparing(Avaliacao::getDataAvaliacao))
+                .map(Avaliacao::getPontuacao)
+                .orElse(0);
     }
+
 
     @Override
     public void Avaliar(Avaliacao avaliacao) {
-
+        avaliacoes.add(avaliacao);
     }
 
     public String getAutor() {
@@ -54,5 +62,12 @@ public class Livro extends Media {
 
     public TipoMedia getTipoMedia() {
         return this.tipoMedia;
+    }
+
+    @Override
+    public List<Avaliacao> getAvaliacoes() {
+        return avaliacoes.stream()
+                .sorted(Comparator.comparing(Avaliacao::getDataAvaliacao).reversed())
+                .collect(Collectors.toList());
     }
 }
