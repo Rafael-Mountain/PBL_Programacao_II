@@ -12,16 +12,17 @@ public class ListGridMedia {
         int colGenero = 20;
         int colAno = 6;
         int colTipo = 20;
+        int colPontuacao = 10;
 
         // Imprime linha superior
-        printLinha(colSeletor, colTitulo, colGenero, colAno, colTipo);
+        printLinha(colSeletor, colTitulo, colGenero, colAno, colTipo, colPontuacao);
 
         // Cabeçalho
-        System.out.printf("| %-"+colSeletor+"s | %-"+colTitulo+"s | %-"+colGenero+"s | %-"+colAno+"s | %-"+colTipo+"s |%n",
-                "Seletor", "Título", "Gênero", "Ano", "Tipo");
+        System.out.printf("| %-"+colSeletor+"s | %-"+colTitulo+"s | %-"+colGenero+"s | %-"+colAno+"s | %-"+colTipo+"s | %-"+colPontuacao+"s |%n",
+                "Seletor", "Título", "Gênero", "Ano", "Tipo", "Pontuação");
 
         // Linha separadora
-        printLinha(colSeletor, colTitulo, colGenero, colAno, colTipo);
+        printLinha(colSeletor, colTitulo, colGenero, colAno, colTipo, colPontuacao);
 
         // Dados
         for (int i = 0; i < medias.size(); i++) {
@@ -31,6 +32,7 @@ public class ListGridMedia {
             String ano = String.valueOf(media.getDataLancamento().getYear());
             String tipoMedia = media.getTipoMedia().getDescricao();
             String seletor = String.valueOf(i);
+            String pontuacao = String.valueOf(media.getPontuacao());
 
             if (titulo.length() > colTitulo) {
                 titulo = titulo.substring(0, colTitulo - 3) + "...";
@@ -44,15 +46,15 @@ public class ListGridMedia {
                 tipoMedia = tipoMedia.substring(0, colTipo - 3) + "...";
             }
 
-            System.out.printf("| %-"+colSeletor+"s | %-"+colTitulo+"s | %-"+colGenero+"s | %-"+colAno+"s | %-"+colTipo+"s |%n",
-                    seletor, titulo, genero, ano, tipoMedia);
+            System.out.printf("| %-"+colSeletor+"s | %-"+colTitulo+"s | %-"+colGenero+"s | %-"+colAno+"s | %-"+colTipo+"s | %-"+colPontuacao+"s |%n",
+                    seletor, titulo, genero, ano, tipoMedia, pontuacao);
         }
 
         // Linha inferior
-        printLinha(colSeletor, colTitulo, colGenero, colAno, colTipo);
+        printLinha(colSeletor, colTitulo, colGenero, colAno, colTipo, colPontuacao);
     }
 
-    private static void printLinha(int col1, int col2, int col3, int col4, int col5) {
+    private static void printLinha(int col1, int col2, int col3, int col4, int col5, int col6) {
         System.out.print("+");
         printRepetido('-', col1 + 2);
         System.out.print("+");
@@ -63,6 +65,8 @@ public class ListGridMedia {
         printRepetido('-', col4 + 2);
         System.out.print("+");
         printRepetido('-', col5 + 2);
+        System.out.print("+");
+        printRepetido('-', col6 + 2);
         System.out.println("+");
     }
 

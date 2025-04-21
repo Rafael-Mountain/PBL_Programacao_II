@@ -3,12 +3,16 @@ package model;
 import model.commons.IAvaliavel;
 
 import java.time.LocalDateTime;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Temporada  implements IAvaliavel{
     private LocalDateTime ano;
     private int qEpisodios;
     private int serieId;
     private TipoMedia tipoMedia = TipoMedia.TEMPORADA;
+    private List<Avaliacao> avaliacoes;
 
     @Override
     public int getId() {
@@ -27,9 +31,24 @@ public class Temporada  implements IAvaliavel{
 
     @Override
     public int getPontuacao() {
-        return 0;
+        return avaliacoes.stream()
+                .max(Comparator.comparing(Avaliacao::getDataAvaliacao))
+                .map(Avaliacao::getPontuacao)
+                .orElse(0);
     }
 
+
+    @Override
+    public List<Avaliacao> getAvaliacoes() {
+        return avaliacoes.stream()
+                .sorted(Comparator.comparing(Avaliacao::getDataAvaliacao).reversed())
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public TipoMedia getTipoMedia() {
+        return tipoMedia;
+    }
 
     public int getqEpisodios() {
         return qEpisodios;
@@ -53,11 +72,6 @@ public class Temporada  implements IAvaliavel{
 
     public void setSerieId(int serieId) {
         this.serieId = serieId;
-    }
-
-    @Override
-    public TipoMedia getTipoMedia() {
-        return tipoMedia;
     }
 }
 

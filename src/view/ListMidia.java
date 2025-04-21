@@ -45,7 +45,7 @@ public class ListMidia implements IScreen {
             input = terminal.nextLine();
             switch (input) {
                 case "1":
-                    SearchResults searchResults= new SearchView().draw(terminal);
+//                    SearchResults searchResults= new SearchView().draw(terminal);
                     break;
                 case "2":
                     // Implementar filtro

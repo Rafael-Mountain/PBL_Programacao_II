@@ -16,10 +16,9 @@ public class Menu extends Screen {
         do {
             System.out.println("\n=== Bem-Vindo ao Sistema ===");
             System.out.println("1 - Criar Midia");
-            System.out.println("2 - Criar Genero");
-            System.out.println("3 - Listar Midia ");
-            System.out.println("4 - Opção");
-            System.out.println("5 - Sair");
+            System.out.println("2 - Listar Midia");
+            System.out.println("3 - Generos");
+            System.out.println("4 - Sair");
             System.out.print("Escolha uma opção: ");
 
             opcao = terminal.nextLine();
@@ -29,20 +28,18 @@ public class Menu extends Screen {
                     new MenuCreateMedia().draw(terminal);
                     break;
                 case "2":
-                    new GeneroMenu().draw(terminal);
+                    new MenuListMedia().draw(terminal);
                     break;
                 case "3":
-                    new MenuListMedia().draw(terminal);
-                case "4":
-                    System.out.println("Executando opção 4...");
+                    new GeneroMenu().draw(terminal);
                     break;
-                case "5":
+                case "4":
                     System.out.println("Saindo do sistema...");
                     break;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
             }
-        } while (!opcao.equals("5"));
+        } while (!opcao.equals("4"));
 
     }
 
