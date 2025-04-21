@@ -1,18 +1,23 @@
 package model;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Filme extends MediaAudioVisual {
     private String direcao;
     private int duracao; // Duração em minutos
     private String roteiro;
     private TipoMedia tipoMedia = TipoMedia.FILME;
+    private List<Avaliacao> avaliacoes;
 
-    public Filme(){
+
+    public Filme() {
         super();
+        this.avaliacoes = new ArrayList<>();
     }
 
 
@@ -21,6 +26,7 @@ public class Filme extends MediaAudioVisual {
                  String localDisponivel, List<String> elenco, String direcao, int duracao, String roteiro) {
 
         super(titulo, dataLancamento, consumido, generos, tituloOriginal, localDisponivel, elenco);
+        this.avaliacoes = new ArrayList<>();
         this.direcao = direcao;
         this.duracao = duracao; // Garante que a duração seja positiva
         this.roteiro = roteiro;
@@ -55,6 +61,13 @@ public class Filme extends MediaAudioVisual {
         return this.tipoMedia;
     }
 
+    @Override
+    public List<Avaliacao> getAvaliacoes() {
+        return avaliacoes.stream()
+                .sorted(Comparator.comparing(Avaliacao::getDataAvaliacao).reversed())
+                .collect(Collectors.toList());
+    }
+
     //Todo: Copiar a avaliação
     @Override
     public Filme clone() {
@@ -75,12 +88,15 @@ public class Filme extends MediaAudioVisual {
 
     @Override
     public int getPontuacao() {
-        return 0;
+        return avaliacoes.stream()
+                .max(Comparator.comparing(Avaliacao::getDataAvaliacao))
+                .map(Avaliacao::getPontuacao)
+                .orElse(0);
     }
 
     @Override
     public void Avaliar(Avaliacao avaliacao) {
-
+        avaliacoes.add(avaliacao);
     }
 
     @Override
@@ -89,7 +105,7 @@ public class Filme extends MediaAudioVisual {
 
         return "Filme{\n" +
                 "titulo='" + getTitulo() + "'\n" +
-                ", id='" + ((getId() == -1) ? "N/A": getId()) + "'\n" +
+                ", id='" + ((getId() == -1) ? "N/A" : getId()) + "'\n" +
                 ", tituloOriginal='" + getTituloOriginal() + "'\n" +
                 ", dataLancamento=" + (getDataLancamento() != null ? getDataLancamento().format(formatter) : "N/A") + "\n" +
                 ", consumido=" + (isConsumido() ? "Sim" : "Não") + "\n" +
