@@ -1,6 +1,13 @@
 package controller.search;
 
 import controller.filter.FilterChain;
+import model.Avaliacao;
+import model.Filme;
+import model.Media;
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public abstract class SearchController {
     private SearchFields searchField;
@@ -8,7 +15,7 @@ public abstract class SearchController {
     private SearchResults searchResults;
     protected SearchFactory searchFactory;
     private FilterChain filterChain;
-
+    private boolean ordenacao;
 
     public SearchController(String searchTerm, SearchFields searchField) {
         this.searchTerm = searchTerm;
@@ -32,7 +39,27 @@ public abstract class SearchController {
             searchResults = filterChain.getSearchResults();
         }
 
+        List<Media> orderedMediaList;
+
+        if (ordenacao) {
+            // Ordem crescente
+            orderedMediaList = searchResults.getMediaList().stream()
+                    .sorted(Comparator.comparing(Media::getPontuacao))
+                    .collect(Collectors.toList());
+        } else {
+            // Ordem decrescente
+            orderedMediaList = searchResults.getMediaList().stream()
+                    .sorted(Comparator.comparing(Media::getPontuacao).reversed())
+                    .collect(Collectors.toList());
+        }
+
+        searchResults.setMediaList(orderedMediaList);
     }
+
+    public void setOrdenacao(boolean ordem){
+        this.ordenacao = ordem;
+    }
+
     public SearchResults getSearchResults() {
         return searchResults;
     }

@@ -11,15 +11,15 @@ import view.commons.ViewCommons;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 // TODO: Separar essa view em 3 tipos de mídia diferentes.
-/*
-public class SearchView {
+public abstract class SearchView {
     public SearchResults draw(Scanner terminal) {
         String valor = null;
         int opcao;
-        List<SimpleEntry<String, SearchFields>> filterFields = getSearchFields();
+        List<SimpleEntry<String, SearchFields>> filterFields = getFields();
         FilterChain filterChain = new FilterChain();
 
         System.out.println("\n=== Busca de Mídia");
@@ -49,17 +49,18 @@ public class SearchView {
 
         SearchFields field = (filterFields.get(opcao - 1).getValue());
 
-        SearchController searchController = new SearchController(valor, field);
-        searchController.setFilterChain(filterChain);
-        searchController.execute();
-        SearchResults searchResults = searchController.getSearchResults();
-        return searchResults;
+        System.out.println("\nVocê deseja ordenar o resultado por: \n Mais bem avaliado.\n Menos bem avaliado.");
+        boolean ordenacao = ViewCommons.inputBoolean(terminal, "Selecione a opção (Sim - Mais bem avaliado /Não - Menos bem avaliado):");
+
+        return execute(field, filterChain, valor, ordenacao);
     }
 
-    public List<SimpleEntry<String, SearchFields>> getSearchFields(){
-        // Transforma enum em um dicionário
-        return Arrays.stream(SearchFields.values()).map(field -> new SimpleEntry<>(field.getFieldName(), field)).collect(Collectors.toList());
-    }
+
+
+
+    public abstract List<SimpleEntry<String, SearchFields>> getFields();
+
+    public abstract SearchResults execute(SearchFields field, FilterChain filterChain, String value, boolean ordenacao);
 
     public Filter filterGenreView(Scanner terminal) {
 
@@ -105,5 +106,3 @@ public class SearchView {
     }
 }
 
-
-*/
