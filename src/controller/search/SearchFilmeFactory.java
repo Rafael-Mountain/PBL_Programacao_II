@@ -28,10 +28,14 @@ public class SearchFilmeFactory implements SearchFactory {
                 return searchGenre;
             }
             case type.DIRETOR -> {
-
+                SearchDirector searchDirector = new SearchDirector();
+                searchDirector.setRepository(filmeRepository);
+                return searchDirector;
             }
             case type.ELENCO -> {
-
+                SearchElenco searchElenco = new SearchElenco();
+                searchElenco.setRepository(filmeRepository);
+                return searchElenco;
             }
             default  -> {
 
