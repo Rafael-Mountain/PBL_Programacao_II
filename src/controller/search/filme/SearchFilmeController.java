@@ -9,8 +9,5 @@ public class SearchFilmeController extends SearchController {
         super(searchTerm, searchField);
         searchFactory = new SearchFilmeFactory();
     }
-
-
-
 }
 

@@ -16,6 +16,15 @@ public class Livro extends Media  implements IAvaliavel {
     private TipoMedia tipoMedia = TipoMedia.LIVRO;
     private List<Avaliacao> avaliacoes;
 
+    public Livro(String titulo, LocalDateTime dataLancamento, boolean consumido, List<Genero> generosLivro, String autor, String editora, boolean possui, String isbn) {
+        super(titulo, dataLancamento, consumido, generosLivro);
+        this.autor = autor;
+        this.editora = editora;
+        this.possui = possui;
+        this.isbn = isbn;
+    }
+
+
     @Override
     public int getPontuacao() {
         return avaliacoes.stream()
