@@ -2,6 +2,7 @@ package view;
 
 import view.commons.Screen;
 import view.filme.CreateFilmeForm;
+import view.livro.CreateLivroForm;
 import view.serie.CreateSerieForm;
 
 import java.util.Scanner;
@@ -29,7 +30,7 @@ public class MenuCreateMedia extends Screen {
                     new CreateSerieForm().draw(terminal);
                     break;
                 case "3":
-                    System.out.println("Executando opção 3...");
+                    new CreateLivroForm().draw(terminal);
                     break;
                 case "4":
                     System.out.println("Voltando");

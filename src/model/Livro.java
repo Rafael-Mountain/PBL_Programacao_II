@@ -3,6 +3,7 @@ package model;
 import model.commons.IAvaliavel;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
@@ -16,9 +17,15 @@ public class Livro extends Media  implements IAvaliavel {
     private TipoMedia tipoMedia = TipoMedia.LIVRO;
     private List<Avaliacao> avaliacoes;
 
+    public Livro() {
+        super();
+        this.avaliacoes = new ArrayList<>();
+    }
+
     public Livro(String titulo, LocalDateTime dataLancamento, boolean consumido, List<Genero> generosLivro, String autor, String editora, boolean possui, String isbn) {
         super(titulo, dataLancamento, consumido, generosLivro);
         this.autor = autor;
+        this.avaliacoes = new ArrayList<>();
         this.editora = editora;
         this.possui = possui;
         this.isbn = isbn;

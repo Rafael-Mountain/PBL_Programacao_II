@@ -28,18 +28,6 @@ public class CreateLivroForm extends Screen {
         ActionResult result;
         Livro livro;
 
-        /*
-        *     private String autor;
-                private String editora;
-                private boolean possui;
-                private String isbn;
-                private TipoMedia tipoMedia = TipoMedia.LIVRO;
-                private List<Avaliacao> avaliacoes;
-        *
-        *
-        *
-        * */
-
         do {
             System.out.println("\n=== Criar Livero ===\n");
 
@@ -52,20 +40,21 @@ public class CreateLivroForm extends Screen {
             System.out.print("Editora: ");
             String editora = terminal.nextLine();
 
-            System.out.println("ISBN:");
+            System.out.print("ISBN:");
             String isbn = terminal.nextLine();
 
             int AnoLancamento = ViewCommons.inputAno(terminal, "Ano de Lançamento");
 
-                List<Genero> generosLivro = ViewCommons.inputGenero(terminal);
+            List<Genero> generosLivro = ViewCommons.inputGenero(terminal);
 
-            boolean consumido = ViewCommons.inputBoolean(terminal, "Já Assisti? ");
+            boolean consumido = ViewCommons.inputBoolean(terminal, "Já Leu? ");
 
             boolean possui = ViewCommons.inputBoolean(terminal, "Possui? ");
 
             livro = new Livro(nome, LocalDateTime.of(AnoLancamento, 1, 1, 0, 0),
                     consumido, generosLivro, autor, editora, possui, isbn);
 
+            System.out.println(livro.getTitulo());
             CreateLivroAction createLivro = new CreateLivroAction(new CreateLivroValidation());
             result = createLivro.execute(livro);
 
