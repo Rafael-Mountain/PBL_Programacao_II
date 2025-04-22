@@ -29,11 +29,11 @@ public class SearchSerieFactory implements SearchFactory {
                 searchGenre.setRepository(serieRepository);
                 return searchGenre;
             }
-//            case type.ELENCO -> {
-//                SearchElenco searchElenco = new SearchElenco();
-//                searchElenco.setRepository(serieRepository);
-//                return searchElenco;
-//            }
+            case type.ELENCO -> {
+                SearchElenco searchElenco = new SearchElenco();
+                searchElenco.setRepository(serieRepository);
+                return searchElenco;
+            }
             default -> {
 
                 return null;

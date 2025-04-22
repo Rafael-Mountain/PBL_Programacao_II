@@ -15,6 +15,11 @@ public class Temporada  implements IAvaliavel{
     private TipoMedia tipoMedia = TipoMedia.TEMPORADA;
     private List<Avaliacao> avaliacoes;
 
+    public Temporada(int qEpisodios, LocalDateTime ano) {
+        this.qEpisodios = qEpisodios;
+        this.ano = ano;
+    }
+
     @Override
     public int getId() {
         return id;
@@ -37,7 +42,6 @@ public class Temporada  implements IAvaliavel{
                 .map(Avaliacao::getPontuacao)
                 .orElse(0);
     }
-
 
     @Override
     public List<Avaliacao> getAvaliacoes() {

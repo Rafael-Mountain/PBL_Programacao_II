@@ -12,13 +12,19 @@ public class Serie extends MediaAudioVisual {
                  List<Genero> generos, String tituloOriginal, String localDisponivel,
                  List<String> elenco, LocalDateTime dataFim) {
         super(titulo, dataLancamento, consumido, generos, tituloOriginal, localDisponivel, elenco);
+        this .dataFim = dataFim;
+        this.temporadas = new java.util.ArrayList<>();
     }
 
     @Override
     public int getPontuacao() {
-        return temporadas.stream()
-                .mapToInt(Temporada::getPontuacao)
-                .sum()/ temporadas.size();
+        if (!temporadas.isEmpty()) {
+            return temporadas.stream()
+                    .mapToInt(Temporada::getPontuacao)
+                    .sum() / temporadas.size();
+        } else {
+            return 0;
+        }
     }
 
     public TipoMedia getTipoMedia() {

@@ -55,7 +55,7 @@ public class CreateLivroForm extends Screen {
             System.out.println("ISBN:");
             String isbn = terminal.nextLine();
 
-            int AnoLancamento = ViewCommons.inputAno(terminal, "Ano de Lançamento: ");
+            int AnoLancamento = ViewCommons.inputAno(terminal, "Ano de Lançamento");
 
                 List<Genero> generosLivro = ViewCommons.inputGenero(terminal);
 

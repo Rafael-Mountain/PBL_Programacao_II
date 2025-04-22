@@ -1,12 +1,14 @@
 package view.serie;
 
 import controller.dataBase.FilmeRepository;
+import controller.dataBase.SerieRepository;
 import model.Filme;
 import model.Serie;
 import view.avaliacao.AvaliacaoDisplay;
 import view.avaliacao.CreateAvaliacaoForm;
 import view.commons.Screen;
 import view.commons.ViewCommons;
+import view.serie.temporada.CreateTemporadaForm;
 import view.serie.temporada.TemporadaDisplay;
 
 
@@ -49,8 +51,9 @@ public class SerieDisplay extends Screen {
 
         System.out.println("\n=== Ações ===");
         System.out.println("1. Editar");
-        System.out.println("2. Selecionar Temporada");
-        System.out.println("3. Voltar");
+        System.out.println("2. Adicionar Temporada");
+        System.out.println("3. Selecionar Temporada");
+        System.out.println("4. Voltar");
 
         String input;
         do {
@@ -64,6 +67,16 @@ public class SerieDisplay extends Screen {
                     break;
 
                 case "2":
+                    //TODO : nâo funcionou ver o pq
+                    new CreateTemporadaForm(serie).draw(terminal);
+                    new SerieDisplay(SerieRepository.getInstance().getItemById(serie.getId())).draw(terminal);
+                    return;
+
+                case "3":
+                    if (serie.getTemporadas().isEmpty()) {
+                        System.out.println("Nenhuma temporada cadastrada.");
+                        break;
+                    }
                     boolean v = true;
                     do {
                         int id = ViewCommons.inputInt(terminal, "Digite o id da temporada: ");
@@ -76,7 +89,7 @@ public class SerieDisplay extends Screen {
                     } while (v);
                     break;
 
-                case "3":
+                case "4":
                     return;
 
                 default:

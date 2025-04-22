@@ -2,7 +2,7 @@ package view.livro;
 
 import controller.filter.FilterChain;
 import controller.search.SearchFields;
-import controller.search.SearchLivroController;
+import controller.search.livro.SearchLivroController;
 import controller.search.SearchResults;
 import view.SearchView;
 

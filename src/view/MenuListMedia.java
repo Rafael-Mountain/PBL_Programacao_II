@@ -2,8 +2,12 @@ package view;
 
 import controller.search.SearchFields;
 import controller.search.filme.SearchFilmeController;
+import controller.search.livro.SearchLivroController;
+import controller.search.serie.SearchSerieController;
 import view.commons.Screen;
 import view.filme.FilmeListMidia;
+import view.livro.LivroListMidia;
+import view.serie.SerieListMidia;
 
 import java.util.Scanner;
 
@@ -29,13 +33,16 @@ public class MenuListMedia extends Screen {
                     new FilmeListMidia(searchController.getSearchResults()).draw(terminal);
                     break;
                 case "2":
-                    System.out.println("Executando opção 2...");
+                    SearchSerieController searchSerieController = new SearchSerieController(null, SearchFields.TUDO);
+                    searchSerieController.execute();
+                    new SerieListMidia(searchSerieController.getSearchResults()).draw(terminal);
                     break;
                 case "3":
-                    System.out.println("Executando opção 3...");
+                    SearchLivroController searchLivroController = new SearchLivroController(null, SearchFields.TUDO);
+                    searchLivroController.execute();
+                    new LivroListMidia(searchLivroController.getSearchResults()).draw(terminal);
                     break;
                 case "4":
-                    System.out.println("Voltando");
                     return;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");

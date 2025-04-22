@@ -3,6 +3,7 @@ package view.serie;
 import controller.filter.FilterChain;
 import controller.search.SearchFields;
 import controller.search.SearchResults;
+import controller.search.serie.SearchSerieController;
 import view.SearchView;
 
 import java.util.AbstractMap;
@@ -26,12 +27,11 @@ public class SearchViewSerie extends SearchView {
 
     @Override
     public SearchResults execute(SearchFields field, FilterChain filterChain, String value, boolean ordenacao) {
-        SearchFilmeController searchFilmeController = new SearchFilmeController(value, field);
-        searchFilmeController.setFilterChain(filterChain);
-        searchFilmeController.setOrdenacao(ordenacao);
-        searchFilmeController.execute();
-        SearchResults searchResults = searchFilmeController.getSearchResults();
+        SearchSerieController searchSerieController = new SearchSerieController(value, field);
+        searchSerieController.setFilterChain(filterChain);
+        searchSerieController.setOrdenacao(ordenacao);
+        searchSerieController.execute();
+        SearchResults searchResults = searchSerieController.getSearchResults();
         return searchResults;
-        return null;
     }
 }

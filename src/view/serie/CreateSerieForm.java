@@ -32,8 +32,8 @@ public class CreateSerieForm extends Screen {
             System.out.print("Titulo Original: ");
             String nomeOriginal = terminal.nextLine();
 
-            int anoLancamento = ViewCommons.inputAno(terminal, "Ano de Lançamento: ");
-            int datafim = ViewCommons.inputAno(terminal, "Ano de Encerramento: ");
+            int anoLancamento = ViewCommons.inputAno(terminal, "Ano de Lançamento");
+            int datafim = ViewCommons.inputAno(terminal, "Ano de Encerramento");
             System.out.print("Local disponível: ");
             String localDisponivel = terminal.nextLine();
 
@@ -52,5 +52,6 @@ public class CreateSerieForm extends Screen {
 
         } while (!result.isSuccess());
 
+       new SerieDisplay(serie).draw(terminal);
     }
 }

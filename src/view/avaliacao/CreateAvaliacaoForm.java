@@ -3,20 +3,12 @@ package view.avaliacao;
 import controller.action.ActionResult;
 import controller.action.avaliacao.CreateAvaliacaoAction;
 import controller.action.avaliacao.CreateAvaliacaoValidation;
-import controller.action.filme.CreateFilmeAction;
-import controller.action.filme.CreateFilmeValidation;
-import controller.dataBase.GeneroRepository;
 import model.Avaliacao;
-import model.Filme;
-import model.Genero;
 import model.commons.IAvaliavel;
 import view.commons.Screen;
 import view.commons.ViewCommons;
-import view.filme.FilmeDisplay;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Scanner;
 
 public class CreateAvaliacaoForm extends Screen {
@@ -40,7 +32,7 @@ public class CreateAvaliacaoForm extends Screen {
 
             CreateAvaliacaoAction createAvaliacao = new CreateAvaliacaoAction(new CreateAvaliacaoValidation());
 
-            createAvaliacao.SetModel(objAvaliavel);
+            createAvaliacao.SetSuperModel(objAvaliavel);
             result = createAvaliacao.execute(avaliacao);
             System.out.println(result.getMessage());
 

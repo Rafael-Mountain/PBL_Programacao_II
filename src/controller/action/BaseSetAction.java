@@ -7,7 +7,7 @@ public abstract class BaseSetAction<T,M> extends BaseAction<T>{
         super(validation);
     }
 
-    public void SetModel(M superModel) {
+    public void SetSuperModel(M superModel) {
         this.superModel = superModel;
     }
 

@@ -20,6 +20,7 @@ public abstract class SearchController {
     public SearchController(String searchTerm, SearchFields searchField) {
         this.searchTerm = searchTerm;
         this.searchField = searchField;
+        this.filterChain = null;
     }
 
     public void execute() {
@@ -33,7 +34,7 @@ public abstract class SearchController {
         Search search = searchFactory.createSearch(searchField);
         searchResults = search.execute(searchTerm);
 
-        if (filterChain != null || searchResults.isEmpty()) {
+        if (filterChain != null && !searchResults.isEmpty()) {
             filterChain.setSearchResults(searchResults);
             filterChain.applyFilters();
             searchResults = filterChain.getSearchResults();

@@ -1,6 +1,9 @@
-package controller.search;
+package controller.search.livro;
 
-public class SearchLivroController extends SearchController{
+import controller.search.SearchController;
+import controller.search.SearchFields;
+
+public class SearchLivroController extends SearchController {
     public SearchLivroController(String searchTerm, SearchFields searchField) {
         super(searchTerm, searchField);
         searchFactory = new SearchLivroFactory();

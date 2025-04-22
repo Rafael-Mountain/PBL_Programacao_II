@@ -48,7 +48,7 @@ public abstract class ListMidia implements IScreen {
                     goToSearch(terminal);
                     return;
                 case "2":
-                    // Implementar filtro
+                    // Todo: Implementar o selecionar
                     break;
                 case "3":
                     return;

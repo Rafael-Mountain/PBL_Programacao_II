@@ -1,7 +1,7 @@
-package controller.search;
+package controller.search.livro;
 
-import controller.dataBase.FilmeRepository;
 import controller.dataBase.LivroRepository;
+import controller.search.*;
 
 public class SearchLivroFactory implements SearchFactory {
     LivroRepository livroRepository = LivroRepository.getInstance();
