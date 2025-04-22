@@ -2,7 +2,7 @@ package view.filme;
 
 import controller.filter.FilterChain;
 import controller.search.SearchFields;
-import controller.search.SearchFilmeController;
+import controller.search.filme.SearchFilmeController;
 import controller.search.SearchResults;
 import view.SearchView;
 

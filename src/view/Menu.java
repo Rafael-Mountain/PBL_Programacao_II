@@ -1,7 +1,5 @@
 package view;
 
-import controller.search.SearchFields;
-import controller.search.SearchFilmeController;
 import view.commons.Screen;
 import view.genero.GeneroMenu;
 

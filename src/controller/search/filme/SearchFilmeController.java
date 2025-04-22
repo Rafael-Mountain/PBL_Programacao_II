@@ -1,6 +1,9 @@
-package controller.search;
+package controller.search.filme;
 
-public class SearchFilmeController extends  SearchController{
+import controller.search.SearchController;
+import controller.search.SearchFields;
+
+public class SearchFilmeController extends SearchController {
 
     public SearchFilmeController(String searchTerm, SearchFields searchField) {
         super(searchTerm, searchField);

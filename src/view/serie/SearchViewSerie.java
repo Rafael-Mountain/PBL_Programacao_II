@@ -26,12 +26,12 @@ public class SearchViewSerie extends SearchView {
 
     @Override
     public SearchResults execute(SearchFields field, FilterChain filterChain, String value, boolean ordenacao) {
-//        SearchFilmeController searchFilmeController = new SearchFilmeController(value, field);
-//        searchFilmeController.setFilterChain(filterChain);
-//        searchFilmeController.setOrdenacao(ordenacao);
-//        searchFilmeController.execute();
-//        SearchResults searchResults = searchFilmeController.getSearchResults();
-//        return searchResults;
+        SearchFilmeController searchFilmeController = new SearchFilmeController(value, field);
+        searchFilmeController.setFilterChain(filterChain);
+        searchFilmeController.setOrdenacao(ordenacao);
+        searchFilmeController.execute();
+        SearchResults searchResults = searchFilmeController.getSearchResults();
+        return searchResults;
         return null;
     }
 }

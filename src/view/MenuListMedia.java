@@ -1,7 +1,7 @@
 package view;
 
 import controller.search.SearchFields;
-import controller.search.SearchFilmeController;
+import controller.search.filme.SearchFilmeController;
 import view.commons.Screen;
 import view.filme.FilmeListMidia;
 
