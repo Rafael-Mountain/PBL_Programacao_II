@@ -57,6 +57,7 @@ public class FilmeDisplay extends Screen {
                 case "1":
                     // TODO: Fazer que nem gente.
                     filme.setConsumido(true);
+                    System.out.println("Filme marcado como visto.");
                     break;
                 case "2":
                     // Avaliar filme

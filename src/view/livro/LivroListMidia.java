@@ -1,8 +1,11 @@
 package view.livro;
 
 import controller.search.SearchResults;
+import model.Filme;
+import model.Livro;
 import view.ListMidia;
 import view.SearchView;
+import view.filme.FilmeDisplay;
 import view.filme.FilmeListMidia;
 import view.filme.SearchViewFilme;
 
@@ -18,6 +21,11 @@ public class LivroListMidia extends ListMidia {
         SearchView searchView = new SearchViewLivro();
         LivroListMidia livroListMidia =  new LivroListMidia(searchView.draw(terminal));
         livroListMidia.draw(terminal);
+    }
+
+    @Override
+    public void goToDisplay(Scanner terminal, int id) {
+        new LivroDisplay((Livro) medias.get(id)).draw(terminal);
     }
 
     @Override

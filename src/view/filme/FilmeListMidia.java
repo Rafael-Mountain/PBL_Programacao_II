@@ -1,6 +1,7 @@
 package view.filme;
 
 import controller.search.SearchResults;
+import model.Filme;
 import view.ListMidia;
 import view.SearchView;
 
@@ -16,6 +17,11 @@ public class FilmeListMidia  extends ListMidia {
         SearchView searchView = new SearchViewFilme();
         FilmeListMidia filmeListMidia =  new FilmeListMidia(searchView.draw(terminal));
         filmeListMidia.draw(terminal);
+    }
+
+    @Override
+    public void goToDisplay(Scanner terminal, int id) {
+        new FilmeDisplay((Filme) medias.get(id)).draw(terminal);
     }
 
     @Override

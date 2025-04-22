@@ -56,6 +56,7 @@ public class LivroDisplay extends Screen {
             switch (input) {
                 case "1":
                     livro.setConsumido(true);
+                    System.out.println("Livro marcado como lido.");
                     break;
                 case "2":
                     if (!livro.isConsumido()) {

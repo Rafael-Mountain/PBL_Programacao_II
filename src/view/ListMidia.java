@@ -3,12 +3,13 @@ package view;
 import controller.search.SearchResults;
 import model.Media;
 import view.commons.IScreen;
+import view.commons.ViewCommons;
 
 import java.util.List;
 import java.util.Scanner;
 
 public abstract class ListMidia implements IScreen {
-    private List<Media> medias;
+    protected List<Media> medias;
     private boolean reset = true;
     private String message;
 
@@ -48,7 +49,12 @@ public abstract class ListMidia implements IScreen {
                     goToSearch(terminal);
                     return;
                 case "2":
-                    // Todo: Implementar o selecionar
+                    if (medias.isEmpty()) {
+                        break;
+                    }
+                    int mediaId = ViewCommons.inputIntWRange(terminal, "Índice da mídia selecionada: ",0, medias.size());
+                    goToDisplay(terminal, mediaId);
+                    reset = true;
                     break;
                 case "3":
                     return;
@@ -64,6 +70,8 @@ public abstract class ListMidia implements IScreen {
     }
 
     public abstract void goToSearch(Scanner terminal);
+
+    public abstract void goToDisplay(Scanner terminal, int id);
 
     public abstract String getNomeMidia();
 }
