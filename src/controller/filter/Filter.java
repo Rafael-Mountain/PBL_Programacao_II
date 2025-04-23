@@ -15,7 +15,7 @@ public abstract class Filter {
     }
 
     void setMedias(List<Media> medias) {
-        medias = medias;
+        this.medias = medias;
     }
 
     String getMessage() {

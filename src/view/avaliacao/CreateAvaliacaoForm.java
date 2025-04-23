@@ -21,11 +21,11 @@ public class CreateAvaliacaoForm extends Screen {
 
         do {
             System.out.println("\n=== Avaliar Midia ===\n");
-            System.out.print("Review: ");
+            System.out.print("Comentário: ");
             String review = terminal.nextLine();
 
-            int pontuacao = ViewCommons.inputIntWRange(terminal, "Pontuação(1-5): ", 1, 5);
-            LocalDate data_consumo = ViewCommons.inputData(terminal, "Data de consumo: ");
+            int pontuacao = ViewCommons.inputIntWRange(terminal, "Pontuação (1-5): ", 1, 5);
+            LocalDate data_consumo = ViewCommons.inputData(terminal, "Data que assistiu/leu");
 
 
             avaliacao = new Avaliacao(null, pontuacao, review, data_consumo);
@@ -34,7 +34,7 @@ public class CreateAvaliacaoForm extends Screen {
 
             createAvaliacao.SetSuperModel(objAvaliavel);
             result = createAvaliacao.execute(avaliacao);
-            System.out.println(result.getMessage());
+            System.out.println("\n=== Resultado: " + result.getMessage());
 
         } while (!result.isSuccess());
     }

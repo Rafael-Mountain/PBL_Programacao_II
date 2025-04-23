@@ -1,8 +1,6 @@
 package controller.filter;
 
-import controller.search.SearchFields;
 import controller.search.SearchResults;
-import model.Media;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +24,10 @@ public class FilterChain {
             searchResults.setMediaList(filter.getMedias());
             searchResults.setMessage(searchResults.getMessage() + "\n" + filter.getMessage());
         }
+    }
+
+    public boolean isEmpty() {
+        return filters.isEmpty();
     }
 
     public void setSearchResults(SearchResults searchResults) {

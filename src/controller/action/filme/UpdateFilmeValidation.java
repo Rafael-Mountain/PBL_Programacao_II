@@ -3,7 +3,7 @@ package controller.action.filme;
 import controller.action.Validation;
 import model.Filme;
 
-public class UpdateFilmValidation implements Validation<Filme> {
+public class UpdateFilmeValidation implements Validation<Filme> {
     private String errorMessage;
 
     @Override

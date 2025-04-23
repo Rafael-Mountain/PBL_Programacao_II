@@ -12,7 +12,7 @@ public class Menu extends Screen {
         String opcao;
 
         do {
-            System.out.println("\n=== Bem-Vindo ao Sistema ===");
+            System.out.println("\n=== Bem-Vindo ao Diario Cultural ===");
             System.out.println("1 - Criar Midia");
             System.out.println("2 - Listar Midia");
             System.out.println("3 - Generos");

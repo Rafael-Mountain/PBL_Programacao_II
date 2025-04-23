@@ -22,9 +22,9 @@ public class CreateTemporadaAction extends BaseSetAction<Temporada, Serie> {
         if (!isValid(model)) {
             return new ActionResult(false, getErrorMessage());
         }
+
         SerieRepository repository= SerieRepository.getInstance();
-        model.setSerieId(superModel.getId());
-        superModel.updateTemporadaById(model.getId(), model);
+        superModel.addTemporada(model);
         repository.update(superModel);
 
         return new ActionResult(true, "Temporada created successfully");

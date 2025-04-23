@@ -1,6 +1,7 @@
 package controller.dataBase;
 
 import model.Serie;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +43,7 @@ public class SerieRepository implements IRepository<Serie> {
         for (int i = 0; i < series.size(); i++) {
             if (series.get(i).getId() == item.getId()) {
                 series.set(i, item);
+                return;
             }
         }
         System.out.println("Série não encontrada para atualização.");

@@ -62,6 +62,6 @@ public class CreateAvaliacaoAction extends BaseSetAction<Avaliacao, IAvaliavel> 
             return new ActionResult(false, "Tipo de mídia inválido");
         }
         
-        return new ActionResult(true, "Avaliacao created successfully");
+        return new ActionResult(true, "Avaliacao criada com sucesso");
     }
 }

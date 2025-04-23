@@ -1,20 +1,17 @@
 package view;
 
 import controller.filter.*;
-import controller.search.SearchController;
 import controller.search.SearchFields;
 import controller.search.SearchResults;
 import model.Genero;
-import model.Media;
 import view.commons.ViewCommons;
 
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-// TODO: Separar essa view em 3 tipos de mídia diferentes.
+
 public abstract class SearchView {
     public SearchResults draw(Scanner terminal) {
         String valor = null;
@@ -31,7 +28,7 @@ public abstract class SearchView {
         opcao = ViewCommons.inputIntWRange(terminal, "selecione o campo para busca (caso selecione 'tudo' será feita uma busca geral): ", 1, filterFields.size() + 1);
 
         if (opcao != 1) {
-            System.out.println("Digite o valor para busca: ");
+            System.out.print("Digite o valor para busca: ");
             valor = terminal.nextLine();
         }
 
@@ -49,8 +46,8 @@ public abstract class SearchView {
 
         SearchFields field = (filterFields.get(opcao - 1).getValue());
 
-        System.out.println("\nVocê deseja ordenar o resultado por: \n Mais bem avaliado.\n Menos bem avaliado.");
-        boolean ordenacao = ViewCommons.inputBoolean(terminal, "Selecione a opção (Sim - Mais bem avaliado /Não - Menos bem avaliado):");
+        System.out.println("\nVocê deseja ordenar o resultado por: \n(S) Melhor avaliado.\n(N) Pior avaliado.\n");
+        boolean ordenacao = ViewCommons.inputBoolean(terminal, "Selecione a opção de ordenação");
 
         return execute(field, filterChain, valor, ordenacao);
     }

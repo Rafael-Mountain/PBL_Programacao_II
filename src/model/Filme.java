@@ -89,7 +89,7 @@ public class Filme extends MediaAudioVisual implements IAvaliavel {
     }
 
     @Override
-    public int getPontuacao() {
+    public double getPontuacao() {
         return avaliacoes.stream()
                 .max(Comparator.comparing(Avaliacao::getDataAvaliacao))
                 .map(Avaliacao::getPontuacao)

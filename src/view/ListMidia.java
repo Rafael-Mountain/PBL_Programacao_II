@@ -38,8 +38,8 @@ public abstract class ListMidia implements IScreen {
                     reset = false;
                 }
             }
-
-            System.out.println("\n 1 - Buscar " + getNomeMidia());
+            System.out.println("\n========= Opções ========");
+            System.out.println(" 1 - Buscar " + getNomeMidia());
             System.out.println(" 2 - Selecionar " + getNomeMidia());
             System.out.println(" 3 - Voltar");
             System.out.print("Escolha uma opção: ");
@@ -52,7 +52,7 @@ public abstract class ListMidia implements IScreen {
                     if (medias.isEmpty()) {
                         break;
                     }
-                    int mediaId = ViewCommons.inputIntWRange(terminal, "Índice da mídia selecionada: ",0, medias.size());
+                    int mediaId = ViewCommons.inputIntWRange(terminal, "\nÍndice do(a) " + getNomeMidia() +" selecionado(a): ",0, medias.size()-1);
                     goToDisplay(terminal, mediaId);
                     reset = true;
                     break;

@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class Serie extends MediaAudioVisual {
+    private int temporadaId = 0;
     private LocalDateTime dataFim;
     private List<Temporada> temporadas;
     private TipoMedia tipoMedia = TipoMedia.SERIE;
@@ -17,10 +18,10 @@ public class Serie extends MediaAudioVisual {
     }
 
     @Override
-    public int getPontuacao() {
+    public double getPontuacao() {
         if (!temporadas.isEmpty()) {
             return temporadas.stream()
-                    .mapToInt(Temporada::getPontuacao)
+                    .mapToDouble(Temporada::getPontuacao)
                     .sum() / temporadas.size();
         } else {
             return 0;
@@ -44,7 +45,12 @@ public class Serie extends MediaAudioVisual {
     }
 
     public void setTemporadas(List<Temporada> temporadas) {
-        this.temporadas = temporadas;
+        this.temporadas = temporadas.stream()
+                .peek(temporada -> {
+                    temporada.setId(temporadaId++);
+                    temporada.setSerieId(getId());
+                })
+                .collect(java.util.stream.Collectors.toList());
     }
 
     public void updateTemporadaById(int id, Temporada temporada) {
@@ -67,6 +73,8 @@ public class Serie extends MediaAudioVisual {
     }
 
     public void addTemporada(Temporada t) {
+        t.setId(temporadaId++);
+        t.setSerieId(getId());
         temporadas.add(t);
     }
 

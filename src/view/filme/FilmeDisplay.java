@@ -55,10 +55,9 @@ public class FilmeDisplay extends Screen {
 
             switch (input) {
                 case "1":
-                    // TODO: Fazer que nem gente.
-                    filme.setConsumido(true);
-                    System.out.println("Filme marcado como visto.");
-                    break;
+                    new UpdateFilmeForm(filme).draw(terminal);
+                    new FilmeDisplay(FilmeRepository.getInstance().getItemById(filme.getId())).draw(terminal);
+                    return;
                 case "2":
                     // Avaliar filme
                     if (!filme.isConsumido()) {

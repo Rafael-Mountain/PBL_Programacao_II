@@ -1,12 +1,20 @@
-import tests.Testes;
+import tests.mocks.MockFilme;
+import tests.mocks.MockLivro;
+import tests.mocks.MockSerie;
 import view.Menu;
 
 import java.util.Scanner;
 
 public class DiarioCultural {
     public static void main(String[] args) {
+        boolean teste = true;
+
+        if (teste){
+            MockFilme.rodar();
+            MockLivro.rodar();
+            MockSerie.rodar();
+        }
         Scanner terminal = new Scanner(System.in);
-        Testes.rodar3(); // Dados estáticos para teste.
         new Menu().draw(terminal);
     }
 }

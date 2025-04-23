@@ -34,7 +34,7 @@ public abstract class SearchController {
         Search search = searchFactory.createSearch(searchField);
         searchResults = search.execute(searchTerm);
 
-        if (filterChain != null && !searchResults.isEmpty()) {
+        if (!searchResults.isEmpty() && filterChain != null && !filterChain.isEmpty()) {
             filterChain.setSearchResults(searchResults);
             filterChain.applyFilters();
             searchResults = filterChain.getSearchResults();
@@ -45,12 +45,12 @@ public abstract class SearchController {
         if (ordenacao) {
             // Ordem crescente
             orderedMediaList = searchResults.getMediaList().stream()
-                    .sorted(Comparator.comparing(Media::getPontuacao))
+                    .sorted(Comparator.comparing(Media::getPontuacao).reversed())
                     .collect(Collectors.toList());
         } else {
             // Ordem decrescente
             orderedMediaList = searchResults.getMediaList().stream()
-                    .sorted(Comparator.comparing(Media::getPontuacao).reversed())
+                    .sorted(Comparator.comparing(Media::getPontuacao))
                     .collect(Collectors.toList());
         }
 

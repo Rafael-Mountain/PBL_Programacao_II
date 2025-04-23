@@ -33,7 +33,6 @@ public class MenuCreateMedia extends Screen {
                     new CreateLivroForm().draw(terminal);
                     break;
                 case "4":
-                    System.out.println("Voltando");
                     return;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
