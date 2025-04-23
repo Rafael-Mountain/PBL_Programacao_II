@@ -1,10 +1,7 @@
 package controller.search;
 
 import controller.filter.FilterChain;
-import model.Avaliacao;
-import model.Filme;
 import model.Media;
-
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;

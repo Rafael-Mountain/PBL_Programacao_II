@@ -6,6 +6,8 @@ import java.util.List;
 
 public abstract class Filter {
     protected List<Media> medias;
+
+    //Todo : Implementar o uso de mensagens
     private String message;
 
     abstract void apply();
