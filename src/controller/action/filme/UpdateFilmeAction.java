@@ -17,8 +17,11 @@ public class UpdateFilmeAction extends BaseAction<Filme> {
         if(!isValid(model)){
             return new ActionResult(false, getErrorMessage());
         }
-
-        FilmeRepository.getInstance().update(model);
+        try {
+            FilmeRepository.getInstance().update(model);
+        } catch (Exception e) {
+            return new ActionResult(false, "Erro! " + e.getMessage());
+        }
         return new ActionResult(true,"Filme atualizado com sucesso");
     }
 }

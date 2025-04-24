@@ -17,8 +17,11 @@ public class UpdateLivroAction extends BaseAction<Livro> {
         if (!isValid(model)) {
             return new ActionResult(false, getErrorMessage());
         }
-
-        LivroRepository.getInstance().update(model);
+        try {
+            LivroRepository.getInstance().update(model);
+        } catch (Exception e) {
+            return new ActionResult(false, "Erro! " + e.getMessage());
+        }
         return new ActionResult(true, "Livro atualizado com sucesso");
     }
 }

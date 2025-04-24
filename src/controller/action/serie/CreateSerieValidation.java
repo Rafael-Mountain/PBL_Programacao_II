@@ -13,6 +13,7 @@ public class CreateSerieValidation implements Validation<Serie> {
             errorMessage = "Erro! titulo vazio";
             return false;
         }
+
         if (model.getGeneros().isEmpty()){
             errorMessage = "Erro! Selecione pelo menos um genero";
             return false;
@@ -22,6 +23,14 @@ public class CreateSerieValidation implements Validation<Serie> {
             errorMessage = "Erro! Serie ja existe na base de dados";
             return false;
         }
+
+        if(repository.getItems().stream().anyMatch(serie -> serie.getTitulo().equals(model.getTitulo()))){
+            errorMessage = "Erro! Serie ja existe na base de dados";
+            return false;
+
+        }
+
+
         return true;
     }
 

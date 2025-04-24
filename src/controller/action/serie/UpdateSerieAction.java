@@ -17,8 +17,12 @@ public class UpdateSerieAction extends BaseAction<Serie> {
         if (!isValid(model)) {
             return new ActionResult(false, getErrorMessage());
         }
+        try{
+            SerieRepository.getInstance().update(model);
+        } catch (Exception e) {
+            return new ActionResult(false, "Erro! " + e.getMessage());
+        }
 
-        SerieRepository.getInstance().update(model);
         return new ActionResult(true, "Serie atualizado com sucesso");
     }
 }
