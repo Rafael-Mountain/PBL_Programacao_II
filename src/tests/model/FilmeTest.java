@@ -21,7 +21,7 @@ class FilmeTest {
                 "Avengers: Endgame", "Disney+", Arrays.asList("Robert Downey Jr.", "Chris Evans"),
                 "Anthony Russo", 181, "Roteiro maravilhoso");
 
-        filme.Avaliar(avaliacao);
+        filme.avaliar(avaliacao);
 
         // Testando os valores dos atributos
         assertEquals("Vingadores: Ultimato", filme.getTitulo());
