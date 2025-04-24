@@ -31,7 +31,7 @@ public abstract class BaseSetAction<T, M> extends BaseAction<T> {
      *
      * @param superModel O supermodelo a ser associado ao modelo principal.
      */
-    public void SetSuperModel(M superModel) {
+    public void setSuperModel(M superModel) {
         this.superModel = superModel;
     }
 
