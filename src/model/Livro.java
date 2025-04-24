@@ -8,7 +8,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Livro extends Media  implements IAvaliavel {
+public class Livro extends Media implements IAvaliavel {
+    // Atributos
     private String autor;
     private String editora;
     private boolean possui;
@@ -16,6 +17,7 @@ public class Livro extends Media  implements IAvaliavel {
     private TipoMedia tipoMedia = TipoMedia.LIVRO;
     private List<Avaliacao> avaliacoes;
 
+    // Construtores
     public Livro() {
         super();
         this.avaliacoes = new ArrayList<>();
@@ -30,21 +32,7 @@ public class Livro extends Media  implements IAvaliavel {
         this.isbn = isbn;
     }
 
-
-    @Override
-    public double getPontuacao() {
-        return avaliacoes.stream()
-                .max(Comparator.comparing(Avaliacao::getDataAvaliacao))
-                .map(Avaliacao::getPontuacao)
-                .orElse(0);
-    }
-
-
-    @Override
-    public void Avaliar(Avaliacao avaliacao) {
-        avaliacoes.add(avaliacao);
-    }
-
+    // Getters e Setters
     public String getAutor() {
         return autor;
     }
@@ -77,6 +65,8 @@ public class Livro extends Media  implements IAvaliavel {
         this.isbn = isbn;
     }
 
+    // Métodos de Avaliação
+    @Override
     public TipoMedia getTipoMedia() {
         return this.tipoMedia;
     }
@@ -87,4 +77,18 @@ public class Livro extends Media  implements IAvaliavel {
                 .sorted(Comparator.comparing(Avaliacao::getDataAvaliacao).reversed())
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public double getPontuacao() {
+        return avaliacoes.stream()
+                .max(Comparator.comparing(Avaliacao::getDataAvaliacao))
+                .map(Avaliacao::getPontuacao)
+                .orElse(0);
+    }
+
+    @Override
+    public void Avaliar(Avaliacao avaliacao) {
+        avaliacoes.add(avaliacao);
+    }
+
 }

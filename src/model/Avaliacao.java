@@ -2,7 +2,6 @@ package model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class Avaliacao {
     private LocalDateTime dataAvaliacao;
@@ -10,6 +9,7 @@ public class Avaliacao {
     private String review;
     private LocalDate dataConsumo;
 
+    public Avaliacao(){}
 
     public Avaliacao(LocalDateTime dataAvaliacao, int pontuacao, String review, LocalDate dataConsumo) {
         this.dataAvaliacao = dataAvaliacao;
@@ -50,16 +50,5 @@ public class Avaliacao {
 
     public void setDataConsumo(LocalDate dataConsumo) {
         this.dataConsumo = dataConsumo;
-    }
-
-    // Método toString para exibição dos dados
-    @Override
-    public String toString() {
-        return "Avaliacao{" +
-                "dataAvaliacao=" + dataAvaliacao +
-                ", pontuacao=" + pontuacao +
-                ", review='" + review + '\'' +
-                ", dataConsumo=" + dataConsumo +
-                '}';
     }
 }

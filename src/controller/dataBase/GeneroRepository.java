@@ -55,12 +55,13 @@ public class GeneroRepository implements IRepository<Genero> {
      */
     @Override
     public Genero getItemById(int id) {
+        // Busca o gênero pelo ID
         for (Genero genero : generos) {
             if (genero.getId() == id) {
                 return genero;
             }
         }
-        return null;
+        return null; // Caso não encontre o gênero
     }
 
     /**
@@ -76,7 +77,7 @@ public class GeneroRepository implements IRepository<Genero> {
                 return;
             }
         }
-        System.out.println("Gênero não encontrado para atualização.");
+        throw new RuntimeException("Genero não encontrado para atualização");
     }
 
     /**
@@ -85,8 +86,8 @@ public class GeneroRepository implements IRepository<Genero> {
      * @param genero o novo gênero a ser salvo.
      */
     @Override
-    public void save(Genero genero) {
-        genero.setId(generoId++);
+    public void add(Genero genero) {
+        genero.setId(generoId++);  // Atribui um ID único ao gênero antes de salvar
         generos.add(genero);
     }
 

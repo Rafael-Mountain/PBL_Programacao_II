@@ -13,6 +13,7 @@ import model.Avaliacao;
  * @author [Seu Nome]
  */
 public class CreateAvaliacaoValidation implements Validation<Avaliacao> {
+    private String errorMessage;
 
     /** Mensagem de erro que descreve a falha de validação, caso ocorra. */
     private String errorMessage;
@@ -27,10 +28,18 @@ public class CreateAvaliacaoValidation implements Validation<Avaliacao> {
      */
     @Override
     public boolean isValid(Avaliacao model) {
-        if (model.getPontuacao() < 1 || model.getPontuacao() > 5) {
-            errorMessage = "Pontuação deve estar entre 1 e 5.";
+        if (model == null) {
+            errorMessage = "Avaliacao está nula";
             return false;
         }
+
+        if (model.getPontuacao() < 1 || model.getPontuacao() > 5) {
+            errorMessage = "Pontuação inválida: deve estar entre 1 e 5.";
+            return false;
+        }
+
+        // Adicione outras validações se necessário
+        errorMessage = null;
         return true;
     }
 
@@ -43,5 +52,5 @@ public class CreateAvaliacaoValidation implements Validation<Avaliacao> {
     public String getErrorMessage() {
         return errorMessage;
     }
-}
 
+}

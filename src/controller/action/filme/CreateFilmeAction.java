@@ -51,10 +51,7 @@ public class CreateFilmeAction extends BaseAction<Filme> {
             return new ActionResult(false, getErrorMessage());
         }
 
-        // Salva o filme no repositório
-        FilmeRepository.getInstance().save(filme);
-
-        // Retorna o resultado da ação
-        return new ActionResult(true, "Filme criado com sucesso");
+        FilmeRepository.getInstance().add(filme);
+        return new ActionResult(true,"Filme criado com sucesso");
     }
 }

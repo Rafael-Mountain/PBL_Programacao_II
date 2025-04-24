@@ -56,37 +56,69 @@ public class CreateAvaliacaoAction extends BaseSetAction<Avaliacao, IAvaliavel> 
         if (!isValid(model)) {
             return new ActionResult(false, getErrorMessage());
         }
-
-        // Define a data da avaliação como a data/hora atual
+        
+        //Setar a data de avaliação
         LocalDateTime dataAtual = LocalDateTime.now();
         model.setDataAvaliacao(dataAtual);
-
+        
         if (superModel == null) {
             return new ActionResult(false, "Super model is null");
         }
-
-        if (superModel.getTipoMedia() == null) {
+        
+        if(superModel.getTipoMedia() == null){
             return new ActionResult(false, "Media type cannot be null");
-        }
+        } 
+        
+        if (superModel.getTipoMedia()== TipoMedia.FILME) {
+            // Avaliação de filme
 
-        // Define comportamento com base no tipo de mídia
-        if (superModel.getTipoMedia() == TipoMedia.FILME) {
             superModel.Avaliar(model);
-            FilmeRepository.getInstance().update((Filme) superModel);
+            FilmeRepository filmeRepository = FilmeRepository.getInstance();
+            try {
+                filmeRepository.update((Filme) superModel);
+            }catch (Exception e){
+                return new ActionResult(false, e.getMessage());
+            }
+
         } else if (superModel.getTipoMedia() == TipoMedia.LIVRO) {
+            // Avaliação de Livro
+
             superModel.Avaliar(model);
-            LivroRepository.getInstance().update((Livro) superModel);
+            LivroRepository livroRepository = LivroRepository.getInstance();
+
+            try {
+                livroRepository.update((Livro) superModel);
+            }catch (Exception e) {
+                return new ActionResult(false, e.getMessage());
+            }
+
+
         } else if (superModel.getTipoMedia() == TipoMedia.TEMPORADA) {
+            // Avaliação de Temporada
+
             superModel.Avaliar(model);
             Temporada temporada = (Temporada) superModel;
             SerieRepository serieRepository = SerieRepository.getInstance();
-            Serie serie = serieRepository.getItemById(temporada.getSerieId());
+            int serieId = temporada.getSerieId();
+            Serie serie = serieRepository.getItemById(serieId);
+
+            if (serie == null) {
+                return new ActionResult(false, "Serie not found");
+            }
+
             serie.updateTemporadaById(temporada.getId(), temporada);
-            serieRepository.update(serie);
+
+            try {
+                serieRepository.update(serie);
+            }
+            catch (Exception e) {
+                return new ActionResult(false, e.getMessage());
+            }
+
         } else {
             return new ActionResult(false, "Tipo de mídia inválido");
         }
-
+        
         return new ActionResult(true, "Avaliacao criada com sucesso");
     }
 }

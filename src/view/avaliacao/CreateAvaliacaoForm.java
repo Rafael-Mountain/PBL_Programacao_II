@@ -32,7 +32,7 @@ public class CreateAvaliacaoForm extends Screen {
 
             CreateAvaliacaoAction createAvaliacao = new CreateAvaliacaoAction(new CreateAvaliacaoValidation());
 
-            createAvaliacao.SetSuperModel(objAvaliavel);
+            createAvaliacao.setSuperModel(objAvaliavel);
             result = createAvaliacao.execute(avaliacao);
             System.out.println("\n=== Resultado: " + result.getMessage());
 

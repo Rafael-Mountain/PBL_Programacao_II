@@ -43,8 +43,7 @@ public class CreateLivroAction extends BaseAction<Livro> {
             return new ActionResult(false, getErrorMessage());
         }
 
-        // Persiste o livro no repositório
-        LivroRepository.getInstance().save(livro);
-        return new ActionResult(true, "Livro criado com sucesso");
+        LivroRepository.getInstance().add(livro);
+        return new ActionResult(true,"Livro criado com sucesso");
     }
 }

@@ -56,12 +56,13 @@ public class FilmeRepository implements IRepository<Filme> {
      */
     @Override
     public Filme getItemById(int id) {
+        // Busca o filme pelo ID
         for (Filme filme : filmes) {
             if (filme.getId() == id) {
                 return filme;
             }
         }
-        return null;
+        return null; // Caso não encontre o filme
     }
 
     /**
@@ -70,14 +71,14 @@ public class FilmeRepository implements IRepository<Filme> {
      * @param item Filme atualizado que substituirá o anterior.
      */
     @Override
-    public void update(Filme item) {
+    public void update(Filme item) throws RuntimeException {
         for (int i = 0; i < filmes.size(); i++) {
             if (filmes.get(i).getId() == item.getId()) {
                 filmes.set(i, item);
                 return;
             }
         }
-        System.out.println("Filme não encontrado para atualização.");
+        throw new RuntimeException("Filme não encontrado para atualização");
     }
 
     /**
@@ -86,8 +87,8 @@ public class FilmeRepository implements IRepository<Filme> {
      * @param filme Filme a ser salvo.
      */
     @Override
-    public void save(Filme filme) {
-        filme.setId(filmeId++);
+    public void add(Filme filme) {
+        filme.setId(filmeId++);  // Atribui um ID único ao filme antes de salvar
         filmes.add(filme);
     }
 

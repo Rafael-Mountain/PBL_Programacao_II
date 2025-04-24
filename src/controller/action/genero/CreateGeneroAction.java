@@ -6,19 +6,6 @@ import controller.action.BaseAction;
 import controller.action.Validation;
 import model.Genero;
 
-/**
- * Ação para criar um novo gênero no sistema.
- *
- * Esta classe estende a {@link BaseAction} e implementa a lógica para criar
- * um novo gênero no sistema. A validação do modelo de gênero é realizada antes
- * de persistir os dados, e a operação resulta em um objeto {@link ActionResult}
- * indicando o sucesso ou falha da operação.
- *
- * @see BaseAction
- * @see Genero
- * @see Validation
- * @see ActionResult
- */
 public class CreateGeneroAction extends BaseAction<Genero> {
 
     /**
@@ -47,10 +34,7 @@ public class CreateGeneroAction extends BaseAction<Genero> {
             return new ActionResult(false, getErrorMessage());
         }
 
-        // Salva o gênero no repositório
-        GeneroRepository.getInstance().save(model);
-
-        // Retorna um resultado de sucesso
+        GeneroRepository.getInstance().add(model);
         return new ActionResult(true, "Gênero criado com sucesso");
     }
 }
