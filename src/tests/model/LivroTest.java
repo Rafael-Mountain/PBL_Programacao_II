@@ -20,7 +20,7 @@ class LivroTest {
         Livro livro = new Livro("Duna", dataLancamento, true, Arrays.asList(genero),
                 "Frank Herbert", "Editora Aleph", true, "978-8539501077");
 
-        livro.Avaliar(avaliacao);
+        livro.avaliar(avaliacao);
 
         // Testando os valores dos atributos
         assertEquals("Duna", livro.getTitulo());
@@ -61,8 +61,8 @@ class LivroTest {
         Avaliacao avaliacao1 = new Avaliacao(LocalDateTime.now(), 5, "Excelente história!", LocalDate.of(2018, 4, 12));
         Avaliacao avaliacao2 = new Avaliacao(LocalDateTime.now().minusDays(1), 4, "Bom livro, mas com alguns pontos fracos.", LocalDate.of(2018, 4, 10));
 
-        livro.Avaliar(avaliacao1);
-        livro.Avaliar(avaliacao2);
+        livro.avaliar(avaliacao1);
+        livro.avaliar(avaliacao2);
 
         assertEquals(5, livro.getPontuacao()); // Deve retornar a avaliação mais recente
         assertEquals(2, livro.getAvaliacoes().size());
