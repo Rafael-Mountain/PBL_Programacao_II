@@ -4,13 +4,22 @@ import controller.action.Validation;
 import model.Avaliacao;
 
 public class CreateAvaliacaoValidation implements Validation<Avaliacao> {
-    String errorMessage;
+    private String errorMessage;
 
     @Override
     public boolean isValid(Avaliacao model) {
-        if (model.getPontuacao() < 1 || model.getPontuacao() > 5 ) {
+        if (model == null) {
+            errorMessage = "Avaliacao está nula";
             return false;
         }
+
+        if (model.getPontuacao() < 1 || model.getPontuacao() > 5) {
+            errorMessage = "Pontuação inválida: deve estar entre 1 e 5.";
+            return false;
+        }
+
+        // Adicione outras validações se necessário
+        errorMessage = null;
         return true;
     }
 
@@ -18,5 +27,4 @@ public class CreateAvaliacaoValidation implements Validation<Avaliacao> {
     public String getErrorMessage() {
         return errorMessage;
     }
-
 }

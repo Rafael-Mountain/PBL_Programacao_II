@@ -38,18 +38,18 @@ public class FilmeRepository implements IRepository<Filme> {
     }
 
     @Override
-    public void update(Filme item) {
+    public void update(Filme item) throws RuntimeException {
         for (int i = 0; i < filmes.size(); i++) {
             if (filmes.get(i).getId() == item.getId()) {
                 filmes.set(i, item);
                 return;
             }
         }
-        System.out.println("Filme não encontrado para atualização.");
+        throw new RuntimeException("Filme não encontrado para atualização");
     }
 
     @Override
-    public void save(Filme filme) {
+    public void add(Filme filme) {
         filme.setId(filmeId++);  // Atribui um ID único ao filme antes de salvar
         filmes.add(filme);
     }

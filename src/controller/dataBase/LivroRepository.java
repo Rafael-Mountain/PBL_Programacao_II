@@ -38,18 +38,18 @@ public class LivroRepository implements IRepository<Livro> {
     }
 
     @Override
-    public void update(Livro item) {
+    public void update (Livro item) throws RuntimeException{
         for (int i = 0; i < livros.size(); i++) {
             if (livros.get(i).getId() == item.getId()) {
                 livros.set(i, item);
                 return;
             }
         }
-        System.out.println("Livro não encontrado para atualização.");
+        throw new RuntimeException("Livro não encontrado para atualização.");
     }
 
     @Override
-    public void save(Livro livro) {
+    public void add(Livro livro) {
         livro.setId(livroId++);  // Atribui um ID único ao livro antes de salvar
         livros.add(livro);
     }

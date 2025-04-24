@@ -17,7 +17,7 @@ public class CreateSerieAction extends BaseAction<Serie> {
             return new ActionResult(false, getErrorMessage());
         }
 
-        SerieRepository.getInstance().save(serie);
+        SerieRepository.getInstance().add(serie);
         return new ActionResult(true, "Série criada com sucesso");
     }
 }

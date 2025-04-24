@@ -18,7 +18,7 @@ public class CreateGeneroAction extends BaseAction<Genero> {
             return new ActionResult(false, getErrorMessage());
         }
 
-        GeneroRepository.getInstance().save(model);
+        GeneroRepository.getInstance().add(model);
         return new ActionResult(true, "Gênero criado com sucesso");
     }
 }

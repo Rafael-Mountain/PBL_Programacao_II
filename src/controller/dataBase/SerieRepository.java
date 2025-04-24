@@ -46,11 +46,11 @@ public class SerieRepository implements IRepository<Serie> {
                 return;
             }
         }
-        System.out.println("Série não encontrada para atualização.");
+        throw new RuntimeException("Série não encontrada para atualização.");
     }
 
     @Override
-    public void save(Serie serie) {
+    public void add(Serie serie) {
         serie.setId(serieId++);  // Atribui um ID único à série antes de salvar
         series.add(serie);
     }

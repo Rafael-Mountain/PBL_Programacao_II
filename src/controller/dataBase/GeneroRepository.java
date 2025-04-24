@@ -45,11 +45,11 @@ public class GeneroRepository implements IRepository<Genero> {
                 return;
             }
         }
-        System.out.println("Gênero não encontrado para atualização.");
+        throw new RuntimeException("Genero não encontrado para atualização");
     }
 
     @Override
-    public void save(Genero genero) {
+    public void add(Genero genero) {
         genero.setId(generoId++);  // Atribui um ID único ao gênero antes de salvar
         generos.add(genero);
     }

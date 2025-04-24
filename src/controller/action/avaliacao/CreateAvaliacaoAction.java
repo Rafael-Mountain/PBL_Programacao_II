@@ -41,13 +41,25 @@ public class CreateAvaliacaoAction extends BaseSetAction<Avaliacao, IAvaliavel> 
 
             superModel.Avaliar(model);
             FilmeRepository filmeRepository = FilmeRepository.getInstance();
-            filmeRepository.update((Filme) superModel);
+            try {
+                filmeRepository.update((Filme) superModel);
+            }catch (Exception e){
+                return new ActionResult(false, e.getMessage());
+            }
+
         } else if (superModel.getTipoMedia() == TipoMedia.LIVRO) {
             // Avaliação de Livro
 
             superModel.Avaliar(model);
             LivroRepository livroRepository = LivroRepository.getInstance();
-            livroRepository.update((Livro) superModel);
+
+            try {
+                livroRepository.update((Livro) superModel);
+            }catch (Exception e) {
+                return new ActionResult(false, e.getMessage());
+            }
+
+
         } else if (superModel.getTipoMedia() == TipoMedia.TEMPORADA) {
             // Avaliação de Temporada
 
@@ -56,8 +68,20 @@ public class CreateAvaliacaoAction extends BaseSetAction<Avaliacao, IAvaliavel> 
             SerieRepository serieRepository = SerieRepository.getInstance();
             int serieId = temporada.getSerieId();
             Serie serie = serieRepository.getItemById(serieId);
+
+            if (serie == null) {
+                return new ActionResult(false, "Serie not found");
+            }
+
             serie.updateTemporadaById(temporada.getId(), temporada);
-            serieRepository.update(serie);
+
+            try {
+                serieRepository.update(serie);
+            }
+            catch (Exception e) {
+                return new ActionResult(false, e.getMessage());
+            }
+
         } else {
             return new ActionResult(false, "Tipo de mídia inválido");
         }

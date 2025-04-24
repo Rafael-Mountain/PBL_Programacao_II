@@ -32,7 +32,7 @@ public class CreateTemporadaForm extends Screen {
                     LocalDateTime.of(ano, 1, 1, 0, 0));
 
             CreateTemporadaAction createTemporadaAction = new CreateTemporadaAction(new CreateTemporadaValidation());
-            createTemporadaAction.SetSuperModel(serie);
+            createTemporadaAction.setSuperModel(serie);
             result = createTemporadaAction.execute(temporada);
 
             System.out.println("\n=== Resultado: " + result.getMessage());

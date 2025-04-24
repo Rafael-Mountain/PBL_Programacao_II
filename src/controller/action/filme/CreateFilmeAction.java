@@ -18,7 +18,7 @@ public class CreateFilmeAction extends BaseAction<Filme> {
             return new ActionResult(false, getErrorMessage());
         }
 
-        FilmeRepository.getInstance().save(filme);
+        FilmeRepository.getInstance().add(filme);
         return new ActionResult(true,"Filme criado com sucesso");
     }
 }

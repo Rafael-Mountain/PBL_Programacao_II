@@ -6,6 +6,6 @@ public interface IRepository<T> {
     List<T> getItems();
     T getItemById(int id);
     void update(T item);
-    void save(T item);
+    void add(T item);
     void delete(T item);
 }

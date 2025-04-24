@@ -16,10 +16,38 @@ public class Temporada  implements IAvaliavel{
     private TipoMedia tipoMedia = TipoMedia.TEMPORADA;
     private List<Avaliacao> avaliacoes;
 
+    public Temporada() {
+        this.avaliacoes = new ArrayList<>();
+    }
+
     public Temporada(int qEpisodios, LocalDateTime ano) {
         this.qEpisodios = qEpisodios;
         this.ano = ano;
         this.avaliacoes = new ArrayList<>();
+    }
+
+    public int getqEpisodios() {
+        return qEpisodios;
+    }
+
+    public void setqEpisodios(int qEpisodios) {
+        this.qEpisodios = qEpisodios;
+    }
+
+    public LocalDateTime getAno() {
+        return ano;
+    }
+
+    public void setAno(LocalDateTime ano) {
+        this.ano = ano;
+    }
+
+    public int getSerieId() {
+        return serieId;
+    }
+
+    public void setSerieId(int serieId) {
+        this.serieId = serieId;
     }
 
     @Override
@@ -30,6 +58,11 @@ public class Temporada  implements IAvaliavel{
     @Override
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public TipoMedia getTipoMedia() {
+        return tipoMedia;
     }
 
     @Override
@@ -50,35 +83,6 @@ public class Temporada  implements IAvaliavel{
         return avaliacoes.stream()
                 .sorted(Comparator.comparing(Avaliacao::getDataAvaliacao).reversed())
                 .collect(Collectors.toList());
-    }
-
-    @Override
-    public TipoMedia getTipoMedia() {
-        return tipoMedia;
-    }
-
-    public int getqEpisodios() {
-        return qEpisodios;
-    }
-
-    public LocalDateTime getAno() {
-        return ano;
-    }
-
-    public void setAno(LocalDateTime ano) {
-        this.ano = ano;
-    }
-
-    public void setqEpisodios(int qEpisodios) {
-        this.qEpisodios = qEpisodios;
-    }
-
-    public int getSerieId() {
-        return serieId;
-    }
-
-    public void setSerieId(int serieId) {
-        this.serieId = serieId;
     }
 }
 
