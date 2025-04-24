@@ -102,4 +102,8 @@ public class LivroRepository implements IRepository<Livro> {
     public void delete(Livro livro) {
         livros.removeIf(livroItem -> livroItem.getId() == livro.getId());
     }
+
+    public void setLivroId(int id) {
+        this.livroId = id;
+    }
 }

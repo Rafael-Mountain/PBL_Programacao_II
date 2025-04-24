@@ -31,7 +31,7 @@ public class CreateFilmeActionTest {
         ActionResult result = action.execute(filme);
 
         assertFalse(result.isSuccess());
-        assertEquals("Erro! titulo vazio", result.getMessage());
+        assertEquals("Erro! título vazio", result.getMessage());
     }
 
     @Test
@@ -43,7 +43,7 @@ public class CreateFilmeActionTest {
         ActionResult result = action.execute(filme);
 
         assertFalse(result.isSuccess());
-        assertEquals("Erro! Selecione pelo menos um genero", result.getMessage());
+        assertEquals("Erro! Selecione pelo menos um gênero", result.getMessage());
     }
 
     @Test
@@ -57,7 +57,7 @@ public class CreateFilmeActionTest {
         ActionResult result = action.execute(filme); // Tenta adicionar de novo
 
         assertFalse(result.isSuccess());
-        assertEquals("Erro! Filme ja existe na base de dados", result.getMessage());
+        assertEquals("Erro! Filme já existe na base de dados", result.getMessage());
     }
 
     @Test

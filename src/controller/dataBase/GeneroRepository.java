@@ -100,4 +100,8 @@ public class GeneroRepository implements IRepository<Genero> {
     public void delete(Genero genero) {
         generos.removeIf(generoItem -> generoItem.getId() == genero.getId());
     }
+
+    public void setGeneroId(int id) {
+        this.generoId = id;
+    }
 }

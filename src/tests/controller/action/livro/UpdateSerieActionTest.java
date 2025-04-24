@@ -34,7 +34,7 @@ class UpdateSerieActionTest {
         ActionResult result = action.execute(serie);
 
         assertFalse(result.isSuccess());
-        assertEquals("Erro! titulo vazio", result.getMessage());
+        assertEquals("Erro! título vazio", result.getMessage());
     }
 
     @Test
@@ -46,7 +46,7 @@ class UpdateSerieActionTest {
         ActionResult result = action.execute(serie);
 
         assertFalse(result.isSuccess());
-        assertEquals("Erro! Selecione pelo menos um genero", result.getMessage());
+        assertEquals("Erro! Selecione pelo menos um gênero", result.getMessage());
     }
 
     @Test

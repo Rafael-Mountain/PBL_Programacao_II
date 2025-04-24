@@ -104,4 +104,8 @@ public class SerieRepository implements IRepository<Serie> {
     public void delete(Serie serie) {
         series.removeIf(serieItem -> serieItem.getId() == serie.getId());
     }
+
+    public void setSerieId(int id) {
+        this.serieId = id;
+    }
 }

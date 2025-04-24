@@ -101,4 +101,8 @@ public class FilmeRepository implements IRepository<Filme> {
     public void delete(Filme filme) {
         filmes.removeIf(filmeItem -> filmeItem.getId() == filme.getId());
     }
+
+    public void setFilmeId(int id) {
+        this.filmeId = id;
+    }
 }
