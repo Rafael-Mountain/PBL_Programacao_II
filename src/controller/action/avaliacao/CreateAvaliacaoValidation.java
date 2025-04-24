@@ -13,7 +13,6 @@ import model.Avaliacao;
  * @author [Seu Nome]
  */
 public class CreateAvaliacaoValidation implements Validation<Avaliacao> {
-    private String errorMessage;
 
     /** Mensagem de erro que descreve a falha de validação, caso ocorra. */
     private String errorMessage;
