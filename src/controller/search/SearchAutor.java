@@ -1,31 +1,62 @@
 package controller.search;
 
 import controller.dataBase.IRepository;
-import model.Filme;
 import model.Livro;
 import model.Media;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SearchAutor implements Search{
+/**
+ * Implementação de {@link Search} que realiza buscas de livros pelo nome do autor.
+ * <p>
+ * Executa a pesquisa sobre o repositório de {@link Livro}, filtrando aqueles
+ * cujo autor contém o termo de busca (case-insensitive), e retorna os resultados
+ * como uma lista de {@link Media}.
+ * </p>
+ *
+ * @see Search
+ * @see SearchResults
+ * @see IRepository
+ * @see Livro
+ */
+public class SearchAutor implements Search {
+
+    /**
+     * Repositório de livros a ser utilizado na pesquisa.
+     */
     private IRepository<Livro> livroRepository;
 
+    /**
+     * Executa a busca de livros cujo autor contém o termo fornecido.
+     *
+     * @param searchTerm Termo de busca para o nome do autor.
+     * @return Um {@link SearchResults} contendo:
+     *         <ul>
+     *           <li>Lista de mídias (livros) cujo autor corresponde ao termo;</li>
+     *           <li>Mensagem de status sobre o resultado da busca.</li>
+     *         </ul>
+     */
     @Override
     public SearchResults execute(String searchTerm) {
-
         List<Media> medias = livroRepository.getItems().stream()
-                .filter(livro -> livro.getAutor().toLowerCase().contains(searchTerm.toLowerCase()))
+                .filter(livro -> livro.getAutor()
+                        .toLowerCase()
+                        .contains(searchTerm.toLowerCase()))
                 .collect(Collectors.toList());
 
-        if (medias.isEmpty()) {
-            return new SearchResults(medias, "Mídias não encontradas");
-        } else {
-            return new SearchResults(medias, "Busca por Autor: " + searchTerm);
-        }
+        String message = medias.isEmpty()
+                ? "Mídias não encontradas"
+                : "Busca por Autor: " + searchTerm;
+
+        return new SearchResults(medias, message);
     }
 
+    /**
+     * Define o repositório de livros que será usado nesta busca.
+     *
+     * @param livroRepository Repositório de {@link Livro}.
+     */
     public void setRepository(IRepository<Livro> livroRepository) {
         this.livroRepository = livroRepository;
     }

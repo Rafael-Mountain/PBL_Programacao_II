@@ -19,7 +19,7 @@ class TemporadaTest {
         Temporada temporada = new Temporada(10, ano);
         temporada.setId(1);
         temporada.setSerieId(101);
-        temporada.Avaliar(avaliacao);
+        temporada.avaliar(avaliacao);
 
         // Testando os valores dos atributos
         assertEquals(1, temporada.getId());
@@ -51,8 +51,8 @@ class TemporadaTest {
         Avaliacao avaliacao1 = new Avaliacao(LocalDateTime.now(), 3, "Boa, mas alguns episódios são arrastados.", LocalDate.of(2020, 11, 2));
         Avaliacao avaliacao2 = new Avaliacao(LocalDateTime.now().minusDays(1), 4, "Ótima temporada, gostei muito!", LocalDate.of(2020, 11, 1));
 
-        temporada.Avaliar(avaliacao1);
-        temporada.Avaliar(avaliacao2);
+        temporada.avaliar(avaliacao1);
+        temporada.avaliar(avaliacao2);
 
         assertEquals(3, temporada.getPontuacao()); // Deve retornar a avaliação mais recente
         assertEquals(2, temporada.getAvaliacoes().size());
@@ -64,8 +64,8 @@ class TemporadaTest {
         Avaliacao avaliacao1 = new Avaliacao(LocalDateTime.now(), 5, "Excelente temporada!", LocalDate.of(2021, 3, 1));
         Avaliacao avaliacao2 = new Avaliacao(LocalDateTime.now().minusDays(2), 3, "Pode melhorar.", LocalDate.of(2021, 2, 28));
 
-        temporada.Avaliar(avaliacao1);
-        temporada.Avaliar(avaliacao2);
+        temporada.avaliar(avaliacao1);
+        temporada.avaliar(avaliacao2);
 
         // Testando a pontuação mais recente
         assertEquals(5, temporada.getPontuacao()); // A avaliação mais recente deve ser usada

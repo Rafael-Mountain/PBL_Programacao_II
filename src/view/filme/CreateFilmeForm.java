@@ -13,7 +13,45 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Tela responsável por permitir ao usuário criar um novo filme, fornecendo detalhes como título, diretor, gêneros,
+ * entre outros. Esta classe gerencia o processo de coleta das informações do filme, validação da entrada e criação
+ * do objeto de filme.
+ * <p>
+ * A classe estende {@link view.commons.Screen} e implementa o processo de criação do filme de forma interativa
+ * através do console. Ela garante que um filme só possa ser criado caso existam gêneros disponíveis no sistema.
+ * </p>
+ */
 public class CreateFilmeForm extends Screen {
+
+    /**
+     * Solicita ao usuário que insira todos os detalhes necessários para criar um novo filme. Isso inclui:
+     * <ul>
+     *     <li>Título do filme</li>
+     *     <li>Título original do filme</li>
+     *     <li>Ano de lançamento</li>
+     *     <li>Duração do filme em minutos</li>
+     *     <li>Diretor</li>
+     *     <li>Roteirista</li>
+     *     <li>Local onde o filme está disponível</li>
+     *     <li>Gêneros associados ao filme</li>
+     *     <li>Elenco (atores/atrizes)</li>
+     *     <li>Se o filme foi assistido ou não</li>
+     * </ul>
+     * <p>
+     * O método valida as entradas, garantindo que todos os campos obrigatórios sejam fornecidos e formatados
+     * corretamente. Se algum dado necessário estiver ausente ou inválido, o usuário será solicitado a corrigir a
+     * informação.
+     * </p>
+     * Após coletar todos os dados, o método tenta criar um novo objeto {@link model.Filme} e processá-lo usando a
+     * classe {@link controller.action.filme.CreateFilmeAction}.
+     * <p>
+     * Caso a criação do filme seja bem-sucedida, uma mensagem de sucesso será exibida. Caso contrário, o usuário
+     * será solicitado a corrigir qualquer problema com os dados fornecidos.
+     * </p>
+     *
+     * @param terminal o objeto scanner usado para ler a entrada do console
+     */
     @Override
     public void draw(Scanner terminal) {
         if (GeneroRepository.getInstance().getItems().isEmpty()) {
@@ -41,7 +79,6 @@ public class CreateFilmeForm extends Screen {
             System.out.print("Local disponível: ");
             String localDisponivel = terminal.nextLine();
 
-
             List<Genero> generosFilme = ViewCommons.inputGenero(terminal);
             List<String> elenco = ViewCommons.inputElenco(terminal);
 
@@ -59,6 +96,5 @@ public class CreateFilmeForm extends Screen {
         } while (!result.isSuccess());
 
         new FilmeDisplay(filme).draw(terminal);
-
     }
 }

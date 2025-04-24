@@ -72,7 +72,7 @@ public class CreateAvaliacaoAction extends BaseSetAction<Avaliacao, IAvaliavel> 
         if (superModel.getTipoMedia()== TipoMedia.FILME) {
             // Avaliação de filme
 
-            superModel.Avaliar(model);
+            superModel.avaliar(model);
             FilmeRepository filmeRepository = FilmeRepository.getInstance();
             try {
                 filmeRepository.update((Filme) superModel);
@@ -83,7 +83,7 @@ public class CreateAvaliacaoAction extends BaseSetAction<Avaliacao, IAvaliavel> 
         } else if (superModel.getTipoMedia() == TipoMedia.LIVRO) {
             // Avaliação de Livro
 
-            superModel.Avaliar(model);
+            superModel.avaliar(model);
             LivroRepository livroRepository = LivroRepository.getInstance();
 
             try {
@@ -96,7 +96,7 @@ public class CreateAvaliacaoAction extends BaseSetAction<Avaliacao, IAvaliavel> 
         } else if (superModel.getTipoMedia() == TipoMedia.TEMPORADA) {
             // Avaliação de Temporada
 
-            superModel.Avaliar(model);
+            superModel.avaliar(model);
             Temporada temporada = (Temporada) superModel;
             SerieRepository serieRepository = SerieRepository.getInstance();
             int serieId = temporada.getSerieId();
