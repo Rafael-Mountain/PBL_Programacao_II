@@ -1,7 +1,7 @@
 ## Autores
 
-- **Rafael Henrique Siqueira Santos** - 24111340  
-- **Vitor Gabriel Dórea** - 24111343
+- **Rafael Henrique Siqueira Santos**  
+- **Vitor Gabriel Dórea**
 
 ---
 
