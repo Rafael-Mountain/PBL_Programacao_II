@@ -7,8 +7,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-
-    <!-- JUnit4 -->
     <orderEntry type="module-library">
       <library name="JUnit4">
         <CLASSES>
@@ -19,8 +17,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-
-    <!-- JUnit5 -->
     <orderEntry type="module-library">
       <library name="JUnit5.8.1">
         <CLASSES>
@@ -35,6 +31,16 @@
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$USER_HOME$/Downloads/jackson" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$USER_HOME$/Downloads/jackson" recursive="false" />
       </library>
     </orderEntry>
   </component>

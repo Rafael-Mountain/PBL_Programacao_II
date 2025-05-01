@@ -1,5 +1,10 @@
 package controller.dataBase;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
+
 import model.Filme;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,14 +21,15 @@ public class FilmeRepository implements IRepository<Filme> {
     private static FilmeRepository instance;
     private List<Filme> filmes;
     private int filmeId;
+    private ObjectMapper objectMapper; // Torna o objectMapper um campo da classe
 
-    /**
-     * Construtor privado para garantir o padrão Singleton.
-     * Inicializa a lista de filmes e o contador de IDs.
-     */
     private FilmeRepository() {
         filmes = new ArrayList<>();
         filmeId = 0;
+
+        objectMapper = new ObjectMapper(); // Inicializa aqui
+        objectMapper.registerModule(new JavaTimeModule());
+        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
     }
 
     /**
@@ -90,6 +96,7 @@ public class FilmeRepository implements IRepository<Filme> {
     public void add(Filme filme) {
         filme.setId(filmeId++);  // Atribui um ID único ao filme antes de salvar
         filmes.add(filme);
+        this.save();
     }
 
     /**
@@ -100,6 +107,18 @@ public class FilmeRepository implements IRepository<Filme> {
     @Override
     public void delete(Filme filme) {
         filmes.removeIf(filmeItem -> filmeItem.getId() == filme.getId());
+    }
+
+
+    public void save() {
+        try {
+            String json = objectMapper.writeValueAsString(filmes);
+            System.out.println(json);
+        }
+        catch (Exception e) {
+            System.out.println("Erro ao gravar os filmes: " + e.getMessage());
+            return;
+        }
     }
 
     public void setFilmeId(int id) {
