@@ -1,5 +1,7 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import model.commons.IAvaliavel;
 
 import java.time.LocalDateTime;
@@ -147,11 +149,13 @@ public class Filme extends MediaAudioVisual implements IAvaliavel {
         avaliacoes.add(avaliacao);
     }
 
+
     /**
      * Retorna a pontuação da avaliação mais recente feita ao filme.
      *
      * @return pontuação mais recente, ou 0 se não houver avaliações.
      */
+    @JsonIgnore
     @Override
     public double getPontuacao() {
         return avaliacoes.stream()

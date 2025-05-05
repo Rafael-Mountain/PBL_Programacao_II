@@ -1,6 +1,6 @@
 package controller.search;
 
-import controller.dataBase.IRepository;
+import controller.dataBase.repository.IRepository;
 import model.Media;
 
 import java.util.ArrayList;

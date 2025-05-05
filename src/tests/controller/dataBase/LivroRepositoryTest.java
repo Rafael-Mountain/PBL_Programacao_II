@@ -17,7 +17,7 @@ public class LivroRepositoryTest {
     public void setUp() {
         repository = LivroRepository.getInstance();
         repository.getItems().clear();  // Limpa os dados antes de cada teste
-        repository.setLivroId(0);       // Reinicia o contador de ID
+        repository.clear();      // Reinicia o contador de ID
     }
 
     @Test
@@ -103,9 +103,8 @@ public class LivroRepositoryTest {
     public void testSetLivroId() {
         Livro livro = new Livro();
         livro.setTitulo("A Revolução dos Bichos");
-        repository.setLivroId(50);
         repository.add(livro);
 
-        assertEquals(50, livro.getId());
+        assertEquals(0, livro.getId());
     }
 }

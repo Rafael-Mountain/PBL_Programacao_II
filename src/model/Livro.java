@@ -1,5 +1,6 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import model.commons.IAvaliavel;
 
 import java.time.LocalDateTime;
@@ -167,6 +168,7 @@ public class Livro extends Media implements IAvaliavel {
      *
      * @return pontuação mais recente ou 0 caso não haja avaliações.
      */
+    @JsonIgnore
     @Override
     public double getPontuacao() {
         return avaliacoes.stream()

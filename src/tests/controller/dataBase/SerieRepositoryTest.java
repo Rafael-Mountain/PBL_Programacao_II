@@ -17,7 +17,7 @@ public class SerieRepositoryTest {
     public void setUp() {
         repository = SerieRepository.getInstance();
         repository.getItems().clear();  // Limpa antes de cada teste
-        repository.setSerieId(0);       // Reinicia o contador de ID
+        repository.clear();       // Reinicia o contador de ID
     }
 
     @Test

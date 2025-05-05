@@ -1,4 +1,4 @@
-package controller.dataBase;
+package controller.dataBase.repository;
 
 import java.util.List;
 
@@ -45,4 +45,10 @@ public interface IRepository<T> {
      * @param item o item a ser removido.
      */
     void delete(T item);
+
+    void save();
+
+    void load();
+
+    void clear();
 }

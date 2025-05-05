@@ -17,7 +17,7 @@ public class FilmeRepositoryTest {
     public void setUp() {
         repository = FilmeRepository.getInstance();
         repository.getItems().clear();
-        repository.setFilmeId(0);
+        repository.clear();
         // limpa antes de cada teste
     }
 

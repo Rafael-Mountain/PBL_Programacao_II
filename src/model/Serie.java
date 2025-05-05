@@ -1,5 +1,7 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -113,6 +115,7 @@ public class Serie extends MediaAudioVisual implements Cloneable {
      *
      * @return Pontuação média das temporadas.
      */
+    @JsonIgnore
     @Override
     public double getPontuacao() {
         if (!temporadas.isEmpty()) {

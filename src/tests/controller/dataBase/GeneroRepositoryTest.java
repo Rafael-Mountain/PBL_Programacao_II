@@ -17,7 +17,7 @@ public class GeneroRepositoryTest {
     public void setUp() {
         repository = GeneroRepository.getInstance();
         repository.getItems().clear();  // Resetar lista antes de cada teste
-        repository.setGeneroId(0);      // Resetar contador de IDs
+        repository.clear();      // Resetar contador de IDs
     }
 
     @Test
@@ -89,13 +89,5 @@ public class GeneroRepositoryTest {
         repository.delete(genero2);  // Não deve lançar exceção
 
         assertEquals(1, repository.getItems().size());
-    }
-
-    @Test
-    public void testSetGeneroId() {
-        Genero genero = new Genero("Musical");
-        repository.setGeneroId(100);
-        repository.add(genero);
-        assertEquals(100, genero.getId());
     }
 }

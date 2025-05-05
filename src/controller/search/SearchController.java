@@ -59,7 +59,7 @@ public abstract class SearchController {
             searchResults = new SearchResults(null, "Error: Campo de pesquisa não pode ser nulo");
             return;
         }
-        if (searchTerm == null) {
+        if (searchTerm == null && searchField != SearchFields.TUDO) {
             searchResults = new SearchResults(null, "Error: Termo de pesquisa não pode ser nulo");
             return;
         }

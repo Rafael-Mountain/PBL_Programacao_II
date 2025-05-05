@@ -1,8 +1,8 @@
 package controller.dataBase;
 
+import controller.dataBase.repository.IRepository;
+import controller.dataBase.repository.Repository;
 import model.Genero;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * {@code GeneroRepository} é uma implementação do padrão de repositório para a entidade {@link Genero}.
@@ -12,17 +12,14 @@ import java.util.List;
  * <p>
  * Utiliza o padrão Singleton para garantir uma única instância durante a execução da aplicação.
  */
-public class GeneroRepository implements IRepository<Genero> {
+public class GeneroRepository extends Repository<Genero> {
     private static GeneroRepository instance;
-    private List<Genero> generos;
-    private int generoId;
 
     /**
-     * Construtor privado. Inicializa a lista de gêneros e o contador de IDs.
+     * Construtor privado.
      */
     private GeneroRepository() {
-        generos = new ArrayList<>();
-        generoId = 0;
+       super("Genero");
     }
 
     /**
@@ -37,71 +34,4 @@ public class GeneroRepository implements IRepository<Genero> {
         return instance;
     }
 
-    /**
-     * Retorna a lista de todos os gêneros armazenados.
-     *
-     * @return lista de {@link Genero}.
-     */
-    @Override
-    public List<Genero> getItems() {
-        return generos;
-    }
-
-    /**
-     * Retorna o gênero com o ID especificado.
-     *
-     * @param id o ID do gênero.
-     * @return {@link Genero} correspondente ou {@code null} se não for encontrado.
-     */
-    @Override
-    public Genero getItemById(int id) {
-        // Busca o gênero pelo ID
-        for (Genero genero : generos) {
-            if (genero.getId() == id) {
-                return genero;
-            }
-        }
-        return null; // Caso não encontre o gênero
-    }
-
-    /**
-     * Atualiza um gênero existente na lista. Caso não encontre o ID, exibe uma mensagem no console.
-     *
-     * @param item gênero com os novos dados.
-     */
-    @Override
-    public void update(Genero item) {
-        for (int i = 0; i < generos.size(); i++) {
-            if (generos.get(i).getId() == item.getId()) {
-                generos.set(i, item);
-                return;
-            }
-        }
-        throw new RuntimeException("Genero não encontrado para atualização");
-    }
-
-    /**
-     * Salva um novo gênero atribuindo-lhe um ID único.
-     *
-     * @param genero o novo gênero a ser salvo.
-     */
-    @Override
-    public void add(Genero genero) {
-        genero.setId(generoId++);  // Atribui um ID único ao gênero antes de salvar
-        generos.add(genero);
-    }
-
-    /**
-     * Remove um gênero da lista com base no seu ID.
-     *
-     * @param genero o gênero a ser removido.
-     */
-    @Override
-    public void delete(Genero genero) {
-        generos.removeIf(generoItem -> generoItem.getId() == genero.getId());
-    }
-
-    public void setGeneroId(int id) {
-        this.generoId = id;
-    }
 }

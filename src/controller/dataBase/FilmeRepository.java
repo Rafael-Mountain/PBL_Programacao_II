@@ -1,13 +1,8 @@
 package controller.dataBase;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.fasterxml.jackson.databind.SerializationFeature;
-
-
+import controller.dataBase.repository.IRepository;
+import controller.dataBase.repository.Repository;
 import model.Filme;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Repositório responsável por gerenciar instâncias da classe {@link Filme}.
@@ -17,19 +12,11 @@ import java.util.List;
  *
  * Esta implementação utiliza o padrão Singleton, garantindo que exista apenas uma instância da classe em tempo de execução.
  */
-public class FilmeRepository implements IRepository<Filme> {
+public class FilmeRepository extends Repository<Filme> {
     private static FilmeRepository instance;
-    private List<Filme> filmes;
-    private int filmeId;
-    private ObjectMapper objectMapper; // Torna o objectMapper um campo da classe
 
     private FilmeRepository() {
-        filmes = new ArrayList<>();
-        filmeId = 0;
-
-        objectMapper = new ObjectMapper(); // Inicializa aqui
-        objectMapper.registerModule(new JavaTimeModule());
-        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+        super("Filme");
     }
 
     /**
@@ -44,84 +31,4 @@ public class FilmeRepository implements IRepository<Filme> {
         return instance;
     }
 
-    /**
-     * Retorna todos os filmes armazenados no repositório.
-     *
-     * @return Lista de filmes.
-     */
-    @Override
-    public List<Filme> getItems() {
-        return filmes;
-    }
-
-    /**
-     * Retorna um filme com base no seu ID.
-     *
-     * @param id ID do filme desejado.
-     * @return Filme com o ID correspondente ou {@code null} se não encontrado.
-     */
-    @Override
-    public Filme getItemById(int id) {
-        // Busca o filme pelo ID
-        for (Filme filme : filmes) {
-            if (filme.getId() == id) {
-                return filme;
-            }
-        }
-        return null; // Caso não encontre o filme
-    }
-
-    /**
-     * Atualiza as informações de um filme existente.
-     *
-     * @param item Filme atualizado que substituirá o anterior.
-     */
-    @Override
-    public void update(Filme item) throws RuntimeException {
-        for (int i = 0; i < filmes.size(); i++) {
-            if (filmes.get(i).getId() == item.getId()) {
-                filmes.set(i, item);
-                return;
-            }
-        }
-        throw new RuntimeException("Filme não encontrado para atualização");
-    }
-
-    /**
-     * Salva um novo filme no repositório e atribui um ID único a ele.
-     *
-     * @param filme Filme a ser salvo.
-     */
-    @Override
-    public void add(Filme filme) {
-        filme.setId(filmeId++);  // Atribui um ID único ao filme antes de salvar
-        filmes.add(filme);
-        this.save();
-    }
-
-    /**
-     * Remove um filme do repositório com base no seu ID.
-     *
-     * @param filme Filme a ser removido.
-     */
-    @Override
-    public void delete(Filme filme) {
-        filmes.removeIf(filmeItem -> filmeItem.getId() == filme.getId());
-    }
-
-
-    public void save() {
-        try {
-            String json = objectMapper.writeValueAsString(filmes);
-            System.out.println(json);
-        }
-        catch (Exception e) {
-            System.out.println("Erro ao gravar os filmes: " + e.getMessage());
-            return;
-        }
-    }
-
-    public void setFilmeId(int id) {
-        this.filmeId = id;
-    }
 }

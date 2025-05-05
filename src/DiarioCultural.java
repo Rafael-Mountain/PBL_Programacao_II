@@ -47,7 +47,6 @@ public class DiarioCultural {
     public static void main(String[] args) {
         boolean teste = false;
 
-
         Properties props = new Properties();
         try (FileInputStream input = new FileInputStream("config.properties")) {
             props.load(input);
