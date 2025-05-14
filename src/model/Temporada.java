@@ -1,5 +1,6 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import model.commons.IAvaliavel;
 
 import java.time.LocalDateTime;
@@ -156,6 +157,7 @@ public class Temporada implements IAvaliavel {
      *
      * @return Pontuação da temporada.
      */
+    @JsonIgnore
     @Override
     public double getPontuacao() {
         return avaliacoes.stream()

@@ -50,5 +50,8 @@ public interface IRepository<T> {
 
     void load();
 
+    Class<T> getItemClass();
+
+
     void clear();
 }

@@ -20,6 +20,7 @@ public abstract class Repository<t extends Identifiable> implements IRepository<
         this.itemsList = new ArrayList<>();
         this.itemId = 0;
         this.nameItem = nameItem;
+        this.load();
         objectMapper = new ObjectMapper(); // Inicializa aqui
         objectMapper.registerModule(new JavaTimeModule());
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
@@ -45,6 +46,7 @@ public abstract class Repository<t extends Identifiable> implements IRepository<
         for (int i = 0; i < itemsList.size(); i++) {
             if (itemsList.get(i).getId() == item.getId()) {
                 itemsList.set(i, item);
+                this.save();
                 return;
             }
         }
@@ -68,7 +70,7 @@ public abstract class Repository<t extends Identifiable> implements IRepository<
         //TODO: implementar o throw
         try {
             RepositoryContent repositoryContent = new RepositoryContent(itemsList, itemId);
-            FileManagement fileManagement = new FileManagement(nameItem);
+            FileManagement fileManagement = new FileManagement(nameItem, getItemClass());
             fileManagement.dump(repositoryContent);
         }
         catch (Exception e) {
@@ -78,7 +80,16 @@ public abstract class Repository<t extends Identifiable> implements IRepository<
 
     @Override
     public void load() {
-        //TODO: implementar o load
+        try {
+            FileManagement<t> fileManagement = new FileManagement<>(nameItem, getItemClass());
+            RepositoryContent<t> repositoryContent = fileManagement.load();
+
+            this.itemsList = repositoryContent.getListItems();
+            this.itemId = repositoryContent.getIdCounter();
+            System.out.println(repositoryContent.getListItems() + " " + repositoryContent.getIdCounter());
+        } catch (Exception e) {
+            System.out.println("Erro ao carregar os " + nameItem + "s : " + e.getMessage());
+        }
     }
 
     @Override

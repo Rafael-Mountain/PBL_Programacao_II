@@ -36,4 +36,9 @@ public class SerieRepository extends Repository<Serie> {
         }
         return instance;
     }
+
+    @Override
+    public Class<Serie> getItemClass() {
+        return Serie.class;
+    }
 }

@@ -34,4 +34,8 @@ public class GeneroRepository extends Repository<Genero> {
         return instance;
     }
 
+    @Override
+    public Class<Genero> getItemClass() {
+        return Genero.class;
+    }
 }

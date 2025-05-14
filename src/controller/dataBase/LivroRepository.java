@@ -1,6 +1,7 @@
 package controller.dataBase;
 
 import controller.dataBase.repository.Repository;
+import model.Genero;
 import model.Livro;
 
 /**
@@ -32,5 +33,9 @@ public class LivroRepository extends Repository<Livro> {
             instance = new LivroRepository();
         }
         return instance;
+    }
+    @Override
+    public Class<Livro> getItemClass() {
+        return Livro.class;
     }
 }

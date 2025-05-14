@@ -31,4 +31,8 @@ public class FilmeRepository extends Repository<Filme> {
         return instance;
     }
 
+    @Override
+    public Class<Filme> getItemClass() {
+        return Filme.class;
+    }
 }

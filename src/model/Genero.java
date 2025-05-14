@@ -26,6 +26,8 @@ public class Genero implements Identifiable {
         this.nome = nome;
     }
 
+    public Genero() {}
+
     /**
      * Retorna o nome do gênero.
      *
