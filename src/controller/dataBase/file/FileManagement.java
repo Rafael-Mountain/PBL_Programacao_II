@@ -54,8 +54,9 @@ public class FileManagement<T> {
         Path cwd = Paths.get("").toAbsolutePath();
         this.path = cwd + File.separator + fileName + ".json"; // Define o caminho completo do arquivo JSON
         objectMapper = new ObjectMapper();
-        objectMapper.registerModule(new JavaTimeModule()); // Suporte para java.time.LocalDateTime etc.
-        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS); // Formata datas como strings ISO-8601
+        objectMapper.registerModule(new JavaTimeModule())
+                .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
+                .enable(SerializationFeature.INDENT_OUTPUT);
     }
 
     /**

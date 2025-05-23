@@ -1,8 +1,5 @@
 package controller.dataBase.repository;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import controller.dataBase.file.FileManagement;
 import model.commons.Identifiable;
 
@@ -66,7 +63,7 @@ public abstract class Repository<t extends Identifiable> implements IRepository<
     public void save() {
         //TODO: implementar o throw
         try {
-            RepositoryContent repositoryContent = new RepositoryContent(itemsList, itemId);
+            RepositoryContent<t>  repositoryContent = new RepositoryContent(itemsList, itemId);
             FileManagement fileManagement = new FileManagement(nameItem, getItemClass());
             fileManagement.dump(repositoryContent);
         }
