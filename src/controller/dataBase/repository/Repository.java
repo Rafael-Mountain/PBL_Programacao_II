@@ -13,7 +13,6 @@ public abstract class Repository<t extends Identifiable> implements IRepository<
     private List<t> itemsList;
     private int itemId;
     private String nameItem;
-    private ObjectMapper objectMapper;
 
 
     public Repository(String nameItem) {
@@ -21,9 +20,6 @@ public abstract class Repository<t extends Identifiable> implements IRepository<
         this.itemId = 0;
         this.nameItem = nameItem;
         this.load();
-        objectMapper = new ObjectMapper(); // Inicializa aqui
-        objectMapper.registerModule(new JavaTimeModule());
-        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
     }
 
     @Override
@@ -63,6 +59,7 @@ public abstract class Repository<t extends Identifiable> implements IRepository<
     @Override
     public void delete(t item) {
         itemsList.removeIf(listItem -> listItem.getId() == item.getId());
+        this.save();
     }
 
     @Override
