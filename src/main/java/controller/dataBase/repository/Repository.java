@@ -1,6 +1,7 @@
 package controller.dataBase.repository;
 
 import controller.dataBase.file.FileManagement;
+import controller.dataBase.repository.IRepository;
 import model.commons.Identifiable;
 
 import java.util.ArrayList;

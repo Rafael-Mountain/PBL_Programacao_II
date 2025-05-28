@@ -1,11 +1,9 @@
 package view.serie;
 
 import controller.search.SearchResults;
-import model.Livro;
 import model.Serie;
 import view.ListMidia;
 import view.SearchView;
-import view.livro.LivroDisplay;
 
 import java.util.Scanner;
 

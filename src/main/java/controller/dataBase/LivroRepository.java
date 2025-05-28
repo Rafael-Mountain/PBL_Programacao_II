@@ -1,7 +1,6 @@
 package controller.dataBase;
 
 import controller.dataBase.repository.Repository;
-import model.Genero;
 import model.Livro;
 
 /**

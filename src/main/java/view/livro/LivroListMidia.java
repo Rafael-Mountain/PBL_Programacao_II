@@ -4,9 +4,6 @@ import controller.search.SearchResults;
 import model.Livro;
 import view.ListMidia;
 import view.SearchView;
-import view.filme.FilmeDisplay;
-import view.filme.FilmeListMidia;
-import view.filme.SearchViewFilme;
 
 import java.util.Scanner;
 

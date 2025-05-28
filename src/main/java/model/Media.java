@@ -1,6 +1,5 @@
 package model;
 
-import model.commons.IAvaliavel;
 import model.commons.ITemAvaliacao;
 
 import java.time.LocalDateTime;

@@ -71,7 +71,7 @@ public class LivroRepositoryTest {
             repository.update(livro);
         });
 
-        assertEquals("Livro não encontrado para atualização.", e.getMessage());
+        assertEquals("Livro não encontrado para atualização", e.getMessage());
     }
 
     @Test

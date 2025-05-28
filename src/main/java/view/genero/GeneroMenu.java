@@ -1,6 +1,5 @@
 package view.genero;
 
-import view.commons.IScreen;
 import view.commons.Screen;
 
 import java.util.Scanner;
