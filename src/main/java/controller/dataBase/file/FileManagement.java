@@ -52,7 +52,7 @@ public class FileManagement<T> {
         this.fileName = fileName;
         this.clazz = clazz;
         Path cwd = Paths.get("").toAbsolutePath();
-        this.path = cwd + File.separator + fileName + ".json"; // Define o caminho completo do arquivo JSON
+        this.path = cwd + File.separator + "arquivos" + File.separator + fileName + ".json"; // Define o caminho completo do arquivo JSON
         objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule())
                 .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
@@ -120,6 +120,11 @@ public class FileManagement<T> {
     public void verifyFile() {
         File file = new File(this.path);
         if (!file.exists()) {
+            // Cria o diretório se não existir
+            File parentDir = file.getParentFile();
+            if (parentDir != null && !parentDir.exists()) {
+                parentDir.mkdirs();
+            }
             // Estrutura JSON padrão para um repositório vazio
             String json = "{\"listItems\":[],\"idCounter\":0}";
             try (FileWriter writer = new FileWriter(file)) {

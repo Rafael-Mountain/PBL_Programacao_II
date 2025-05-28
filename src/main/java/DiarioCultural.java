@@ -1,9 +1,9 @@
 package main.java;
 
-//import tests.mocks.MockFilme;
-//import tests.mocks.MockLivro;
-//import tests.mocks.MockSerie;
 import view.Menu;
+import mocks.MockFilme;
+import mocks.MockLivro;
+import mocks.MockSerie;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -49,22 +49,13 @@ public class DiarioCultural {
      * @param args argumentos de linha de comando (não utilizados atualmente).
      */
     public static void main(String[] args) {
-        boolean teste = false;
+        boolean teste = true;
 
-        Properties props = new Properties();
-        try (FileInputStream input = new FileInputStream( Paths.get("").toAbsolutePath() + File.separator +"resources"+ File.separator + "config.properties")) {
-            props.load(input);
-            teste = Boolean.parseBoolean(props.getProperty("teste", "false"));
-        } catch (IOException e) {
-//            System.out.println("Arquivo de configuração não encontrado ou inválido. Continuando com teste = false.");
+        if (teste) {
+            MockFilme.rodar();
+            MockLivro.rodar();
+            MockSerie.rodar();
         }
-//
-//        // Executa dados de teste se a configuração permitir
-//        if (teste) {
-//            MockFilme.rodar();
-//            MockLivro.rodar();
-//            MockSerie.rodar();
-//        }
 
         // Inicializa o menu principal
         Scanner terminal = new Scanner(System.in);

@@ -1,4 +1,4 @@
-package tests.mocks;
+package mocks;
 
 import controller.action.serie.CreateSerieAction;
 import controller.action.serie.CreateSerieValidation;

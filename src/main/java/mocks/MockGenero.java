@@ -1,4 +1,4 @@
-package tests.mocks;
+package mocks;
 
 import controller.action.genero.CreateGeneroAction;
 import controller.action.genero.CreateGeneroValidation;

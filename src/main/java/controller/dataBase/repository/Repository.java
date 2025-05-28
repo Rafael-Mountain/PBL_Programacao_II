@@ -81,7 +81,6 @@ public abstract class Repository<t extends Identifiable> implements IRepository<
 
             this.itemsList = repositoryContent.getListItems();
             this.itemId = repositoryContent.getIdCounter();
-            System.out.println(repositoryContent.getListItems() + " " + repositoryContent.getIdCounter());
         } catch (Exception e) {
             System.out.println("Erro ao carregar os " + nameItem + "s : " + e.getMessage());
         }

@@ -1,4 +1,4 @@
-package tests.mocks;
+package mocks;
 
 import controller.action.livro.CreateLivroAction;
 import controller.action.livro.CreateLivroValidation;

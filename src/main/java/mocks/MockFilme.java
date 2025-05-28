@@ -1,4 +1,4 @@
-package tests.mocks;
+package mocks;
 
 import controller.action.filme.CreateFilmeAction;
 import controller.action.filme.CreateFilmeValidation;
