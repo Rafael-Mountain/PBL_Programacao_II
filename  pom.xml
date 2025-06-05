@@ -4,21 +4,26 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- TODO: 1. Preencha estas informações com os dados do seu projeto -->
     <groupId>com.mountain_vd</groupId>
     <artifactId>PBL_Programacao_II</artifactId>
     <version>3.0</version>
-    <packaging>jar</packaging> <!-- ou 'war' se for um projeto web -->
+    <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- TODO: 2. Defina a versão do Java que seu projeto usa -->
-        <maven.compiler.source>23</maven.compiler.source>
-        <maven.compiler.target>23</maven.compiler.target>
+        <maven.compiler.release>23</maven.compiler.release> <!-- Java 23 -->
 
-        <!-- Versões das dependências (ajuste conforme necessário) -->
-        <junit.jupiter.version>5.8.2</junit.jupiter.version>
-        <jackson.version>2.13.4</jackson.version> <!-- Verifique as versões mais recentes -->
+        <!-- Versões das dependências atualizadas -->
+        <junit.jupiter.version>5.10.2</junit.jupiter.version>
+        <jackson.version>2.17.0</jackson.version>
+
+        <!-- Versões do JavaFX (compatível com Java 21+, o JavaFX 22.0.1 é uma boa escolha recente) -->
+        <javafx.version>22.0.1</javafx.version>
+        <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
+
+        <!-- TODO: Confirme o nome completo da sua classe principal JavaFX -->
+        <!-- Exemplo: se DiarioCultural.java está em src/main/java/com/mountain_vd/DiarioCultural.java -->
+        <javafx.main.class>DiarioCultural</javafx.main.class>
     </properties>
 
     <dependencies>
@@ -42,8 +47,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Jackson (para JSON - exemplo, adicione ou remova conforme necessário) -->
-        <!-- TODO: 3. Verifique se você realmente usa Jackson e ajuste/adicione os módulos corretos -->
+        <!-- Jackson (para JSON) -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -62,17 +66,32 @@
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
-            <version>${jackson.version}</version> <!-- Use a propriedade ou a versão específica -->
+            <version>${jackson.version}</version>
         </dependency>
 
-        <!-- TODO: 4. Adicione AQUI outras dependências que seu projeto necessita -->
-        <!-- Exemplo:
+        <!-- Dependências do JavaFX -->
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.12.0</version>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
         </dependency>
-        -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <!-- Adicione outros módulos JavaFX se precisar, e.g.:
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-media</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+         -->
     </dependencies>
 
     <build>
@@ -80,28 +99,36 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version> <!-- Verifique a versão mais recente -->
+                <version>3.13.0</version> <!-- Versão mais recente -->
                 <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
+                    <!-- A tag <release> é pega da propriedade maven.compiler.release -->
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version> <!-- Ou uma versão mais recente compatível com JUnit 5 -->
+                <version>3.2.5</version> <!-- Versão mais recente -->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.2</version> <!-- Verifique a versão mais recente -->
+                <version>3.3.0</version> <!-- Versão mais recente -->
                 <configuration>
                     <archive>
                         <manifest>
-                            <!-- TODO: 5. Se sua aplicação tiver uma classe principal, defina-a aqui -->
-                             <mainClass>com.mountain_vd.src.main.java.DiarioCultural</mainClass>
+                            <mainClass>${javafx.main.class}</mainClass>
                         </manifest>
                     </archive>
+                </configuration>
+            </plugin>
+
+            <!-- Plugin do JavaFX -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>${javafx.maven.plugin.version}</version>
+                <configuration>
+                    <mainClass>${javafx.main.class}</mainClass>
                 </configuration>
             </plugin>
         </plugins>

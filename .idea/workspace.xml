@@ -4,24 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f647e7e-b96a-4417-bb0b-138eb96722ac" name="Changes" comment="Transformando projeto para Maven">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="9f647e7e-b96a-4417-bb0b-138eb96722ac" name="Changes" comment="Umas melhorias ai">
+      <change beforePath="$PROJECT_DIR$/ pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DiarioCultural.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DiarioCultural.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/dataBase/file/FileManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/dataBase/file/FileManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/dataBase/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/dataBase/repository/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/mocks/MockFilme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mocks/MockFilme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/mocks/MockGenero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mocks/MockGenero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/mocks/MockLivro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mocks/MockLivro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/mocks/MockSerie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mocks/MockSerie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -35,6 +39,7 @@
   "keyToString": {
     "Application.DiarioCultural.executor": "Run",
     "JUnit.All in PBL_Programacao_II.executor": "Run",
+    "Maven. [javafx:run].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -45,7 +50,19 @@
     "project.structure.side.proportion": "0.40574712"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn javafx:run" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.DiarioCultural">
+    <configuration name="DiarioCultural" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DiarioCultural" />
+      <module name="PBL_Programacao_II" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in PBL_Programacao_II" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PBL_Programacao_II" />
       <option name="PACKAGE_NAME" value="" />
@@ -56,6 +73,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DiarioCultural" />
         <item itemvalue="JUnit.All in PBL_Programacao_II" />
       </list>
     </recent_temporary>
@@ -77,11 +95,20 @@
       <option name="project" value="LOCAL" />
       <updated>1748474383919</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Umas melhorias ai">
+      <option name="closed" value="true" />
+      <created>1748476794424</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748476794424</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Transformando projeto para Maven" />
-    <option name="LAST_COMMIT_MESSAGE" value="Transformando projeto para Maven" />
+    <MESSAGE value="Umas melhorias ai" />
+    <option name="LAST_COMMIT_MESSAGE" value="Umas melhorias ai" />
   </component>
 </project>

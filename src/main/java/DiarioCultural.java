@@ -1,15 +1,19 @@
-package main.java;
 
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import view.Menu;
 import mocks.MockFilme;
 import mocks.MockLivro;
 import mocks.MockSerie;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.Properties;
 import java.util.Scanner;
 
 /**
@@ -38,7 +42,47 @@ import java.util.Scanner;
  * @version 1.0
  * @since 2025-04-23
  */
-public class DiarioCultural {
+public class DiarioCultural extends Application {
+
+
+    @Override
+    public void start(Stage stage) throws Exception {
+
+        // Conteúdo de fundo (pode ser qualquer layout)
+        VBox backgroundContent = new VBox(new Text("Conteúdo principal"));
+
+        // Botão flutuante
+        Button floatingButton = new Button("+");
+        floatingButton.setStyle("-fx-background-color: #009688; -fx-text-fill: white; -fx-font-size: 20px;");
+        floatingButton.setMinSize(60, 60);
+        floatingButton.setPadding(Insets.EMPTY);
+//        floatingButton.setBorder(new Border(new BorderStroke(Color.DARKGRAY, BorderStrokeStyle.SOLID, new CornerRadii(25), BorderWidths.DEFAULT)));
+//        floatingButton.setBackground(new Background(new BackgroundFill(Color.TEAL, new CornerRadii(10), Insets.EMPTY)));
+        floatingButton.setShape(new Circle(60/2));
+        // Layout para posicionar o botão
+        StackPane root = new StackPane(backgroundContent);
+
+        // Usar AnchorPane para posicionamento absoluto
+        AnchorPane floatingPane = new AnchorPane(floatingButton);
+        AnchorPane.setBottomAnchor(floatingButton, 20.0);
+        AnchorPane.setRightAnchor(floatingButton, 20.0);
+
+        root.getChildren().add(floatingPane);
+
+        BorderPane borderPane = new BorderPane();
+        VBox sidebar = new VBox(new Text("Conteúdo lateral"));
+        root.setStyle("-fx-padding: 20;");
+
+        borderPane.setCenter(root);
+        borderPane.setLeft(sidebar);
+        Scene scene = new Scene(borderPane, 700, 500);
+
+
+        stage.setScene(scene);
+        stage.setTitle("Exemplo com CSS");
+        stage.show();
+
+    }
 
     /**
      * Ponto de entrada da aplicação DiarioCultural.
@@ -49,16 +93,6 @@ public class DiarioCultural {
      * @param args argumentos de linha de comando (não utilizados atualmente).
      */
     public static void main(String[] args) {
-        boolean teste = true;
-
-        if (teste) {
-            MockFilme.rodar();
-            MockLivro.rodar();
-            MockSerie.rodar();
-        }
-
-        // Inicializa o menu principal
-        Scanner terminal = new Scanner(System.in);
-        new Menu().draw(terminal);
+        launch(args);
     }
 }
