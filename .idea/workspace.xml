@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f647e7e-b96a-4417-bb0b-138eb96722ac" name="Changes" comment="Umas melhorias ai">
+      <change afterPath="$PROJECT_DIR$/src/main/java/viewFX/Component.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/viewFX/Displayable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/viewFX/MenuBar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/viewFX/RootScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DiarioCultural.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DiarioCultural.java" afterDir="false" />
     </list>
@@ -18,11 +23,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="corretto-23" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -39,19 +48,33 @@
   "keyToString": {
     "Application.DiarioCultural.executor": "Run",
     "JUnit.All in PBL_Programacao_II.executor": "Run",
+    "Maven. [-x,javafx:run].executor": "Run",
+    "Maven. [-x].executor": "Run",
+    "Maven. [javafx:run,-x].executor": "Run",
+    "Maven. [javafx:run...].executor": "Run",
     "Maven. [javafx:run].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Usuário/Desktop/Rafael/PBL_Programacao_II",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.40574712"
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.40574712",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
+      <command value="mvn -x javafx:run" />
+      <command value="mvn javafx:run -x" />
+      <command value="mvn -x" />
+      <command value="mvn javafx:run -Dexec.executable=&quot;C:\Users\SoftwareDATA\.jdks\corretto-23.0.2\bin\java&quot;" />
       <command value="mvn javafx:run" />
     </option>
   </component>
@@ -78,6 +101,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -86,6 +117,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1748471681837</updated>
+      <workItem from="1749831281987" duration="1961000" />
     </task>
     <task id="LOCAL-00001" summary="Transformando projeto para Maven">
       <option name="closed" value="true" />
@@ -105,6 +137,9 @@
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Transformando projeto para Maven" />
