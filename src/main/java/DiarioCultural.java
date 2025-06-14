@@ -1,20 +1,10 @@
 
 import javafx.application.Application;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.text.Text;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import view.Menu;
-import mocks.MockFilme;
-import mocks.MockLivro;
-import mocks.MockSerie;
+import viewFX.RootScene;
 
-import java.util.Scanner;
+import java.util.Objects;
 
 /**
  * Classe principal do sistema DiarioCultural.
@@ -45,10 +35,17 @@ import java.util.Scanner;
 public class DiarioCultural extends Application {
     @Override
     public void start(Stage stage) throws Exception {
+        stage.setTitle("Diario Cultural");
+        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/images/favicon.png")));
+        stage.getIcons().add(image);
 
+        RootScene rootScene = new RootScene();
+        stage.setScene(rootScene.getScene());
+
+        stage.show();
     }
 
-    static void main (String[] args) {
+    public static void main (String[] args) {
         launch(args);
     }
 }

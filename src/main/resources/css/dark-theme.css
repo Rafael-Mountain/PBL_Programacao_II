@@ -1,0 +1,14 @@
+.root {
+    -fx-background-color: #1e1e1e;
+}
+
+.button, .toggle-button {
+    -fx-background-color: #444;
+    -fx-text-fill: #f5f5f5;
+    -fx-background-radius: 0;
+    -fx-font-weight: bold;
+}
+
+#MenuBar {
+    -fx-background-color: #403e3e;
+}

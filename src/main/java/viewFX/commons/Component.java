@@ -1,4 +1,4 @@
-package viewFX;
+package viewFX.commons;
 
 import javafx.scene.Node;
 
