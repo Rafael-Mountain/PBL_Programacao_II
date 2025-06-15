@@ -1,7 +1,7 @@
 package tests.controller.action.avaliacao;
 
-import controller.action.avaliacao.CreateAvaliacaoValidation;
-import model.Avaliacao;
+import com.mountain_vd.controller.action.avaliacao.CreateAvaliacaoValidation;
+import com.mountain_vd.model.Avaliacao;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

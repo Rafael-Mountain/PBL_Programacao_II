@@ -1,8 +1,8 @@
 package tests.controller.action.serie;
 
-import controller.action.serie.UpdateSerieValidation;
-import model.Genero;
-import model.Serie;
+import com.mountain_vd.controller.action.serie.UpdateSerieValidation;
+import com.mountain_vd.model.Genero;
+import com.mountain_vd.model.Serie;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

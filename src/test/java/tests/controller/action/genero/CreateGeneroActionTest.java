@@ -1,10 +1,10 @@
 package tests.controller.action.genero;
 
-import controller.action.ActionResult;
-import controller.action.genero.CreateGeneroAction;
-import controller.action.genero.CreateGeneroValidation;
-import controller.dataBase.GeneroRepository;
-import model.Genero;
+import com.mountain_vd.controller.action.ActionResult;
+import com.mountain_vd.controller.action.genero.CreateGeneroAction;
+import com.mountain_vd.controller.action.genero.CreateGeneroValidation;
+import com.mountain_vd.controller.dataBase.GeneroRepository;
+import com.mountain_vd.model.Genero;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

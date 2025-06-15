@@ -1,12 +1,12 @@
 package tests.controller.action.avaliacao;
 
-import controller.action.ActionResult;
-import controller.action.avaliacao.CreateAvaliacaoAction;
-import controller.action.avaliacao.CreateAvaliacaoValidation;
-import controller.dataBase.FilmeRepository;
-import controller.dataBase.SerieRepository;
-import controller.dataBase.LivroRepository;
-import model.*;
+import com.mountain_vd.controller.action.ActionResult;
+import com.mountain_vd.controller.action.avaliacao.CreateAvaliacaoAction;
+import com.mountain_vd.controller.action.avaliacao.CreateAvaliacaoValidation;
+import com.mountain_vd.controller.dataBase.FilmeRepository;
+import com.mountain_vd.controller.dataBase.SerieRepository;
+import com.mountain_vd.controller.dataBase.LivroRepository;
+import com.mountain_vd.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

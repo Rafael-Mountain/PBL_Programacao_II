@@ -1,7 +1,7 @@
 package tests.controller.dataBase;
 
-import controller.dataBase.SerieRepository;
-import model.Serie;
+import com.mountain_vd.controller.dataBase.SerieRepository;
+import com.mountain_vd.model.Serie;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

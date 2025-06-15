@@ -1,11 +1,11 @@
 package tests.controller.action.filme;
 
-import controller.action.ActionResult;
-import controller.action.filme.CreateFilmeAction;
-import controller.action.filme.CreateFilmeValidation;
-import controller.dataBase.FilmeRepository;
-import model.Filme;
-import model.Genero;
+import com.mountain_vd.controller.action.ActionResult;
+import com.mountain_vd.controller.action.filme.CreateFilmeAction;
+import com.mountain_vd.controller.action.filme.CreateFilmeValidation;
+import com.mountain_vd.controller.dataBase.FilmeRepository;
+import com.mountain_vd.model.Filme;
+import com.mountain_vd.model.Genero;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

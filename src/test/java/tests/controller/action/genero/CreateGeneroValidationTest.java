@@ -1,10 +1,10 @@
 package tests.controller.action.genero;
 
-import controller.action.genero.CreateGeneroValidation;
-import model.Genero;
+import com.mountain_vd.controller.action.genero.CreateGeneroValidation;
+import com.mountain_vd.model.Genero;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import controller.dataBase.GeneroRepository;
+import com.mountain_vd.controller.dataBase.GeneroRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 

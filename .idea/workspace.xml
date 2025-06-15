@@ -4,15 +4,160 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f647e7e-b96a-4417-bb0b-138eb96722ac" name="Changes" comment="Inicio da interface grafica">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/favicon2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/teste.fxml" afterDir="false" />
+    <list default="true" id="9f647e7e-b96a-4417-bb0b-138eb96722ac" name="Changes" comment="Criação da barra lateral e dos temas">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/util/EnumUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/MenuBar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/RootScene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/SearchPane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/SearchTableResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/handlers/Filme/FilmeSearchPaneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/handlers/MenuBarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/handlers/SearchPaneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mountain_vd/view/teste.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DiarioCultural.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DiarioCultural.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewFX/Displayable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewFX/Displayable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewFX/MenuBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewFX/MenuBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/viewFX/RootScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/viewFX/RootScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DiarioCultural.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/DiarioCultural.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/ActionResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/ActionResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/BaseAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/BaseAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/BaseSetAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/BaseSetAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/Validation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/Validation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/avaliacao/CreateAvaliacaoAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/avaliacao/CreateAvaliacaoAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/avaliacao/CreateAvaliacaoValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/avaliacao/CreateAvaliacaoValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/filme/CreateFilmeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/filme/CreateFilmeAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/filme/CreateFilmeValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/filme/CreateFilmeValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/filme/UpdateFilmeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/filme/UpdateFilmeAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/filme/UpdateFilmeValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/filme/UpdateFilmeValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/genero/CreateGeneroAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/genero/CreateGeneroAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/genero/CreateGeneroValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/genero/CreateGeneroValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/livro/CreateLivroAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/livro/CreateLivroAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/livro/CreateLivroValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/livro/CreateLivroValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/livro/UpdateLivroAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/livro/UpdateLivroAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/livro/UpdateLivroValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/livro/UpdateLivroValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/serie/CreateSerieAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/serie/CreateSerieAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/serie/CreateSerieValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/serie/CreateSerieValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/serie/UpdateSerieAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/serie/UpdateSerieAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/serie/UpdateSerieValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/serie/UpdateSerieValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/temporada/CreateTemporadaAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/temporada/CreateTemporadaAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/action/temporada/CreateTemporadaValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/temporada/CreateTemporadaValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/dataBase/FilmeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/dataBase/FilmeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/dataBase/GeneroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/dataBase/GeneroRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/dataBase/LivroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/dataBase/LivroRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/dataBase/SerieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/dataBase/SerieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/dataBase/file/FileManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/dataBase/file/FileManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/dataBase/repository/IRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/dataBase/repository/IRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/dataBase/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/dataBase/repository/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/dataBase/repository/RepositoryContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/dataBase/repository/RepositoryContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/filter/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/filter/Filter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/filter/FilterChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/filter/FilterChain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/filter/GenreFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/filter/GenreFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/filter/GenreFilterType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/filter/GenreFilterType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/filter/YearFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/filter/YearFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/filter/YearFilterType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/filter/YearFilterType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/SearchAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/SearchAll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/SearchAutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/SearchAutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/SearchDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/SearchDirector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/SearchElenco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/SearchElenco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/SearchFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/SearchFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/SearchFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/SearchFields.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/SearchGenre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/SearchGenre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/SearchISBN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/SearchISBN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/SearchResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/SearchResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/SearchTitle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/SearchTitle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/SearchYear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/SearchYear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/filme/SearchFilmeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/filme/SearchFilmeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/filme/SearchFilmeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/filme/SearchFilmeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/livro/SearchLivroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/livro/SearchLivroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/livro/SearchLivroFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/livro/SearchLivroFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/serie/SearchSerieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/serie/SearchSerieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/search/serie/SearchSerieFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/search/serie/SearchSerieFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/util/DateFormater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/util/DateFormater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mocks/MockFilme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/mocks/MockFilme.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mocks/MockGenero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/mocks/MockGenero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mocks/MockLivro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/mocks/MockLivro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mocks/MockSerie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/mocks/MockSerie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Avaliacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/model/Avaliacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Filme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/model/Filme.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Genero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/model/Genero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/model/Livro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/model/Media.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/MediaAudioVisual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/model/MediaAudioVisual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Serie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/model/Serie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Temporada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/model/Temporada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/TipoMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/model/TipoMedia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/commons/IAvaliavel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/model/commons/IAvaliavel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/commons/ITemAvaliacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/model/commons/ITemAvaliacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/commons/Identifiable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/model/commons/Identifiable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ListGridMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/ListGridMedia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ListMidia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/ListMidia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MenuCreateMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/MenuCreateMedia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MenuListMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/MenuListMedia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/SearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/SearchView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/avaliacao/AvaliacaoDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/avaliacao/AvaliacaoDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/avaliacao/CreateAvaliacaoForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/avaliacao/CreateAvaliacaoForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/commons/IScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/commons/IScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/commons/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/commons/Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/commons/ViewCommons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/commons/ViewCommons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/filme/CreateFilmeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/filme/CreateFilmeForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/filme/FilmeDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/filme/FilmeDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/filme/FilmeListMidia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/filme/FilmeListMidia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/filme/SearchViewFilme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/filme/SearchViewFilme.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/filme/UpdateFilmeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/filme/UpdateFilmeForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/genero/CreateGeneroForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/genero/CreateGeneroForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/genero/GeneroMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/genero/GeneroMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/genero/ListGenero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/genero/ListGenero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/livro/CreateLivroForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/livro/CreateLivroForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/livro/LivroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/livro/LivroDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/livro/LivroListMidia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/livro/LivroListMidia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/livro/SearchViewLivro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/livro/SearchViewLivro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/livro/UpdateLivroForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/livro/UpdateLivroForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/serie/CreateSerieForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/serie/CreateSerieForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/serie/SearchViewSerie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/serie/SearchViewSerie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/serie/SerieDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/serie/SerieDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/serie/SerieListMidia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/serie/SerieListMidia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/serie/UpdateSerieForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/serie/UpdateSerieForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/serie/temporada/CreateTemporadaForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/serie/temporada/CreateTemporadaForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/serie/temporada/TemporadaDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/view/serie/temporada/TemporadaDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewFX/MenuBar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewFX/RootScene.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewFX/SearchView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewFX/VouVerAinda/SwitchButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/VouVerAinda/SwitchButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewFX/VouVerAinda/Teste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/VouVerAinda/Teste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewFX/commons/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/commons/Component.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/viewFX/commons/Displayable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/commons/Displayable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/teste.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/avaliacao/CreateAvaliacaoActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/avaliacao/CreateAvaliacaoActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/avaliacao/CreateAvaliacaoValidationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/avaliacao/CreateAvaliacaoValidationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/filme/CreateFilmeActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/filme/CreateFilmeActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/filme/CreateFilmeValidationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/filme/CreateFilmeValidationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/filme/UpdateFilmeActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/filme/UpdateFilmeActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/filme/UpdateFilmeValidationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/filme/UpdateFilmeValidationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/genero/CreateGeneroActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/genero/CreateGeneroActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/genero/CreateGeneroValidationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/genero/CreateGeneroValidationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/livro/CreateLivroActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/livro/CreateLivroActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/livro/CreateLivroValidationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/livro/CreateLivroValidationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/livro/UpdateSerieActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/livro/UpdateSerieActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/livro/UpdateSerieValidationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/livro/UpdateSerieValidationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/serie/CreateSerieActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/serie/CreateSerieActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/serie/CreateSerieValidationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/serie/CreateSerieValidationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/serie/UpdateSerieActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/serie/UpdateSerieActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/serie/UpdateSerieValidationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/serie/UpdateSerieValidationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/temporada/CreateTemporadaActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/temporada/CreateTemporadaActionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/action/temporada/CreateTemporadaValidationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/action/temporada/CreateTemporadaValidationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/dataBase/FilmeRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/dataBase/FilmeRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/dataBase/GeneroRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/dataBase/GeneroRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/dataBase/LivroRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/dataBase/LivroRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/controller/dataBase/SerieRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/controller/dataBase/SerieRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/model/AvaliacaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/model/AvaliacaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/model/FilmeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/model/FilmeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/model/GeneroTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/model/GeneroTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/model/LivroTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/model/LivroTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/model/TemporadaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/model/TemporadaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +167,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -50,14 +195,16 @@
     "JUnit.All in PBL_Programacao_II.executor": "Run",
     "Maven. [-x,javafx:run].executor": "Run",
     "Maven. [-x].executor": "Run",
+    "Maven. [clean,javafx:run].executor": "Run",
     "Maven. [javafx:run,-x].executor": "Run",
     "Maven. [javafx:run...].executor": "Run",
     "Maven. [javafx:run].executor": "Run",
+    "Maven.JavaFX Debug.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/SoftwareDATA/Desktop/Rafael/PBL_Programacao_II/src/main/resources/images",
+    "last_opened_file_path": "C:/Users/SoftwareDATA/Desktop/Rafael/PBL_Programacao_II/src/main/resources/css",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -71,6 +218,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SoftwareDATA\Desktop\Rafael\PBL_Programacao_II\src\main\resources\css" />
+      <recent name="C:\Users\SoftwareDATA\Desktop\Rafael\PBL_Programacao_II\src\main\resources\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SoftwareDATA\Desktop\Rafael\PBL_Programacao_II\src\main\java" />
       <recent name="C:\Users\SoftwareDATA\Desktop\Rafael\PBL_Programacao_II\src\main\resources\images" />
     </key>
   </component>
@@ -80,12 +232,13 @@
       <command value="mvn javafx:run -x" />
       <command value="mvn -x" />
       <command value="mvn javafx:run -Dexec.executable=&quot;C:\Users\SoftwareDATA\.jdks\corretto-23.0.2\bin\java&quot;" />
+      <command value="mvn clean javafx:run" />
       <command value="mvn javafx:run" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.DiarioCultural">
+  <component name="RunManager" selected="Maven.JavaFX Debug">
     <configuration name="DiarioCultural" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DiarioCultural" />
+      <option name="MAIN_CLASS_NAME" value="com.mountain_vd.DiarioCultural" />
       <module name="PBL_Programacao_II" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -99,6 +252,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JavaFX Debug" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings">
+          <MavenRunnerSettings>
+            <option name="delegateBuildToMaven" value="false" />
+            <option name="environmentProperties">
+              <map />
+            </option>
+            <option name="jreName" value="corretto-23" />
+            <option name="mavenProperties">
+              <map />
+            </option>
+            <option name="passParentEnv" value="true" />
+            <option name="runMavenInBackground" value="true" />
+            <option name="skipTests" value="false" />
+            <option name="vmOptions" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005" />
+          </MavenRunnerSettings>
+        </option>
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.DiarioCultural" />
+      <item itemvalue="JUnit.All in PBL_Programacao_II" />
+      <item itemvalue="Maven.JavaFX Debug" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.DiarioCultural" />
@@ -125,7 +328,8 @@
       <workItem from="1749831281987" duration="2669000" />
       <workItem from="1749848104087" duration="1698000" />
       <workItem from="1749858292079" duration="591000" />
-      <workItem from="1749859153154" duration="2455000" />
+      <workItem from="1749859153154" duration="9088000" />
+      <workItem from="1749898869659" duration="41581000" />
     </task>
     <task id="LOCAL-00001" summary="Transformando projeto para Maven">
       <option name="closed" value="true" />
@@ -151,16 +355,47 @@
       <option name="project" value="LOCAL" />
       <updated>1749834151036</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Criação da barra lateral e dos temas">
+      <option name="closed" value="true" />
+      <created>1749869032465</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1749869032465</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Transformando projeto para Maven" />
     <MESSAGE value="Umas melhorias ai" />
     <MESSAGE value="Inicio da interface grafica" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inicio da interface grafica" />
+    <MESSAGE value="Criação da barra lateral e dos temas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criação da barra lateral e dos temas" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/filter/GenreFilter.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

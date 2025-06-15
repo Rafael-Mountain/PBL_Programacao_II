@@ -1,6 +1,6 @@
 package tests.model;
 
-import model.Genero;
+import com.mountain_vd.model.Genero;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

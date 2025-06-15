@@ -1,7 +1,7 @@
 package tests.controller.dataBase;
 
-import controller.dataBase.LivroRepository;
-import model.Livro;
+import com.mountain_vd.controller.dataBase.LivroRepository;
+import com.mountain_vd.model.Livro;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

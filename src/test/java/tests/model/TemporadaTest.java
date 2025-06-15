@@ -1,6 +1,6 @@
 package tests.model;
 
-import model.*;
+import com.mountain_vd.model.*;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

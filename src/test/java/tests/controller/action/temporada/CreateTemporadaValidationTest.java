@@ -1,7 +1,7 @@
 package tests.controller.action.temporada;
 
-import controller.action.temporada.CreateTemporadaValidation;
-import model.Temporada;
+import com.mountain_vd.controller.action.temporada.CreateTemporadaValidation;
+import com.mountain_vd.model.Temporada;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

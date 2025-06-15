@@ -1,11 +1,11 @@
 package tests.controller.action.livro;
 
-import controller.action.ActionResult;
-import controller.action.serie.UpdateSerieAction;
-import controller.action.serie.UpdateSerieValidation;
-import controller.dataBase.SerieRepository;
-import model.Genero;
-import model.Serie;
+import com.mountain_vd.controller.action.ActionResult;
+import com.mountain_vd.controller.action.serie.UpdateSerieAction;
+import com.mountain_vd.controller.action.serie.UpdateSerieValidation;
+import com.mountain_vd.controller.dataBase.SerieRepository;
+import com.mountain_vd.model.Genero;
+import com.mountain_vd.model.Serie;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

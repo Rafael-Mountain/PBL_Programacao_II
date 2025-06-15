@@ -1,8 +1,8 @@
 package tests.controller.action.filme;
 
-import controller.action.filme.UpdateFilmeValidation;
-import model.Filme;
-import model.Genero;
+import com.mountain_vd.controller.action.filme.UpdateFilmeValidation;
+import com.mountain_vd.model.Filme;
+import com.mountain_vd.model.Genero;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

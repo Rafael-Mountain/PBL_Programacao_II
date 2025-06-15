@@ -1,7 +1,7 @@
 package roller.dataBase;
 
-import controller.dataBase.FilmeRepository;
-import model.Filme;
+import com.mountain_vd.controller.dataBase.FilmeRepository;
+import com.mountain_vd.model.Filme;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

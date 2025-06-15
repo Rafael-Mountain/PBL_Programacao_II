@@ -1,0 +1,15 @@
+.root {
+    -fx-background-color: #f5f5f5;
+}
+
+/*id da div dos botões laterais*/
+#div_botoes_menu_bar{
+    -fx-spacing: 15;
+}
+
+/*generoLabel.setStyle("-fx-background-color: #FFC0CB; " +  // Rosa claro*/
+/*"-fx-border-radius: 15; " +*/
+/*"-fx-background-radius: 15; " +*/
+/*"-fx-padding: 5 10; " +*/
+/*"-fx-text-fill: #333333;");*/
+

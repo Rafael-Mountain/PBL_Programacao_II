@@ -1,11 +1,11 @@
 package tests.controller.action.temporada;
 
-import controller.action.ActionResult;
-import controller.action.temporada.CreateTemporadaAction;
-import controller.action.temporada.CreateTemporadaValidation;
-import controller.dataBase.SerieRepository;
-import model.Serie;
-import model.Temporada;
+import com.mountain_vd.controller.action.ActionResult;
+import com.mountain_vd.controller.action.temporada.CreateTemporadaAction;
+import com.mountain_vd.controller.action.temporada.CreateTemporadaValidation;
+import com.mountain_vd.controller.dataBase.SerieRepository;
+import com.mountain_vd.model.Serie;
+import com.mountain_vd.model.Temporada;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

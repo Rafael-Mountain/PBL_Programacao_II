@@ -1,7 +1,7 @@
 package tests.controller.dataBase;
 
-import controller.dataBase.GeneroRepository;
-import model.Genero;
+import com.mountain_vd.controller.dataBase.GeneroRepository;
+import com.mountain_vd.model.Genero;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

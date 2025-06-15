@@ -13,21 +13,24 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>23</maven.compiler.release> <!-- Java 23 -->
 
-        <!-- Versões das dependências atualizadas -->
         <junit.jupiter.version>5.10.2</junit.jupiter.version>
         <jackson.version>2.17.0</jackson.version>
-
-        <!-- Versões do JavaFX (compatível com Java 21+, o JavaFX 22.0.1 é uma boa escolha recente) -->
         <javafx.version>22.0.1</javafx.version>
         <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
 
-        <!-- TODO: Confirme o nome completo da sua classe principal JavaFX -->
-        <!-- Exemplo: se DiarioCultural.java está em src/main/java/com/mountain_vd/DiarioCultural.java -->
-        <javafx.main.class>DiarioCultural</javafx.main.class>
+        <!-- Substitua com o nome real da classe principal -->
+        <javafx.main.class>com.mountain_vd.DiarioCultural</javafx.main.class>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+
     <dependencies>
-        <!-- JUnit 5 (para testes) -->
+        <!-- JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -47,7 +50,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Jackson (para JSON) -->
+        <!-- Jackson para JSON -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -69,7 +72,7 @@
             <version>${jackson.version}</version>
         </dependency>
 
-        <!-- Dependências do JavaFX -->
+        <!-- JavaFX -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -80,18 +83,6 @@
             <artifactId>javafx-fxml</artifactId>
             <version>${javafx.version}</version>
         </dependency>
-        <!-- Adicione outros módulos JavaFX se precisar, e.g.:
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>${javafx.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-media</artifactId>
-            <version>${javafx.version}</version>
-        </dependency>
-         -->
     </dependencies>
 
     <build>
@@ -99,20 +90,22 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version> <!-- Versão mais recente -->
+                <version>3.13.0</version>
                 <configuration>
-                    <!-- A tag <release> é pega da propriedade maven.compiler.release -->
+                    <!-- A tag <release> é definida na propriedade -->
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version> <!-- Versão mais recente -->
+                <version>3.2.5</version>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.3.0</version> <!-- Versão mais recente -->
+                <version>3.3.0</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -122,7 +115,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Plugin do JavaFX -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
@@ -131,6 +123,7 @@
                     <mainClass>${javafx.main.class}</mainClass>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
@@ -152,6 +145,5 @@
                 </executions>
             </plugin>
         </plugins>
-
     </build>
 </project>

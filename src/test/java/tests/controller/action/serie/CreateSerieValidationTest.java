@@ -1,9 +1,9 @@
 package tests.controller.action.serie;
 
-import controller.action.serie.CreateSerieValidation;
-import model.Serie;
-import model.Genero;
-import controller.dataBase.SerieRepository;
+import com.mountain_vd.controller.action.serie.CreateSerieValidation;
+import com.mountain_vd.model.Serie;
+import com.mountain_vd.model.Genero;
+import com.mountain_vd.controller.dataBase.SerieRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
