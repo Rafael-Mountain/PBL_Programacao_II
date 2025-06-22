@@ -85,7 +85,7 @@ public class SearchPane implements Component {
         Button floatingButton = new Button("+");
         floatingButton.setId("floatingButton");
         floatingButton.setOnAction(e -> {
-//            rootScene.setMainContent(controller.getAddScreen());
+            rootScene.setMainContent(controller.getAddScreen());
         });
         return floatingButton;
     }
