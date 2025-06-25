@@ -11,7 +11,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>23</maven.compiler.release> <!-- Java 23 -->
+        <maven.compiler.release>21</maven.compiler.release> <!-- Java 23 -->
 
         <junit.jupiter.version>5.10.2</junit.jupiter.version>
         <jackson.version>2.17.0</jackson.version>

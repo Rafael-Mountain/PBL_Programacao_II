@@ -5,6 +5,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import com.mountain_vd.viewFX.commons.Displayable;
 
+import java.util.Objects;
+
 
 public class RootScene implements Displayable {
     BorderPane borderPane;
@@ -22,12 +24,12 @@ public class RootScene implements Displayable {
 
     private void init() {
         setBaseTheme();
-//        setLitghMode();
+        setLightMode();
     }
 
     @Override
     public void render() {
-        borderPane = new BorderPane();
+        borderPane = new BorderPane(); //
         scene = new Scene(borderPane, 1000, 600);
 
 
@@ -38,22 +40,22 @@ public class RootScene implements Displayable {
 
     }
 
-    public void setLitghMode() {
+    public void setLightMode() {
         scene.getStylesheets().clear();
         setBaseTheme();
-//        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/light-theme.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/light-theme.css")).toExternalForm());
 
     }
 
     public void setDarkMode() {
         scene.getStylesheets().clear();
         setBaseTheme();
-//        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/dark-theme.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/dark-theme.css")).toExternalForm());
     }
 
     private void setBaseTheme(){
-//        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/reset.css")).toExternalForm());
-//        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/base.css")).toExternalForm());
+        //scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/reset.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/base.css")).toExternalForm());
     }
 
     public void setMainContent(Node node) {

@@ -3,10 +3,14 @@
 }
 
 .button, .toggle-button {
-    -fx-background-color: #444;
+    -fx-background-color: #FF8300;
     -fx-text-fill: #f5f5f5;
-    -fx-background-radius: 0;
     -fx-font-weight: bold;
+}
+
+.toggle-button:selected {
+    -fx-background-color: #808080;  /* verde de destaque */
+    -fx-text-fill: white;
 }
 
 #MenuBar {

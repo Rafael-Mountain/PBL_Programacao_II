@@ -40,6 +40,7 @@ public class MenuBar implements Component {
         ToggleButton livroButton = renderMediaButton("Livro", mediaToggleGroup, controller::onLivroSelected);
 
         VBox buttonVbox = new VBox(filmeButton, serieButton, livroButton);
+        buttonVbox.getStyleClass().add("media_vbox");
         buttonVbox.setId("div_botoes_menu_bar");
 
         HBox divThemeButton = new HBox(renderThemeButton());

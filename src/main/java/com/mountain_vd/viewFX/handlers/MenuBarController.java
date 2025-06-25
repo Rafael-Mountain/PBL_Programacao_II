@@ -1,5 +1,6 @@
 package com.mountain_vd.viewFX.handlers;
 
+import com.mountain_vd.viewFX.handlers.Livro.LivroSearchPaneController;
 import javafx.scene.control.ToggleButton;
 import com.mountain_vd.viewFX.RootScene;
 import com.mountain_vd.viewFX.SearchPane;
@@ -23,8 +24,8 @@ public class MenuBarController {
     }
 
     public void onLivroSelected() {
-        System.out.println("Ação do botão Livro");
-        // lógica para livros
+        SearchPane pane = new SearchPane(rootScene, new LivroSearchPaneController(rootScene));
+        rootScene.setMainContent(pane.getNode());
     }
 
     public void onThemeToggle(ToggleButton toggleButton) {
@@ -33,7 +34,7 @@ public class MenuBarController {
             rootScene.setDarkMode();
         } else {
             toggleButton.setText("Modo Claro");
-            rootScene.setLitghMode();
+            rootScene.setLightMode();
         }
     }
 }
