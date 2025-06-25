@@ -6,6 +6,7 @@ import com.mountain_vd.controller.search.SearchFields;
 import com.mountain_vd.controller.search.SearchResults;
 import com.mountain_vd.controller.util.EnumUtils;
 import com.mountain_vd.viewFX.RootScene;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 
 import java.util.AbstractMap.SimpleEntry;
@@ -14,8 +15,8 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class SearchPaneController {
-    RootScene rootScene;
-    SearchResults searchResults;
+    protected RootScene rootScene;
+    private SearchResults searchResults;
 
     SearchFields searchField;
     SimpleEntry<GenreFilterType, String> genreFilter;
@@ -31,7 +32,7 @@ public abstract class SearchPaneController {
 
     public abstract Map<String, SearchFields> getSearchFields();
     public abstract SearchController getSearchController(String searchTerm, SearchFields searchField);
-//    public abstract getAddScreen()
+    public abstract Node getAddScreen();
 
     public void search(){
         if (searchTerm == null || searchTerm.isEmpty()){
