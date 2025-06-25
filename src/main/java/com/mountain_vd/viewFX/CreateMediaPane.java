@@ -1,13 +1,17 @@
 package com.mountain_vd.viewFX;
 
 import com.mountain_vd.viewFX.commons.Component;
+import com.mountain_vd.viewFX.forms.*;
 import javafx.scene.Node;
 import javafx.scene.layout.VBox;
 
 public class CreateMediaPane implements Component {
+    RootScene rootScene;
     VBox vbox;
 
+
     public CreateMediaPane(RootScene rootScene) {
+        this.rootScene = rootScene;
         render();
     }
 
@@ -20,16 +24,10 @@ public class CreateMediaPane implements Component {
     public void render() {
         vbox = new VBox(10);
 
-        GenrePickerPane genrePickerPane = new GenrePickerPane();
+        SerieForm mediaForm = new SerieForm(rootScene);
+        mediaForm.addTabAvailable();
+        mediaForm.addTabTemporada();
 
-        vbox.getChildren().add(genrePickerPane.getNode());
-
-        // Aqui você pode adicionar outros componentes, como campos de entrada, botões, etc.
-        // Exemplo:
-        // TextField titleField = new TextField();
-        // titleField.setPromptText("Título do Mídia");
-        // vbox.getChildren().add(titleField);
-
-        // Adicione mais componentes conforme necessário
+        vbox.getChildren().add(mediaForm.getNode());
     }
 }

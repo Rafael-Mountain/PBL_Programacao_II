@@ -3,6 +3,7 @@ package com.mountain_vd.viewFX;
 import com.mountain_vd.controller.filter.GenreFilterType;
 import com.mountain_vd.controller.filter.YearFilterType;
 import com.mountain_vd.controller.util.EnumUtils;
+import com.mountain_vd.controller.util.TextFieldUtil;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -123,15 +124,7 @@ public class SearchPane implements Component {
         HBox filterBox = new HBox();
         genreFilter = new FilterItem("Genêro", EnumUtils.getDescricoes(GenreFilterType.class));
 
-        int maxDigits = 4;
-        TextFormatter<String> numericFormatter = new TextFormatter<>(change -> {
-            String newText = change.getControlNewText();
-            if (newText.matches("\\d{0," + maxDigits + "}")) {
-                return change;
-            }
-            return null;
-        });
-        yearFilter = new FilterItem("Ano", EnumUtils.getDescricoes(YearFilterType.class),numericFormatter);
+        yearFilter = new FilterItem("Ano", EnumUtils.getDescricoes(YearFilterType.class), TextFieldUtil.numericFormatter(4));
 
 
         HBox.setHgrow(genreFilter.getNode(), Priority.ALWAYS);

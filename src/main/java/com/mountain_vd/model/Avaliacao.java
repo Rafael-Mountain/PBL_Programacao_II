@@ -26,7 +26,7 @@ public class Avaliacao {
     private LocalDate dataConsumo;
 
     /**
-     * Construtor padrão.
+     * Construtor padrão
      */
     public Avaliacao() {}
 

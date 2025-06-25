@@ -6,36 +6,46 @@ import com.mountain_vd.controller.action.genero.CreateGeneroValidation;
 import com.mountain_vd.controller.dataBase.GeneroRepository;
 import com.mountain_vd.controller.util.StringUtil;
 import com.mountain_vd.model.Genero;
+import com.mountain_vd.viewFX.RootScene;
 import javafx.collections.ObservableList;
 
-public class GenrePickerController {
+public class GenreListController {
+    RootScene rootScene;
 
-    public static void addGenre(String genre, ObservableList<Genero> generos) {
+    public GenreListController(RootScene rootScene) {
+        this.rootScene = rootScene;
+    }
+
+    @SuppressWarnings("unchecked")
+    public void addGenre(String genre, ObservableList generos) {
         if (genre != null && !genre.trim().isEmpty()) {
             String trimmedFilter = genre.trim();
 
+            // Safe cast
+            ObservableList<Genero> generoList = (ObservableList<Genero>) generos;
+
             GeneroRepository repository = GeneroRepository.getInstance();
 
-            // Busca um gênero no repositório com nome igual, ignorando maiúsculas/minúsculas e espaços
+            // Busca um gênero existente
             Genero generoEncontrado = repository.getItems().stream()
                     .filter(g -> g.getNome().trim().equalsIgnoreCase(trimmedFilter))
                     .findFirst()
                     .orElse(null);
 
-            // Se encontrado e ainda não estiver na lista, adiciona
-            if (generoEncontrado != null && generos.stream()
+            if (generoEncontrado != null && generoList.stream()
                     .noneMatch(g -> g.getNome().trim().equalsIgnoreCase(trimmedFilter))) {
-                generos.add(generoEncontrado);
+                generoList.add(generoEncontrado);
             } else if (generoEncontrado == null) {
-                // Capitaliza todas as palavras (ex: "rock alternativo" → "Rock Alternativo")
+                // Capitaliza o nome
                 String capitalizado = StringUtil.capitalize(trimmedFilter);
-
                 Genero novoGenero = new Genero(capitalizado);
                 CreateGeneroAction createGeneroAction = new CreateGeneroAction(new CreateGeneroValidation());
-                ActionResult result = createGeneroAction.execute(novoGenero); // Executa a ação de criação
+                ActionResult result = createGeneroAction.execute(novoGenero);
 
                 if (result.isSuccess()) {
-                    generos.add(novoGenero); // Adiciona o novo gênero à lista
+                    generoList.add(novoGenero);
+                }else {
+                    rootScene.showMessage(result.getMessage());
                 }
             }
         }
