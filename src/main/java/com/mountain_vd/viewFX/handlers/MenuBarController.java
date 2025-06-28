@@ -1,6 +1,7 @@
 package com.mountain_vd.viewFX.handlers;
 
 import com.mountain_vd.viewFX.handlers.Livro.LivroSearchPaneController;
+import com.mountain_vd.viewFX.handlers.Serie.SerieSearchPaneController;
 import javafx.scene.control.ToggleButton;
 import com.mountain_vd.viewFX.RootScene;
 import com.mountain_vd.viewFX.SearchPane;
@@ -19,8 +20,8 @@ public class MenuBarController {
     }
 
     public void onSerieSelected() {
-        System.out.println("Ação do botão Série");
-        // lógica para séries
+        SearchPane pane = new SearchPane(rootScene, new SerieSearchPaneController(rootScene));
+        rootScene.setMainContent(pane.getNode());
     }
 
     public void onLivroSelected() {

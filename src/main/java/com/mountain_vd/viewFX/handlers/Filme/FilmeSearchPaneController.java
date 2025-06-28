@@ -20,7 +20,6 @@ public class FilmeSearchPaneController extends SearchPaneController {
     }
 
     private void initFields() {
-        fields.put("Tudo", SearchFields.TUDO);
         fields.put("Título", SearchFields.TITULO);
         fields.put("Gênero", SearchFields.GENERO);
         fields.put("Ano de Lançamento", SearchFields.ANO_LANCAMENTO);

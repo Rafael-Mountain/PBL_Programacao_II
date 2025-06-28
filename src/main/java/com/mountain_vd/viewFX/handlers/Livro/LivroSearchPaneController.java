@@ -3,8 +3,10 @@ package com.mountain_vd.viewFX.handlers.Livro;
 import com.mountain_vd.controller.search.SearchController;
 import com.mountain_vd.controller.search.SearchFields;
 import com.mountain_vd.controller.search.livro.SearchLivroController;
+import com.mountain_vd.viewFX.CreateMediaPane;
 import com.mountain_vd.viewFX.RootScene;
 import com.mountain_vd.viewFX.handlers.SearchPaneController;
+import javafx.scene.Node;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +26,6 @@ public class LivroSearchPaneController extends SearchPaneController {
         fields.put("Ano de Lançamento", SearchFields.ANO_LANCAMENTO);
         fields.put("Autor", SearchFields.AUTOR);
         fields.put("ISBN", SearchFields.ISBN);
-        fields.put("Roteiro", SearchFields.ROTEIRO);
     }
 
     @Override
@@ -35,6 +36,12 @@ public class LivroSearchPaneController extends SearchPaneController {
     @Override
     public SearchController getSearchController(String searchTerm, SearchFields searchField) {
         return new SearchLivroController(searchTerm, searchField);
+    }
+
+    @Override
+    public Node getAddScreen() {
+        CreateMediaPane pane = new CreateMediaPane(rootScene);
+        return pane.getNode();
     }
 }
 
