@@ -16,6 +16,22 @@ public class LivroForm extends MediaForm {
         super(rootScene);
     }
 
+    public String getAutor() {
+        return autorField.getText();
+    }
+
+    public String getEditora() {
+        return editoraField.getText();
+    }
+
+    public boolean getPossuiCheckbox() {
+        return possuiCheckbox.isSelected();
+    }
+
+    public String getIsbn() {
+        return isbnField.getText();
+    }
+
     @Override
     public void render() {
         tabPane = new TabPane();

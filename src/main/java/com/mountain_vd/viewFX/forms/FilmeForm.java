@@ -14,6 +14,18 @@ public class FilmeForm extends MediaAudioVisualForm {
         render();
     }
 
+    public String getDuracao() {
+        return duracaoField.getText();
+    }
+
+    public String getDiretor() {
+        return diretorField.getText();
+    }
+
+    public String getRoteiro() {
+        return roteiroTextArea.getText();
+    }
+
     @Override
     public void render() {
         tabPane = new TabPane();

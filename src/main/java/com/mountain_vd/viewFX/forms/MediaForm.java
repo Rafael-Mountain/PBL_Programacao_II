@@ -37,6 +37,22 @@ public class MediaForm implements Component {
         return tabPane;
     }
 
+    public String getTitle() {
+        return titleField.getText();
+    }
+
+    public String getAno() {
+        return anoField.getText();
+    }
+
+    public boolean getConsumer() {
+        return consumerCheckbox.isSelected();
+    }
+
+    public List<Avaliacao> getAvaliacoes() {
+        return avaliacaos;
+    }
+
     @Override
     public void render() {
         tabPane = new TabPane();

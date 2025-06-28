@@ -11,6 +11,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 
+import java.util.List;
+
 public class MediaAudioVisualForm extends MediaForm {
     private TextField tituloOriginalField;
     private TextField LocalDisponivelField;
@@ -18,6 +20,18 @@ public class MediaAudioVisualForm extends MediaForm {
 
     public MediaAudioVisualForm(RootScene rootScene) {
         super(rootScene);
+    }
+
+    public String getTituloOriginal() {
+        return tituloOriginalField.getText();
+    }
+
+    public String getLocalDisponivel() {
+        return LocalDisponivelField.getText();
+    }
+
+    public List<String> getElenco() {
+        return elenco;
     }
 
     @Override

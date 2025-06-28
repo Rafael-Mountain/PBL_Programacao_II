@@ -11,6 +11,7 @@ import javafx.scene.layout.*;
 
 import java.time.LocalDateTime;
 import  java.time.LocalDate;
+import java.util.List;
 
 public class SerieForm extends MediaAudioVisualForm {
 
@@ -20,6 +21,14 @@ public class SerieForm extends MediaAudioVisualForm {
     public SerieForm(RootScene rootScene) {
         super(rootScene);
         this.temporadas = FXCollections.observableArrayList();
+    }
+
+    public DatePicker getDataFimPicker() {
+        return dataFimPicker;
+    }
+
+    public List<Temporada> getTemporadas() {
+        return temporadas;
     }
 
     /**

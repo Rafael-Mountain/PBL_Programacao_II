@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f647e7e-b96a-4417-bb0b-138eb96722ac" name="Changes" comment="Merge com o projeto">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/RootScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/RootScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/FilmeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/FilmeForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/LivroForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/LivroForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/MediaAudioVisualForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/MediaAudioVisualForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/MediaForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/MediaForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/SerieForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/SerieForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/handlers/Filme/FilmeSearchPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/handlers/Filme/FilmeSearchPaneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/handlers/Livro/LivroSearchPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/handlers/Livro/LivroSearchPaneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/handlers/MenuBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/handlers/MenuBarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/handlers/Serie/SerieSearchPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/handlers/Serie/SerieSearchPaneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/TemporadaForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/TemporadaForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +196,7 @@
       <workItem from="1749858292079" duration="591000" />
       <workItem from="1749859153154" duration="9088000" />
       <workItem from="1749898869659" duration="41581000" />
-      <workItem from="1751134006112" duration="730000" />
+      <workItem from="1751134006112" duration="2202000" />
     </task>
     <task id="LOCAL-00001" summary="Transformando projeto para Maven">
       <option name="closed" value="true" />
@@ -231,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749869032465</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Merge com o projeto">
+      <option name="closed" value="true" />
+      <created>1751137754791</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1751137754791</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
