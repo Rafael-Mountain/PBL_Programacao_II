@@ -18,10 +18,8 @@ public class ElencoListController {
                 .anyMatch(a -> a.trim().toLowerCase().equals(atorFormatado));
 
         if (jaExiste) {
-            rootScene.showMessage("Ator já adicionado.\nO ator \"" + ator + "\" já está na lista.");
+            rootScene.showError("Ator já adicionado.\nO ator \"" + ator + "\" já está na lista.");
         } else {
-            System.out.println("Adicionando ator: " + ator);
-
             elencoList.add(StringUtil.capitalize(ator));
         }
 

@@ -45,7 +45,7 @@ public class GenreListController {
                 if (result.isSuccess()) {
                     generoList.add(novoGenero);
                 }else {
-                    rootScene.showMessage(result.getMessage());
+                    rootScene.showError(result.getMessage());
                 }
             }
         }

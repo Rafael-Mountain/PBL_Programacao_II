@@ -41,7 +41,7 @@ public class FilmeSearchPaneController extends SearchPaneController {
 
     @Override
     public Node getAddScreen() {
-        CreateMediaPane pane = new CreateMediaPane(rootScene);
+        CreateMediaPane pane = new CreateMediaPane(rootScene,new CreateFilmeController(rootScene));
         return pane.getNode();
     }
 }

@@ -2,7 +2,7 @@ package com.mountain_vd.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +20,7 @@ public class Serie extends MediaAudioVisual implements Cloneable {
     private int temporadaId = 0;
 
     /** Data de término da série. */
-    private LocalDateTime dataFim;
+    private LocalDate dataFim;
 
     /** Lista de temporadas da série. */
     private List<Temporada> temporadas;
@@ -49,9 +49,9 @@ public class Serie extends MediaAudioVisual implements Cloneable {
      * @param elenco Lista de elenco da série.
      * @param dataFim Data de término da série.
      */
-    public Serie(String titulo, LocalDateTime dataLancamento, boolean consumido,
+    public Serie(String titulo, LocalDate dataLancamento, boolean consumido,
                  List<Genero> generos, String tituloOriginal, String localDisponivel,
-                 List<String> elenco, LocalDateTime dataFim) {
+                 List<String> elenco, LocalDate dataFim) {
         super(titulo, dataLancamento, consumido, generos, tituloOriginal, localDisponivel, elenco);
         this.dataFim = dataFim;
         this.temporadas = new ArrayList<>();
@@ -62,7 +62,7 @@ public class Serie extends MediaAudioVisual implements Cloneable {
      *
      * @return Data de término.
      */
-    public LocalDateTime getDataFim() {
+    public LocalDate getDataFim() {
         return dataFim;
     }
 
@@ -71,7 +71,7 @@ public class Serie extends MediaAudioVisual implements Cloneable {
      *
      * @param dataFim Nova data de término.
      */
-    public void setDataFim(LocalDateTime dataFim) {
+    public void setDataFim(LocalDate dataFim) {
         this.dataFim = dataFim;
     }
 

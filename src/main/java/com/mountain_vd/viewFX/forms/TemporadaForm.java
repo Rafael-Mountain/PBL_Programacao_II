@@ -112,7 +112,7 @@ public class TemporadaForm implements Component {
 
             // Conteúdo: lista de avaliações
             ObservableList<Avaliacao> avaliacoes = FXCollections.observableArrayList(temporada.getAvaliacoes());
-            AvaliacaoForm avaliacaoForm = new AvaliacaoForm(rootScene, avaliacoes);
+            AvaliacaoForm avaliacaoForm = new AvaliacaoForm(rootScene, temporada);
             VBox form = (VBox) avaliacaoForm.getNode();
             form.setPrefHeight(350);
             pane.setContent(form);

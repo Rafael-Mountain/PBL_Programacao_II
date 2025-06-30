@@ -9,6 +9,7 @@ import com.mountain_vd.model.Genero;
 import com.mountain_vd.view.commons.Screen;
 import com.mountain_vd.view.commons.ViewCommons;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
@@ -70,7 +71,7 @@ public class CreateLivroForm extends Screen {
             boolean possui = ViewCommons.inputBoolean(terminal, "Possui? ");
 
             // Criação do livro com os dados coletados
-            livro = new Livro(nome, LocalDateTime.of(anoLancamento, 1, 1, 0, 0),
+            livro = new Livro(nome, LocalDate.of(anoLancamento, 1, 1),
                     consumido, generosLivro, autor, editora, possui, isbn);
 
             System.out.println(livro.getTitulo());

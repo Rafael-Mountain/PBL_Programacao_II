@@ -9,7 +9,7 @@ import com.mountain_vd.view.commons.Screen;
 import com.mountain_vd.view.commons.ViewCommons;
 import com.mountain_vd.view.serie.SerieDisplay;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class CreateTemporadaForm extends Screen {
@@ -29,7 +29,7 @@ public class CreateTemporadaForm extends Screen {
             int qEpisodios = ViewCommons.inputInt(terminal, "Digite a quantidade de episodios: ");
 
             Temporada temporada = new Temporada(qEpisodios,
-                    LocalDateTime.of(ano, 1, 1, 0, 0));
+                    LocalDate.of(ano, 1, 1));
 
             CreateTemporadaAction createTemporadaAction = new CreateTemporadaAction(new CreateTemporadaValidation());
             createTemporadaAction.setSuperModel(serie);

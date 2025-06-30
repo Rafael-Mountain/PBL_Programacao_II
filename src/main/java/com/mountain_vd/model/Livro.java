@@ -3,6 +3,7 @@ package com.mountain_vd.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mountain_vd.model.commons.IAvaliavel;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -59,7 +60,7 @@ public class Livro extends Media implements IAvaliavel {
      * @param possui Indica se o livro está em posse do usuário.
      * @param isbn Código ISBN do livro.
      */
-    public Livro(String titulo, LocalDateTime dataLancamento, boolean consumido, List<Genero> generosLivro,
+    public Livro(String titulo, LocalDate dataLancamento, boolean consumido, List<Genero> generosLivro,
                  String autor, String editora, boolean possui, String isbn) {
         super(titulo, dataLancamento, consumido, generosLivro);
         this.autor = autor;

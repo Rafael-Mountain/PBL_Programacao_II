@@ -3,6 +3,7 @@ package com.mountain_vd.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mountain_vd.model.commons.IAvaliavel;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -24,7 +25,7 @@ public class Temporada implements IAvaliavel {
     private int id;
 
     /** Ano de lançamento da temporada. */
-    private LocalDateTime ano;
+    private LocalDate ano;
 
     /** Quantidade de episódios na temporada. */
     private int qEpisodios;
@@ -51,7 +52,7 @@ public class Temporada implements IAvaliavel {
      * @param qEpisodios Quantidade de episódios da temporada.
      * @param ano Ano de lançamento da temporada.
      */
-    public Temporada(int qEpisodios, LocalDateTime ano) {
+    public Temporada(int qEpisodios, LocalDate ano) {
         this.qEpisodios = qEpisodios;
         this.ano = ano;
         this.avaliacoes = new ArrayList<>();
@@ -80,7 +81,7 @@ public class Temporada implements IAvaliavel {
      *
      * @return Ano de lançamento.
      */
-    public LocalDateTime getAno() {
+    public LocalDate getAno() {
         return ano;
     }
 
@@ -89,7 +90,7 @@ public class Temporada implements IAvaliavel {
      *
      * @param ano Novo ano de lançamento.
      */
-    public void setAno(LocalDateTime ano) {
+    public void setAno(LocalDate ano) {
         this.ano = ano;
     }
 

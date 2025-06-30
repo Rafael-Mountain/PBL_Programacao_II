@@ -3,6 +3,7 @@ package com.mountain_vd.viewFX.handlers.Serie;
 import com.mountain_vd.controller.search.SearchController;
 import com.mountain_vd.controller.search.SearchFields;
 import com.mountain_vd.controller.search.serie.SearchSerieController;
+import com.mountain_vd.viewFX.handlers.Filme.CreateFilmeController;
 import com.mountain_vd.viewFX.CreateMediaPane;
 import com.mountain_vd.viewFX.RootScene;
 import com.mountain_vd.viewFX.handlers.SearchPaneController;
@@ -41,7 +42,7 @@ public class SerieSearchPaneController extends SearchPaneController {
 
         @Override
         public Node getAddScreen() {
-            CreateMediaPane pane = new CreateMediaPane(rootScene);
+            CreateMediaPane pane = new CreateMediaPane(rootScene,new CreateSerieController(rootScene));
             return pane.getNode();
         }
 }

@@ -69,7 +69,19 @@ public class RootScene implements Displayable {
 //        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/base.css")).toExternalForm());
     }
 
-    public void showMessage(String message) {
+    public void showError(String message) {
+        Label label = new Label(message);
+        label.setWrapText(true);
+        showMessage(label);
+    }
+
+    public void showSuccess(String message) {
+        Label label = new Label(message);
+        label.setWrapText(true);
+        showMessage(label);
+    }
+
+    private void showMessage(Node messageContent) {
         // Fundo escurecido
         Region background = new Region();
         background.setStyle("-fx-background-color: rgba(0, 0, 0, 0.4);");
@@ -77,11 +89,8 @@ public class RootScene implements Displayable {
         background.setOnMouseClicked(e -> {});
         background.setMouseTransparent(false);
 
-        // Mensagem
-        Label label = new Label(message);
-        label.setWrapText(true);
 
-        VBox content = new VBox(label);
+        VBox content = new VBox(messageContent);
         content.setAlignment(Pos.CENTER_LEFT);
         content.setPadding(new Insets(20, 20, 20, 20));
         content.setSpacing(10);
@@ -120,4 +129,6 @@ public class RootScene implements Displayable {
 
         closeButton.setOnAction(e -> rootStack.getChildren().remove(overlay));
     }
+
+
 }
