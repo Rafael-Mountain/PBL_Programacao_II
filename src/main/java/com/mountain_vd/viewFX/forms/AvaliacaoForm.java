@@ -1,6 +1,8 @@
 package com.mountain_vd.viewFX.forms;
 
 import com.mountain_vd.model.Avaliacao;
+import com.mountain_vd.model.commons.IAvaliavel;
+import com.mountain_vd.model.commons.ITemAvaliacao;
 import com.mountain_vd.viewFX.RootScene;
 import com.mountain_vd.viewFX.commons.Component;
 import javafx.collections.ObservableList;
@@ -16,6 +18,7 @@ import java.time.format.DateTimeFormatter;
 public class AvaliacaoForm implements Component {
     RootScene rootScene;
     ObservableList<Avaliacao> avaliacoes;
+    IAvaliavel entity;
     VBox content;
 
     private DatePicker dataConsumoPicker;
@@ -23,9 +26,9 @@ public class AvaliacaoForm implements Component {
     private TextArea comentarioArea;
     private ListView<Avaliacao> listView;
 
-    public AvaliacaoForm(RootScene rootScene, ObservableList<Avaliacao> avaliacoes) {
+    public AvaliacaoForm(RootScene rootScene, IAvaliavel entity) {
         this.rootScene = rootScene;
-        this.avaliacoes = avaliacoes;
+        this.avaliacoes.addAll(entity.getAvaliacoes());
         render();
     }
 
@@ -159,8 +162,4 @@ public class AvaliacaoForm implements Component {
         return listView;
     }
 
-    private void setAvaliacoes(ObservableList<Avaliacao> avaliacoes) {
-        this.avaliacoes.clear();
-        this.avaliacoes.addAll(avaliacoes);
-    }
 }

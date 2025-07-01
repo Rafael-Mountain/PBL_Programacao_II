@@ -9,6 +9,7 @@ import com.mountain_vd.model.Genero;
 import com.mountain_vd.view.commons.Screen;
 import com.mountain_vd.view.commons.ViewCommons;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
@@ -84,7 +85,7 @@ public class CreateFilmeForm extends Screen {
 
             boolean consumido = ViewCommons.inputBoolean(terminal, "Já Assisti? ");
 
-            filme = new Filme(nome, LocalDateTime.of(AnoLancamento, 1, 1, 0, 0),
+            filme = new Filme(nome, LocalDate.of(AnoLancamento, 1, 1),
                     consumido, generosFilme, nomeOriginal, localDisponivel,
                     elenco, diretor, duracao, roteiro);
 

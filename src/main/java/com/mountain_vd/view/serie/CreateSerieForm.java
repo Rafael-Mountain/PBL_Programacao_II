@@ -9,6 +9,7 @@ import com.mountain_vd.model.Genero;
 import com.mountain_vd.view.commons.Screen;
 import com.mountain_vd.view.commons.ViewCommons;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
@@ -42,9 +43,9 @@ public class CreateSerieForm extends Screen {
 
             boolean consumido = ViewCommons.inputBoolean(terminal, "Já Assisti? ");
 
-            serie = new Serie(nome, LocalDateTime.of(anoLancamento, 1, 1, 0, 0),
+            serie = new Serie(nome, LocalDate.of(anoLancamento, 1, 1),
                     consumido, generosSerie, nomeOriginal, localDisponivel,
-                    elenco, LocalDateTime.of(datafim, 1, 1, 0, 0));
+                    elenco, LocalDate.of(datafim, 1, 1));
             CreateSerieAction createSerie = new CreateSerieAction(new CreateSerieValidation());
             result = createSerie.execute(serie);
 

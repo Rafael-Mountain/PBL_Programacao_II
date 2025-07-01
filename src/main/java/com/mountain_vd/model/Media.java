@@ -2,7 +2,7 @@ package com.mountain_vd.model;
 
 import com.mountain_vd.model.commons.ITemAvaliacao;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +22,7 @@ public abstract class Media implements ITemAvaliacao {
     private String titulo;
 
     /** Data de lançamento da mídia. */
-    private LocalDateTime dataLancamento;
+    private LocalDate dataLancamento;
 
     /** Lista de gêneros associados à mídia. */
     private List<Genero> generos;
@@ -50,7 +50,7 @@ public abstract class Media implements ITemAvaliacao {
      * @param consumido Indica se a mídia já foi consumida.
      * @param generos Lista de gêneros associados à mídia.
      */
-    public Media(String titulo, LocalDateTime dataLancamento, boolean consumido, List<Genero> generos) {
+    public Media(String titulo, LocalDate dataLancamento, boolean consumido, List<Genero> generos) {
         this();
         if (generos != null) {
             for (Genero genero : generos) {
@@ -105,7 +105,7 @@ public abstract class Media implements ITemAvaliacao {
      *
      * @return data de lançamento.
      */
-    public LocalDateTime getDataLancamento() {
+    public LocalDate getDataLancamento() {
         return dataLancamento;
     }
 
@@ -114,7 +114,7 @@ public abstract class Media implements ITemAvaliacao {
      *
      * @param dataLancamento nova data de lançamento.
      */
-    public void setDataLancamento(LocalDateTime dataLancamento) {
+    public void setDataLancamento(LocalDate dataLancamento) {
         this.dataLancamento = dataLancamento;
     }
 

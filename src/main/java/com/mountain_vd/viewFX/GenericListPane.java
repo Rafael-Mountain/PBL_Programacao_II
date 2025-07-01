@@ -11,12 +11,15 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
+
 import java.util.function.BiConsumer;
 
 public class GenericListPane<T> implements Component {
     private VBox vbox;
     private ObservableList<T> items;
     private TextField inputField;
+    private Button addButton;
+    private ListView<T> listView;
     private BiConsumer<String, ObservableList<T>> controller;
     private String label;
 
@@ -47,7 +50,7 @@ public class GenericListPane<T> implements Component {
         inputField.setPromptText("Digite aqui");
         HBox.setHgrow(inputField, Priority.ALWAYS);
 
-        Button addButton = new Button("Adicionar");
+        addButton = new Button("Adicionar");
         addButton.setOnAction(e -> {
             controller.accept(inputField.getText(), items);
             inputField.clear();
@@ -56,16 +59,16 @@ public class GenericListPane<T> implements Component {
         HBox inputBox = new HBox(inputField, addButton);
         inputBox.setSpacing(5);
 
-        ListView<T> listView = renderListView();
+        listView = renderListView();
         VBox.setVgrow(listView, Priority.ALWAYS);
 
         vbox.getChildren().addAll(inputBox, listView);
     }
 
     public ListView<T> renderListView() {
-        ListView<T> listView = new ListView<>(items);
+        ListView<T> lv = new ListView<>(items);
 
-        listView.setCellFactory(param -> new ListCell<>() {
+        lv.setCellFactory(param -> new ListCell<>() {
             @Override
             protected void updateItem(T item, boolean empty) {
                 super.updateItem(item, empty);
@@ -104,6 +107,13 @@ public class GenericListPane<T> implements Component {
             }
         });
 
-        return listView;
+        return lv;
+    }
+
+    // ========= MÉTODO PARA DESABILITAR =========
+    public void disable() {
+        if (inputField != null) inputField.setDisable(true);
+        if (addButton != null) addButton.setDisable(true);
+        if (listView != null) listView.setDisable(true);
     }
 }

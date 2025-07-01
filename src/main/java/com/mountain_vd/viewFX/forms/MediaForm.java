@@ -3,6 +3,7 @@ package com.mountain_vd.viewFX.forms;
 import com.mountain_vd.controller.util.TextFieldUtil;
 import com.mountain_vd.model.Avaliacao;
 import com.mountain_vd.model.Genero;
+import com.mountain_vd.model.commons.IAvaliavel;
 import com.mountain_vd.viewFX.GenericListPane;
 import com.mountain_vd.viewFX.RootScene;
 import com.mountain_vd.viewFX.commons.Component;
@@ -23,11 +24,14 @@ public class MediaForm implements Component {
     private TextField anoField;
     private CheckBox consumerCheckbox;
     private ObservableList<Genero> generos;
-    private ObservableList<Avaliacao> avaliacaos;
+
+    private AvaliacaoForm avaliacaoForm;
+
+
+    private GenericListPane<Genero> genrePickerPane;
 
     public MediaForm(RootScene rootScene) {
         this.rootScene = rootScene;
-        this.avaliacaos = FXCollections.observableArrayList();
         this.generos = FXCollections.observableArrayList();
         render();
     }
@@ -35,22 +39,6 @@ public class MediaForm implements Component {
     @Override
     public Node getNode() {
         return tabPane;
-    }
-
-    public String getTitle() {
-        return titleField.getText();
-    }
-
-    public String getAno() {
-        return anoField.getText();
-    }
-
-    public boolean getConsumer() {
-        return consumerCheckbox.isSelected();
-    }
-
-    public List<Avaliacao> getAvaliacoes() {
-        return avaliacaos;
     }
 
     @Override
@@ -62,11 +50,11 @@ public class MediaForm implements Component {
         tabPane.getTabs().add(tab);
     }
 
-    public void addTabAvailable() {
+    public void addTabAvailable(IAvaliavel entity) {
         Tab tab = new Tab("Avaliações");
         tab.setClosable(false);
 
-        AvaliacaoForm avaliacaoForm = new AvaliacaoForm(rootScene,avaliacaos);
+        avaliacaoForm = new AvaliacaoForm(rootScene, entity);
 
         tab.setContent(avaliacaoForm.getNode());
         tabPane.getTabs().add(tab);
@@ -82,7 +70,6 @@ public class MediaForm implements Component {
         gridPane.setVgap(10);
         gridPane.setPadding(new Insets(10));
 
-        // Definindo proporções das colunas (5 colunas no total)
         ColumnConstraints col0 = new ColumnConstraints();
         col0.setPercentWidth(10);
         ColumnConstraints col1 = new ColumnConstraints();
@@ -133,7 +120,7 @@ public class MediaForm implements Component {
 
         // Linha 1: Gêneros
         GenreListController controller = new GenreListController(rootScene);
-        GenericListPane<Genero> genrePickerPane = new GenericListPane<>(generos, controller::addGenre, "Gêneros");
+        genrePickerPane = new GenericListPane<>(generos, controller::addGenre, "Gêneros");
         Node genreNode = genrePickerPane.getNode();
         GridPane.setColumnSpan(genreNode, 3);
         GridPane.setRowSpan(genreNode, 2);
@@ -145,7 +132,65 @@ public class MediaForm implements Component {
         return hbox;
     }
 
+    // ======= GETTERS =======
+    public String getTitle() {
+        return titleField.getText();
+    }
+
+    public String getAnoLancamento() {
+        return anoField.getText().trim();
+    }
+
+    public boolean getConsumer() {
+        return consumerCheckbox.isSelected();
+    }
+
+
     public List<Genero> getGeneros() {
         return generos;
+    }
+
+    // ======= SETTERS =======
+    public void setTitle(String title) {
+        titleField.setText(title);
+    }
+
+    public void setAnoLancamento(String ano) {
+        anoField.setText(ano);
+    }
+
+    public void setConsumer(boolean value) {
+        consumerCheckbox.setSelected(value);
+    }
+
+    public void setGeneros(List<Genero> generosList) {
+        this.generos.setAll(generosList);
+    }
+
+
+    // ======= DISABLE METHODS =======
+    public void disableTitleField() {
+        if (titleField != null) titleField.setDisable(true);
+    }
+
+    public void disableAnoField() {
+        if (anoField != null) anoField.setDisable(true);
+    }
+
+    public void disableConsumerCheckbox() {
+        if (consumerCheckbox != null) consumerCheckbox.setDisable(true);
+    }
+
+    public void disableGeneroList() {
+        if (genrePickerPane != null && genrePickerPane.getNode() != null) {
+            genrePickerPane.getNode().setDisable(true);
+        }
+    }
+
+    public void disableFields() {
+        disableTitleField();
+        disableAnoField();
+        disableConsumerCheckbox();
+        disableGeneroList();
     }
 }

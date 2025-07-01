@@ -17,21 +17,10 @@ public class MediaAudioVisualForm extends MediaForm {
     private TextField tituloOriginalField;
     private TextField LocalDisponivelField;
     private ObservableList<String> elenco;
+    private GenericListPane<String> elencoListPane;
 
     public MediaAudioVisualForm(RootScene rootScene) {
         super(rootScene);
-    }
-
-    public String getTituloOriginal() {
-        return tituloOriginalField.getText();
-    }
-
-    public String getLocalDisponivel() {
-        return LocalDisponivelField.getText();
-    }
-
-    public List<String> getElenco() {
-        return elenco;
     }
 
     @Override
@@ -81,13 +70,75 @@ public class MediaAudioVisualForm extends MediaForm {
 
         // --- Lista de Elenco ---
         ElencoListController elencoListController = new ElencoListController(rootScene);
-        GenericListPane<String> ElencoList = new GenericListPane<>(
-                elenco, elencoListController::addAtor, "Elenco");
-        Node elencoNode = ElencoList.getNode();
+        elencoListPane = new GenericListPane<>(elenco, elencoListController::addAtor, "Elenco");
+        Node elencoNode = elencoListPane.getNode();
         GridPane.setColumnSpan(elencoNode, 3);
         GridPane.setRowSpan(elencoNode, 2);
         gridPane.add(elencoNode, 2, 4);
 
         return content;
+    }
+
+    // =============================
+    //          GETTERS
+    // =============================
+
+    public String getTituloOriginal() {
+        return tituloOriginalField.getText();
+    }
+
+    public String getLocalDisponivel() {
+        return LocalDisponivelField.getText();
+    }
+
+    public List<String> getElenco() {
+        return elenco;
+    }
+
+    // =============================
+    //          SETTERS
+    // =============================
+
+    public void setTituloOriginal(String tituloOriginal) {
+        this.tituloOriginalField.setText(tituloOriginal);
+    }
+
+    public void setLocalDisponivel(String localDisponivel) {
+        this.LocalDisponivelField.setText(localDisponivel);
+    }
+
+    public void setElenco(List<String> elenco) {
+        this.elenco.setAll(elenco);
+    }
+
+    // =============================
+    //          DISABLE
+    // =============================
+
+
+    public void disableTituloOriginalField() {
+        if (tituloOriginalField != null) tituloOriginalField.setDisable(true);
+    }
+
+    public void disableLocalDisponivelField() {
+        if (LocalDisponivelField != null) LocalDisponivelField.setDisable(true);
+    }
+
+    public void disableElencoList() {
+        if (elencoListPane != null && elencoListPane.getNode() != null)
+            elencoListPane.getNode().setDisable(true);
+    }
+
+    @Override
+    public void disableFields() {
+        // herdados
+        disableTitleField();
+        disableAnoField();
+        disableConsumerCheckbox();
+        disableGeneroList();
+        // específicos
+        disableTituloOriginalField();
+        disableLocalDisponivelField();
+        disableElencoList();
     }
 }

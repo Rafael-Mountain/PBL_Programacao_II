@@ -1,5 +1,6 @@
 package com.mountain_vd.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,7 @@ public abstract class MediaAudioVisual extends Media {
      * @param localDisponivel Local onde a mídia está disponível.
      * @param elenco Lista de nomes do elenco da mídia.
      */
-    public MediaAudioVisual(String titulo, LocalDateTime dataLancamento, boolean consumido, List<Genero> generos,
+    public MediaAudioVisual(String titulo, LocalDate dataLancamento, boolean consumido, List<Genero> generos,
                             String tituloOriginal, String localDisponivel, List<String> elenco) {
 
         super(titulo, dataLancamento, consumido, generos); // Chama o construtor da classe pai

@@ -3,6 +3,7 @@ package com.mountain_vd.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mountain_vd.model.commons.IAvaliavel;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -65,7 +66,7 @@ public class Filme extends MediaAudioVisual implements IAvaliavel {
      * @param duracao Duração em minutos.
      * @param roteiro Detalhes do roteiro.
      */
-    public Filme(String titulo, LocalDateTime dataLancamento, boolean consumido, List<Genero> generos,
+    public Filme(String titulo, LocalDate dataLancamento, boolean consumido, List<Genero> generos,
                  String tituloOriginal, String localDisponivel, List<String> elenco, String direcao,
                  int duracao, String roteiro) {
         super(titulo, dataLancamento, consumido, generos, tituloOriginal, localDisponivel, elenco);
