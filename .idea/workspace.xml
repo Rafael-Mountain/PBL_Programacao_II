@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f647e7e-b96a-4417-bb0b-138eb96722ac" name="Changes" comment="Merge com o projeto">
+    <list default="true" id="9f647e7e-b96a-4417-bb0b-138eb96722ac" name="Changes" comment="Adição de Getters nos forms.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/FilmeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/FilmeForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/LivroForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/LivroForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/MediaAudioVisualForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/MediaAudioVisualForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/MediaForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/MediaForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/SerieForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/SerieForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/TemporadaForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/TemporadaForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,18 +24,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Dollyn-boy"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Dollyn-boy&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Rafael-Mountain/PBL_Programacao_II.git",
-    "accountId": "a153eaf5-e793-422b-bc4d-10c9132523a4"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Rafael-Mountain/PBL_Programacao_II.git&quot;,
+    &quot;accountId&quot;: &quot;a153eaf5-e793-422b-bc4d-10c9132523a4&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenRunner">
     <option name="jreName" value="temurin-21" />
   </component>
@@ -196,7 +191,9 @@
       <workItem from="1749858292079" duration="591000" />
       <workItem from="1749859153154" duration="9088000" />
       <workItem from="1749898869659" duration="41581000" />
-      <workItem from="1751134006112" duration="2202000" />
+      <workItem from="1751134006112" duration="5173000" />
+      <workItem from="1751230770788" duration="2399000" />
+      <workItem from="1751400751538" duration="796000" />
     </task>
     <task id="LOCAL-00001" summary="Transformando projeto para Maven">
       <option name="closed" value="true" />
@@ -238,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751137754791</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Adição de Getters nos forms.">
+      <option name="closed" value="true" />
+      <created>1751138772796</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1751138772796</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +267,8 @@
     <MESSAGE value="Criação da barra lateral e dos temas" />
     <MESSAGE value="busca aprimorada" />
     <MESSAGE value="Merge com o projeto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge com o projeto" />
+    <MESSAGE value="Adição de Getters nos forms." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adição de Getters nos forms." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

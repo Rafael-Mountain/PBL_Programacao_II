@@ -23,8 +23,8 @@ public class SerieForm extends MediaAudioVisualForm {
         this.temporadas = FXCollections.observableArrayList();
     }
 
-    public DatePicker getDataFimPicker() {
-        return dataFimPicker;
+    public LocalDate getDataFimPicker() {
+        return dataFimPicker.getValue();
     }
 
     public List<Temporada> getTemporadas() {
