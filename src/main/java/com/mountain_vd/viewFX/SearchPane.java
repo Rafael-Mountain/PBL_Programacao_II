@@ -79,7 +79,7 @@ public class SearchPane implements Component {
                         : "asc");
 
         controller.search();
-        tableResult.setSearchResults(controller.getSearchResults());
+        tableResult.setSearchResults(controller.getSearchResults(),controller::goTotDisplayPane);
     }
 
     private Button getFloatingButton(){

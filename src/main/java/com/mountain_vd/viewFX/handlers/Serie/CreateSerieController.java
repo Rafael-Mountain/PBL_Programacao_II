@@ -23,8 +23,8 @@ public class CreateSerieController implements CreateMediaController {
 
     @Override
     public Node getForm() {
-        SerieForm form = new SerieForm(rootScene);
-        return form.getNode();
+        serieForm = new SerieForm(rootScene);
+        return serieForm.getNode();
     }
 
     @Override
@@ -32,7 +32,9 @@ public class CreateSerieController implements CreateMediaController {
         Serie serie = new Serie();
 
         serie.setTitulo(serieForm.getTitle());
-        serie.setDataLancamento(LocalDate.of(Integer.parseInt(serieForm.getAnoLancamento()),1,1));
+        if (!(serieForm.getAnoLancamento() == null) && !serieForm.getAnoLancamento().isEmpty()) {
+            serie.setDataLancamento(LocalDate.of(Integer.parseInt(serieForm.getAnoLancamento()),1,1));
+        }
         serie.setGeneros(serieForm.getGeneros());
         serie.setConsumido(serieForm.getConsumer());
 

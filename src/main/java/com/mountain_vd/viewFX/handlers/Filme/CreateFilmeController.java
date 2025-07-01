@@ -31,7 +31,9 @@ public class CreateFilmeController implements CreateMediaController {
         Filme filme = new Filme();
 
         filme.setTitulo(filmeForm.getTitle());
-        filme.setDataLancamento(LocalDate.of(Integer.parseInt(filmeForm.getAnoLancamento()),1,1));
+        if (!(filmeForm.getAnoLancamento() == null) && !filmeForm.getAnoLancamento().isEmpty()) {
+            filme.setDataLancamento(LocalDate.of(Integer.parseInt(filmeForm.getAnoLancamento()),1,1));
+        }
         filme.setGeneros(filmeForm.getGeneros());
         filme.setConsumido(filmeForm.getConsumer());
 
@@ -40,7 +42,9 @@ public class CreateFilmeController implements CreateMediaController {
         filme.setLocalDisponivel(filmeForm.getLocalDisponivel());
 
         filme.setDirecao(filmeForm.getDiretor());
-        filme.setDuracao(Integer.parseInt(filmeForm.getDuracao()));
+        if (!(filmeForm.getDuracao() == null) && !filmeForm.getDuracao().isEmpty()){
+            filme.setDuracao(Integer.parseInt(filmeForm.getDuracao()));
+        }
         filme.setRoteiro(filmeForm.getRoteiro());
 
         CreateFilmeAction action = new CreateFilmeAction(new CreateFilmeValidation());

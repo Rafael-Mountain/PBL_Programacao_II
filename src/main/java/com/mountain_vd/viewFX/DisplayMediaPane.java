@@ -8,15 +8,16 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 
-public class DisplayMidiaPane implements Component {
+public class DisplayMediaPane implements Component {
     RootScene rootScene;
     DisplayMediaController controller;
     VBox container;
 
 
-    public DisplayMidiaPane(DisplayMediaController controller, RootScene rootScene) {
+    public DisplayMediaPane(DisplayMediaController controller, RootScene rootScene) {
         this.controller = controller;
         this.rootScene = rootScene;
+        render();
     }
 
 

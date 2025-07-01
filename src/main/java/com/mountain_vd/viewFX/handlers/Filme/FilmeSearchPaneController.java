@@ -3,7 +3,10 @@ package com.mountain_vd.viewFX.handlers.Filme;
 import com.mountain_vd.controller.search.SearchController;
 import com.mountain_vd.controller.search.SearchFields;
 import com.mountain_vd.controller.search.filme.SearchFilmeController;
+import com.mountain_vd.model.Filme;
+import com.mountain_vd.model.Media;
 import com.mountain_vd.viewFX.CreateMediaPane;
+import com.mountain_vd.viewFX.DisplayMediaPane;
 import com.mountain_vd.viewFX.RootScene;
 import com.mountain_vd.viewFX.handlers.SearchPaneController;
 import javafx.scene.Node;
@@ -43,5 +46,11 @@ public class FilmeSearchPaneController extends SearchPaneController {
     public Node getAddScreen() {
         CreateMediaPane pane = new CreateMediaPane(rootScene,new CreateFilmeController(rootScene));
         return pane.getNode();
+    }
+
+    @Override
+    public void goTotDisplayPane(Media media) {
+        DisplayMediaPane pane = new DisplayMediaPane(new DisplayFilmeController(rootScene, (Filme) media) ,rootScene);
+        rootScene.setMainContent(pane.getNode());
     }
 }

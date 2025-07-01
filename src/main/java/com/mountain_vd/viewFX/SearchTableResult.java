@@ -9,20 +9,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import com.mountain_vd.model.Genero;
 import com.mountain_vd.model.Media;
 import com.mountain_vd.viewFX.commons.Component;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class SearchTableResult implements Component {
     private ObservableList<Media> medias;
     private SearchResults searchResults;
+    private Consumer<Media>  onMediaDoubleClick;
     private TableView<Media> tableView;
 
     public SearchTableResult() {
@@ -35,8 +34,9 @@ public class SearchTableResult implements Component {
         return tableView;
     }
 
-    public void setSearchResults(SearchResults searchResults) {
+    public void setSearchResults(SearchResults searchResults, Consumer<Media> onMediaDoubleClick) {
         this.searchResults = searchResults;
+        this.onMediaDoubleClick = onMediaDoubleClick;
         this.medias.setAll(searchResults.getMediaList());
     }
 
@@ -57,6 +57,18 @@ public class SearchTableResult implements Component {
 
         tableView.getColumns().addAll(titleCol,generoCol,yearCol,scoreCol);
         tableView.setItems(medias);
+
+        // Clique duplo na linha
+        tableView.setRowFactory(tv -> {
+            TableRow<Media> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && !row.isEmpty()) {
+                    Media clickedMedia = row.getItem();
+                    onMediaDoubleClick.accept(clickedMedia);
+                }
+            });
+            return row;
+        });
     }
 
     private TableColumn<Media, List<Genero>> getGeneroColumn() {

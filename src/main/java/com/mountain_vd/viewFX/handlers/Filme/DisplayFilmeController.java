@@ -21,6 +21,14 @@ public class DisplayFilmeController extends DisplayMediaController{
         filmeForm = new FilmeForm(rootScene);
         filmeForm.addTabAvailable(filme);
 
+        filmeForm.setTitle(filme.getTitulo());
+        if (filme.getDataLancamento() != null) {
+            filmeForm.setAnoLancamento(String.valueOf(filme.getDataLancamento().getYear()));
+        }
+        filmeForm.setGeneros(filme.getGeneros());
+        filmeForm.setConsumer(filme.isConsumido());
+
+
         return filmeForm.getNode();
     }
 

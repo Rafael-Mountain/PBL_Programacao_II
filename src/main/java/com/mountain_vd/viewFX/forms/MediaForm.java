@@ -145,9 +145,6 @@ public class MediaForm implements Component {
         return consumerCheckbox.isSelected();
     }
 
-    public List<Avaliacao> getAvaliacoes() {
-        return avaliacaoForm.get;
-    }
 
     public List<Genero> getGeneros() {
         return generos;

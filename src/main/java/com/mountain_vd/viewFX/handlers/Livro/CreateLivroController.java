@@ -31,7 +31,9 @@ public class CreateLivroController implements CreateMediaController {
         Livro livro = new Livro();
 
         livro.setTitulo(livroForm.getTitle());
-        livro.setDataLancamento(LocalDate.of(Integer.parseInt(livroForm.getAnoLancamento()), 1, 1));
+        if (!(livroForm.getAnoLancamento() == null) && !livroForm.getAnoLancamento().isEmpty()) {
+            livro.setDataLancamento(LocalDate.of(Integer.parseInt(livroForm.getAnoLancamento()), 1, 1));
+        }
         livro.setGeneros(livroForm.getGeneros());
         livro.setConsumido(livroForm.getConsumer());
 

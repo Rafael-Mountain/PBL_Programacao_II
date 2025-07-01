@@ -5,9 +5,9 @@ import com.mountain_vd.controller.search.SearchController;
 import com.mountain_vd.controller.search.SearchFields;
 import com.mountain_vd.controller.search.SearchResults;
 import com.mountain_vd.controller.util.EnumUtils;
+import com.mountain_vd.model.Media;
 import com.mountain_vd.viewFX.RootScene;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 
 import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
@@ -30,6 +30,7 @@ public abstract class SearchPaneController {
         this.rootScene = rootScene;
     }
 
+    public abstract void goTotDisplayPane(Media media);
     public abstract Map<String, SearchFields> getSearchFields();
     public abstract SearchController getSearchController(String searchTerm, SearchFields searchField);
     public abstract Node getAddScreen();
