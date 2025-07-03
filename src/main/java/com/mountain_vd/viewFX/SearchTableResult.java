@@ -1,6 +1,9 @@
 package com.mountain_vd.viewFX;
 
 import com.mountain_vd.controller.search.SearchResults;
+import com.mountain_vd.model.Genero;
+import com.mountain_vd.model.Media;
+import com.mountain_vd.viewFX.commons.Component;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -10,9 +13,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
-import com.mountain_vd.model.Genero;
-import com.mountain_vd.model.Media;
-import com.mountain_vd.viewFX.commons.Component;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
@@ -44,7 +44,7 @@ public class SearchTableResult implements Component {
     @Override
     public void render() {
         tableView = new TableView<>();
-            tableView.getStyleClass().add("result-table");
+        tableView.getStyleClass().add("result-table");
         VBox.setVgrow(tableView, Priority.ALWAYS);
         tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
@@ -161,8 +161,10 @@ public class SearchTableResult implements Component {
         TableColumn<Media, Void> col = new TableColumn<>("");
 
         col.setCellFactory(param -> new TableCell<>() {
-            private  final VBox vbox = new VBox();
-            private final Button eyeButton = new Button();{
+            private final VBox vbox = new VBox();
+            private final Button eyeButton = new Button();
+
+            {
                 eyeButton.getStyleClass().add("eye-button");
                 eyeButton.setPrefSize(24, 24);
                 eyeButton.setOnAction(event -> {

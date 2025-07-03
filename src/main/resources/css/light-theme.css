@@ -104,9 +104,21 @@ search Pane
     -fx-text-fill: #000000;
 }
 
-
 .filter-label {
     -fx-fill: #000000;
+}
+
+.result-table {
+    -fx-background-color: #ffffff;
+}
+
+.result-table .table-cell {
+    -fx-text-fill: #000000;
+}
+
+
+.rounded-label {
+    -fx-text-fill: #000000; /* Cor do texto */
 }
 
 .eye-button {
