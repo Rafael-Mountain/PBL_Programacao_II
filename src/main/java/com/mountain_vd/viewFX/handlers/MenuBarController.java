@@ -54,14 +54,11 @@ public class MenuBarController {
      * Método para alternar o tema da aplicação entre modo claro e modo escuro.
      * Altera o texto do botão de toggle conforme o estado atual.
      *
-     * @param toggleButton o botão que aciona a troca de tema
      */
-    public void onThemeToggle(ToggleButton toggleButton) {
-        if (toggleButton.isSelected()) {
-            toggleButton.setText("Modo Escuro");
+    public void onThemeToggle(boolean state) {
+        if (state) {
             rootScene.setDarkMode();
-        } else {
-            toggleButton.setText("Modo Claro");
+        } else {;
             rootScene.setLightMode();
         }
     }

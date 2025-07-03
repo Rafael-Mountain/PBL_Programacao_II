@@ -1,5 +1,6 @@
 package com.mountain_vd.viewFX;
 
+import com.mountain_vd.viewFX.VouVerAinda.SwitchButton;
 import com.mountain_vd.viewFX.commons.Component;
 import com.mountain_vd.viewFX.handlers.MenuBarController;
 import javafx.geometry.Insets;
@@ -156,14 +157,16 @@ public class MenuBar implements Component {
     /**
      * Cria o botão toggle para alternar entre os modos claro e escuro.
      *
-     * @return ToggleButton configurado para alternar o tema da aplicação.
+     * @return SwitchButton configurado para alternar o tema da aplicação.
      */
-    private ToggleButton renderThemeButton() {
-        ToggleButton toggleButton = new ToggleButton("Modo Claro");
-        toggleButton.setMinWidth(width / 3);
+    private SwitchButton renderThemeButton() {
+        SwitchButton switchButton = new SwitchButton();
 
-        toggleButton.setOnAction(e -> controller.onThemeToggle(toggleButton));
+        // Registra listener para saber quando o estado mudar
+        switchButton.addStateChangeListener((obs, oldVal, newVal) -> {
+            controller.onThemeToggle(newVal); // chama o método passando o novo valor (true/false)
+        });
 
-        return toggleButton;
+        return switchButton;
     }
 }
