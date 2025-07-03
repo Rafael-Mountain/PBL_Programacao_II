@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f647e7e-b96a-4417-bb0b-138eb96722ac" name="Changes" comment="Adição de Getters nos forms.">
+    <list default="true" id="9f647e7e-b96a-4417-bb0b-138eb96722ac" name="Changes" comment="mudanças locais">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/confirm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/error.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/SerieForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/SerieForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/RootScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/RootScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +40,13 @@
     &quot;accountId&quot;: &quot;a153eaf5-e793-422b-bc4d-10c9132523a4&quot;
   }
 }</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="workOffline" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="MavenRunner">
     <option name="jreName" value="temurin-21" />
   </component>
@@ -65,7 +76,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/SoftwareDATA/Desktop/Rafael/PBL_Programacao_II/src/main/resources/css&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Vitor Dórea/IdeaProjects/pbl&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -83,6 +94,7 @@
       <recent name="C:\Users\SoftwareDATA\Desktop\Rafael\PBL_Programacao_II\src\main\resources\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Vitor Dórea\UEFS\Disciplinas\JAVA\PBL_Programacao_II\src\main\resources\images" />
       <recent name="C:\Users\SoftwareDATA\Desktop\Rafael\PBL_Programacao_II\src\main\java" />
       <recent name="C:\Users\SoftwareDATA\Desktop\Rafael\PBL_Programacao_II\src\main\resources\images" />
     </key>
@@ -193,7 +205,9 @@
       <workItem from="1749898869659" duration="41581000" />
       <workItem from="1751134006112" duration="5173000" />
       <workItem from="1751230770788" duration="2399000" />
-      <workItem from="1751400751538" duration="796000" />
+      <workItem from="1751400751538" duration="1348000" />
+      <workItem from="1751486885954" duration="2382000" />
+      <workItem from="1751572350110" duration="1815000" />
     </task>
     <task id="LOCAL-00001" summary="Transformando projeto para Maven">
       <option name="closed" value="true" />
@@ -243,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751138772796</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="mudanças locais">
+      <option name="closed" value="true" />
+      <created>1751401592138</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1751401592138</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +290,8 @@
     <MESSAGE value="busca aprimorada" />
     <MESSAGE value="Merge com o projeto" />
     <MESSAGE value="Adição de Getters nos forms." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adição de Getters nos forms." />
+    <MESSAGE value="mudanças locais" />
+    <option name="LAST_COMMIT_MESSAGE" value="mudanças locais" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
