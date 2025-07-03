@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f647e7e-b96a-4417-bb0b-138eb96722ac" name="Changes" comment="Merge com o projeto">
+    <list default="true" id="9f647e7e-b96a-4417-bb0b-138eb96722ac" name="Changes" comment="estilizando o sistema">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/FilmeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/FilmeForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/LivroForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/LivroForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/MediaAudioVisualForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/MediaAudioVisualForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/MediaForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/MediaForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/SerieForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/SerieForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/TemporadaForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/forms/TemporadaForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/SearchPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/SearchPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/SearchTableResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/SearchTableResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/dark-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/dark-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/light-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/light-theme.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,23 +29,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Dollyn-boy"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Dollyn-boy&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Rafael-Mountain/PBL_Programacao_II.git",
-    "accountId": "a153eaf5-e793-422b-bc4d-10c9132523a4"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Rafael-Mountain/PBL_Programacao_II.git&quot;,
+    &quot;accountId&quot;: &quot;a153eaf5-e793-422b-bc4d-10c9132523a4&quot;
   }
-}]]></component>
-  <component name="MavenRunner">
-    <option name="jreName" value="temurin-21" />
-  </component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
+    <option name="sortByName" value="true" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -65,7 +63,7 @@
     &quot;Maven. [javafx:run,-x].executor&quot;: &quot;Run&quot;,
     &quot;Maven. [javafx:run...].executor&quot;: &quot;Run&quot;,
     &quot;Maven. [javafx:run].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.JavaFX Debug.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.JavaFX Debug.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -83,6 +81,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.mountain_vd.viewFX.handlers.Serie" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\SoftwareDATA\Desktop\Rafael\PBL_Programacao_II\src\main\resources\css" />
       <recent name="C:\Users\SoftwareDATA\Desktop\Rafael\PBL_Programacao_II\src\main\resources\images" />
@@ -175,14 +176,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.39" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.39" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -238,7 +231,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751137754791</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Criando as telas">
+      <option name="closed" value="true" />
+      <created>1751336791689</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1751336791689</updated>
+    </task>
+    <task id="LOCAL-00007" summary="estilizando o sistema">
+      <option name="closed" value="true" />
+      <created>1751566867722</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1751566867722</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +271,9 @@
     <MESSAGE value="Criação da barra lateral e dos temas" />
     <MESSAGE value="busca aprimorada" />
     <MESSAGE value="Merge com o projeto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge com o projeto" />
+    <MESSAGE value="Criando as telas" />
+    <MESSAGE value="estilizando o sistema" />
+    <option name="LAST_COMMIT_MESSAGE" value="estilizando o sistema" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -271,6 +282,25 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/filter/GenreFilter.java</url>
           <line>61</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mountain_vd/controller/action/temporada/CreateTemporadaValidation.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/RootScene.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/RootScene.java</url>
+          <line>68</line>
+          <properties class="com.mountain_vd.viewFX.RootScene" method="setBaseTheme">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
