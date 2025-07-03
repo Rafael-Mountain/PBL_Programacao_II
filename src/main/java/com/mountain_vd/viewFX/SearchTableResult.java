@@ -1,6 +1,9 @@
 package com.mountain_vd.viewFX;
 
 import com.mountain_vd.controller.search.SearchResults;
+import com.mountain_vd.model.Genero;
+import com.mountain_vd.model.Media;
+import com.mountain_vd.viewFX.commons.Component;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -10,9 +13,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
-import com.mountain_vd.model.Genero;
-import com.mountain_vd.model.Media;
-import com.mountain_vd.viewFX.commons.Component;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 

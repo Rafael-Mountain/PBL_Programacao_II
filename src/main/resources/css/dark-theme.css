@@ -105,12 +105,25 @@ search Pane
     -fx-border-color: #505050 transparent transparent transparent;
     -fx-background-color: #1e1e1e;
     -fx-text-fill: #e3e3e3;
+    
 }
+
+.result-table {
+    -fx-background-color: #1e1e1e;
+}
+
+.result-table .table-cell {
+    -fx-text-fill: #e3e3e3;
+}
+
 
 .filter-label {
     -fx-fill: #e3e3e3;
 }
 
+.rounded-label {
+    -fx-text-fill: #000000; /* Cor do texto */
+}
 .eye-button {
     -fx-background-color: transparent;
     -fx-background-image: url("/images/dark_eye.png");

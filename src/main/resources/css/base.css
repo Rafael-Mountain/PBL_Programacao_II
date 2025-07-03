@@ -21,7 +21,7 @@ Combo Box
 
 .combo-box {
     -fx-border-width: 2px;
-    -fx-border-radius: 5;   
+    -fx-border-radius: 5;
 }
 
 /* 
@@ -177,18 +177,78 @@ SearchPane, Table view
     -fx-pref-height: 29px;
 }
 
-.result-table{
+
+
+.result-table {
+    -fx-border-radius: 15;
     -fx-background-radius: 15;
+    -fx-padding: 0 0 12 0;
 
 }
+
+
 .result-table .column-header {
-    -fx-border-color: #f67d26;
-    -fx-border-width: 0 0 1px 0;
+    -fx-background-color: transparent;
 }
 
-.result-table .column-header-background,
-.result-table .table-row-cell {
+.result-table .column-header-background {
     -fx-background-color: transparent;
+    -fx-background-radius: 15 15 0 0;
+    -fx-border-color: #f67d26;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 5px 0;
+}
+
+.result-table .filler {
+    -fx-background-color: transparent;
+}
+
+.result-table .table-row-cell {
+    -fx-table-cell-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.result-table .table-row-cell:odd {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.result-table .table-row-cell:selected {
+    -fx-background-color: #f67d26;
+    -fx-text-fill: #000000;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.result-table>.virtual-flow>.scroll-bar:vertical,
+.result-table>.virtual-flow>.scroll-bar:vertical>.track,
+.result-table>.virtual-flow>.scroll-bar:vertical>.track-background,
+.result-table>.virtual-flow>.scroll-bar:horizontal,
+.result-table>.virtual-flow>.scroll-bar:horizontal>.track,
+.result-table>.virtual-flow>.scroll-bar:horizontal>.track-background {
+    -fx-background-color: transparent;
+}
+
+.rounded-label {
+    -fx-background-color: #ff9a52; /* Laranja claro */
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-padding: 5 10;
+    -fx-text-fill: #000000; /* Cor do texto */
+}
+
+.pontuacao-baixa{
+    -fx-background-color: #dc1d1d; 
+}
+
+.pontuacao-media{
+    -fx-background-color: #fff200;  
+}
+
+.pontuacao-alta{
+    -fx-background-color: #23ce10; 
 }
 
 .eye-button {
@@ -197,6 +257,15 @@ SearchPane, Table view
     -fx-background-size: 16px 16px;
     -fx-background-position: center;
     -fx-cursor: hand;
+}
+
+.floating-button > .hbox{
+    -fx-background-color: #f67d26; /* Laranja claro */
+    -fx-background-radius: 15;
+    -fx-pref-width: 100;
+    -fx-border-radius: 50;
+    -fx-border-width: 0;
+    -fx-padding: 10;
 }
 
 
