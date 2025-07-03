@@ -19,39 +19,63 @@ import javafx.scene.layout.VBox;
 import java.util.List;
 import java.util.function.Consumer;
 
+/**
+ * Componente que exibe uma tabela com resultados de mídias provenientes de uma busca.
+ *
+ * Utiliza um {@link TableView} para apresentar propriedades do objeto {@link Media} como título, gêneros, ano e pontuação.
+ * Também permite interação via clique duplo na linha para ações adicionais.
+ */
 public class SearchTableResult implements Component {
     private ObservableList<Media> medias;
     private SearchResults searchResults;
     private Consumer<Media> onMediaDoubleClick;
     private TableView<Media> tableView;
 
+    /**
+     * Cria uma nova instância do componente, inicializando a lista observável e renderizando a tabela.
+     */
     public SearchTableResult() {
         medias = FXCollections.observableArrayList();
         render();
     }
 
+    /**
+     * Retorna o nó JavaFX raiz do componente (a tabela de resultados).
+     *
+     * @return A {@link TableView} contendo os resultados.
+     */
     @Override
     public Node getNode() {
         return tableView;
     }
 
+    /**
+     * Atualiza os resultados exibidos com base em um objeto {@link SearchResults}.
+     * Também define o consumidor que será chamado ao clicar duas vezes em uma linha.
+     *
+     * @param searchResults Objeto contendo os dados de mídia encontrados.
+     * @param onMediaDoubleClick Função executada ao clicar duas vezes sobre uma mídia.
+     */
     public void setSearchResults(SearchResults searchResults, Consumer<Media> onMediaDoubleClick) {
         this.searchResults = searchResults;
         this.onMediaDoubleClick = onMediaDoubleClick;
         this.medias.setAll(searchResults.getMediaList());
     }
 
+    /**
+     * Inicializa e configura o componente {@link TableView}, incluindo colunas,
+     * formato das células e eventos de interação.
+     */
     @Override
     public void render() {
         tableView = new TableView<>();
-            tableView.getStyleClass().add("result-table");
+        tableView.getStyleClass().add("result-table");
         VBox.setVgrow(tableView, Priority.ALWAYS);
         tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         TableColumn<Media, String> titleCol = new TableColumn<>("Título");
         titleCol.setCellValueFactory(cellData ->
                 new SimpleStringProperty(cellData.getValue().getTitulo()));
-
 
         TableColumn<Media, List<Genero>> generoCol = getGeneroColumn();
         generoCol.setMaxWidth(Double.MAX_VALUE); // Permite expandir
@@ -68,21 +92,19 @@ public class SearchTableResult implements Component {
                     setText(null);
                 } else {
                     setText(item.toString());
-                    setAlignment(Pos.CENTER); // <-- Alinha o conteúdo ao centro da célula
+                    setAlignment(Pos.CENTER); // Alinha o texto ao centro da célula
                 }
             }
         });
 
         TableColumn<Media, Double> scoreCol = getScoreColumn();
 
-
         TableColumn<Media, Void> visualizarCol = getVisualizarColumn();
-
 
         tableView.getColumns().addAll(titleCol, generoCol, yearCol, scoreCol, visualizarCol);
         tableView.setItems(medias);
 
-        // Clique duplo
+        // Define o evento de clique duplo para acionar a ação informada
         tableView.setRowFactory(tv -> {
             TableRow<Media> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
@@ -95,6 +117,11 @@ public class SearchTableResult implements Component {
         });
     }
 
+    /**
+     * Cria a coluna de gêneros que exibe os gêneros da mídia em forma de labels estilizadas.
+     *
+     * @return Coluna de gêneros da tabela.
+     */
     private TableColumn<Media, List<Genero>> getGeneroColumn() {
         TableColumn<Media, List<Genero>> generoCol = new TableColumn<>("Gêneros");
         generoCol.setCellValueFactory(cellData ->
@@ -122,6 +149,11 @@ public class SearchTableResult implements Component {
         return generoCol;
     }
 
+    /**
+     * Cria a coluna de pontuação que exibe a nota da mídia com cores conforme valor.
+     *
+     * @return Coluna de pontuação da tabela.
+     */
     private TableColumn<Media, Double> getScoreColumn() {
         TableColumn<Media, Double> scoreCol = new TableColumn<>("Pontuação");
         scoreCol.setCellValueFactory(cellData ->
@@ -157,12 +189,20 @@ public class SearchTableResult implements Component {
         return scoreCol;
     }
 
+    /**
+     * Cria a coluna que contém um botão para visualizar detalhes da mídia,
+     * acionando a mesma ação do clique duplo.
+     *
+     * @return Coluna com botão de visualizar.
+     */
     private TableColumn<Media, Void> getVisualizarColumn() {
         TableColumn<Media, Void> col = new TableColumn<>("");
 
         col.setCellFactory(param -> new TableCell<>() {
-            private  final VBox vbox = new VBox();
-            private final Button eyeButton = new Button();{
+            private final VBox vbox = new VBox();
+            private final Button eyeButton = new Button();
+
+            {
                 eyeButton.getStyleClass().add("eye-button");
                 eyeButton.setPrefSize(24, 24);
                 eyeButton.setOnAction(event -> {
@@ -174,7 +214,6 @@ public class SearchTableResult implements Component {
                 vbox.getChildren().add(eyeButton);
                 vbox.setAlignment(Pos.CENTER);
             }
-
 
             @Override
             protected void updateItem(Void item, boolean empty) {

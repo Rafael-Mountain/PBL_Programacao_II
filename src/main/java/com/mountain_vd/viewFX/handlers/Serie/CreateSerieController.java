@@ -12,28 +12,45 @@ import javafx.scene.Node;
 
 import java.time.LocalDate;
 
+/**
+ * Controlador responsável pela criação de novas séries na aplicação.
+ * Gera o formulário para entrada de dados da série e executa a ação de criação.
+ */
 public class CreateSerieController implements CreateMediaController {
-    RootScene rootScene;
-    SerieForm serieForm;
+    private final RootScene rootScene;
+    private SerieForm serieForm;
 
+    /**
+     * Construtor que recebe a cena raiz para controle da interface.
+     *
+     * @param rootScene cena principal da aplicação
+     */
     public CreateSerieController(RootScene rootScene) {
         this.rootScene = rootScene;
     }
 
-
+    /**
+     * Cria e retorna o formulário da série para preenchimento dos dados.
+     *
+     * @return nó JavaFX contendo o formulário de criação da série
+     */
     @Override
     public Node getForm() {
         serieForm = new SerieForm(rootScene);
         return serieForm.getNode();
     }
 
+    /**
+     * Coleta os dados do formulário, cria um objeto {@link Serie} e executa a ação de criação.
+     * Exibe mensagens de sucesso ou erro conforme o resultado da ação.
+     */
     @Override
     public void save() {
         Serie serie = new Serie();
 
         serie.setTitulo(serieForm.getTitle());
-        if (!(serieForm.getAnoLancamento() == null) && !serieForm.getAnoLancamento().isEmpty()) {
-            serie.setDataLancamento(LocalDate.of(Integer.parseInt(serieForm.getAnoLancamento()),1,1));
+        if (serieForm.getAnoLancamento() != null && !serieForm.getAnoLancamento().isEmpty()) {
+            serie.setDataLancamento(LocalDate.of(Integer.parseInt(serieForm.getAnoLancamento()), 1, 1));
         }
         serie.setGeneros(serieForm.getGeneros());
         serie.setConsumido(serieForm.getConsumer());
@@ -47,16 +64,17 @@ public class CreateSerieController implements CreateMediaController {
         CreateSerieAction action = new CreateSerieAction(new CreateSerieValidation());
         ActionResult result = action.execute(serie);
 
-        if(result.isSuccess()){
+        if (result.isSuccess()) {
             returnPage();
-            rootScene.showSuccess("Serie cadastrada com sucesso!");
-        }
-        else{
+            rootScene.showSuccess("Série cadastrada com sucesso!");
+        } else {
             rootScene.showError(result.getMessage());
         }
-
     }
 
+    /**
+     * Navega para a página de busca de séries, atualizando o conteúdo principal da cena raiz.
+     */
     @Override
     public void returnPage() {
         SearchPane pane = new SearchPane(rootScene, new SerieSearchPaneController(rootScene));

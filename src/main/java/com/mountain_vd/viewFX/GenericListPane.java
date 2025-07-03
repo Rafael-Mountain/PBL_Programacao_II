@@ -15,13 +15,35 @@ import javafx.scene.layout.VBox;
 import java.util.Objects;
 import java.util.function.BiConsumer;
 
+/**
+ * Componente genérico para exibir e gerenciar uma lista editável de itens.
+ * Permite adicionar novos itens via campo de texto e botão, além de remover itens individualmente.
+ *
+ * @param <T> Tipo dos itens da lista.
+ */
 public class GenericListPane<T> implements Component {
+    /** Container principal vertical. */
     private VBox vbox;
+
+    /** Lista observável de itens exibidos. */
     private final ObservableList<T> items;
+
+    /** Campo de texto para entrada de novos itens. */
     private TextField inputField;
+
+    /** Controlador que recebe o texto do input e a lista para adicionar novos itens. */
     private final BiConsumer<String, ObservableList<T>> controller;
+
+    /** Texto do label descritivo do componente. */
     private final String label;
 
+    /**
+     * Construtor que inicializa o componente com a lista de itens, controlador de adição e label.
+     *
+     * @param items Lista observável que será exibida e modificada.
+     * @param controller Função que recebe o texto do input e a lista para adicionar itens.
+     * @param label Texto descritivo mostrado acima da lista.
+     */
     public GenericListPane(ObservableList<T> items, BiConsumer<String, ObservableList<T>> controller, String label) {
         this.items = items;
         this.controller = controller;
@@ -29,11 +51,23 @@ public class GenericListPane<T> implements Component {
         render();
     }
 
+    /**
+     * Retorna o nó JavaFX que representa este componente.
+     *
+     * @return VBox contendo todo o layout do componente.
+     */
     @Override
     public Node getNode() {
         return vbox;
     }
 
+    /**
+     * Renderiza o layout completo do componente, incluindo:
+     * - Label descritiva
+     * - Campo de texto para entrada de novos itens
+     * - Botão para adicionar itens
+     * - Lista exibindo os itens atuais com botão para remoção de cada item.
+     */
     @Override
     public void render() {
         vbox = new VBox();
@@ -60,6 +94,13 @@ public class GenericListPane<T> implements Component {
         vbox.getChildren().addAll(inputBox, listView);
     }
 
+    /**
+     * Cria e configura o ListView que exibe os itens da lista.
+     * Cada célula possui o texto do item e um botão para removê-lo da lista.
+     * O botão muda sua imagem quando o mouse passa por cima.
+     *
+     * @return ListView configurado para exibir e manipular a lista de itens.
+     */
     public ListView<T> renderListView() {
         ListView<T> lv = new ListView<>(items);
 
