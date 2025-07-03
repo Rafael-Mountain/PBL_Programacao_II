@@ -13,7 +13,7 @@ class TemporadaTest {
 
     @Test
     void testConstrutorEGetters() {
-        LocalDateTime ano = LocalDateTime.of(2021, 9, 1, 0, 0);
+        LocalDate ano = LocalDate.of(2021, 9, 1);
         Avaliacao avaliacao = new Avaliacao(LocalDateTime.now(), 4, "Boa temporada, mas poderia ter mais ação!", LocalDate.of(2021, 9, 1));
 
         Temporada temporada = new Temporada(10, ano);
@@ -32,22 +32,22 @@ class TemporadaTest {
 
     @Test
     void testSetters() {
-        Temporada temporada = new Temporada(12, LocalDateTime.of(2022, 5, 1, 0, 0));
+        Temporada temporada = new Temporada(12, LocalDate.of(2022, 5, 1));
 
         temporada.setId(2);
         temporada.setSerieId(202);
-        temporada.setAno(LocalDateTime.of(2023, 6, 15, 0, 0));
+        temporada.setAno(LocalDate.of(2023, 6, 15));
         temporada.setqEpisodios(15);
 
         assertEquals(2, temporada.getId());
         assertEquals(202, temporada.getSerieId());
         assertEquals(15, temporada.getqEpisodios());
-        assertEquals(LocalDateTime.of(2023, 6, 15, 0, 0), temporada.getAno());
+        assertEquals(LocalDate.of(2023, 6, 15), temporada.getAno());
     }
 
     @Test
     void testAvaliar() {
-        Temporada temporada = new Temporada(8, LocalDateTime.of(2020, 11, 1, 0, 0));
+        Temporada temporada = new Temporada(8, LocalDate.of(2020, 11, 1));
         Avaliacao avaliacao1 = new Avaliacao(LocalDateTime.now(), 3, "Boa, mas alguns episódios são arrastados.", LocalDate.of(2020, 11, 2));
         Avaliacao avaliacao2 = new Avaliacao(LocalDateTime.now().minusDays(1), 4, "Ótima temporada, gostei muito!", LocalDate.of(2020, 11, 1));
 
@@ -60,7 +60,7 @@ class TemporadaTest {
 
     @Test
     void testPontuacaoComAvaliacoes() {
-        Temporada temporada = new Temporada(10, LocalDateTime.of(2021, 3, 1, 0, 0));
+        Temporada temporada = new Temporada(10, LocalDate.of(2021, 3, 1));
         Avaliacao avaliacao1 = new Avaliacao(LocalDateTime.now(), 5, "Excelente temporada!", LocalDate.of(2021, 3, 1));
         Avaliacao avaliacao2 = new Avaliacao(LocalDateTime.now().minusDays(2), 3, "Pode melhorar.", LocalDate.of(2021, 2, 28));
 
@@ -73,7 +73,7 @@ class TemporadaTest {
 
     @Test
     void testAvaliarComListaVazia() {
-        Temporada temporada = new Temporada(5, LocalDateTime.of(2022, 7, 15, 0, 0));
+        Temporada temporada = new Temporada(5, LocalDate.of(2022, 7, 15));
 
         // Testa a pontuação quando não há avaliações
         assertEquals(0, temporada.getPontuacao());

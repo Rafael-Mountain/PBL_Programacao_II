@@ -32,7 +32,7 @@ public class Filme extends MediaAudioVisual implements IAvaliavel {
     private String direcao;
 
     /** Duração do filme em minutos. */
-    private int duracao;
+    private Integer duracao;
 
     /** Informações sobre o roteiro ou roteirista. */
     private String roteiro;
@@ -99,7 +99,7 @@ public class Filme extends MediaAudioVisual implements IAvaliavel {
      *
      * @return duração em minutos.
      */
-    public int getDuracao() {
+    public Integer getDuracao() {
         return duracao;
     }
 

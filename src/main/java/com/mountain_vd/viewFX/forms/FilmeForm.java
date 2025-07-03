@@ -1,5 +1,6 @@
 package com.mountain_vd.viewFX.forms;
 
+import com.mountain_vd.controller.util.TextFieldUtil;
 import com.mountain_vd.viewFX.RootScene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -12,18 +13,6 @@ public class FilmeForm extends MediaAudioVisualForm {
     public FilmeForm(RootScene rootScene) {
         super(rootScene);
         render();
-    }
-
-    public String getDuracao() {
-        return duracaoField.getText();
-    }
-
-    public String getDiretor() {
-        return diretorField.getText();
-    }
-
-    public String getRoteiro() {
-        return roteiroTextArea.getText();
     }
 
     @Override
@@ -48,6 +37,7 @@ public class FilmeForm extends MediaAudioVisualForm {
         // ===== COLUNA ESQUERDA (linha 5, coluna 0, rowspan 2) =====
         Label duracaoLabel = new Label("Duração (min)");
         duracaoField = new TextField();
+        duracaoField.setTextFormatter(TextFieldUtil.numericFormatter(3));
         duracaoField.setPromptText("Ex: 120");
         Tooltip duracaoTooltip = new Tooltip("Informe a duração total do filme em minutos");
         Tooltip.install(duracaoLabel, duracaoTooltip);
@@ -84,5 +74,61 @@ public class FilmeForm extends MediaAudioVisualForm {
         gridPane.add(rightField, 0, 6);
 
         return content;
+    }
+
+    // ========= GETTERS =========
+    public String getDuracao() {
+        return duracaoField.getText();
+    }
+
+    public String getDiretor() {
+        return diretorField.getText();
+    }
+
+    public String getRoteiro() {
+        return roteiroTextArea.getText();
+    }
+
+    // ========= SETTERS =========
+    public void setDuracao(String duracao) {
+        duracaoField.setText(duracao);
+    }
+
+    public void setDiretor(String diretor) {
+        diretorField.setText(diretor);
+    }
+
+    public void setRoteiro(String roteiro) {
+        roteiroTextArea.setText(roteiro);
+    }
+
+    // ========= DISABLE METHODS =========
+    public void disableDuracaoField() {
+        if (duracaoField != null) {
+            duracaoField.setDisable(true);
+            duracaoField.setOpacity(1);
+        }
+    }
+
+    public void disableDiretorField() {
+        if (diretorField != null) {
+            diretorField.setDisable(true);
+            diretorField.setOpacity(1);
+        }
+    }
+
+    public void disableRoteiroTextArea() {
+        if (roteiroTextArea != null) {
+            roteiroTextArea.setDisable(true);
+            roteiroTextArea.setOpacity(1);
+        }
+    }
+
+    @Override
+    public void disableFields() {
+        super.disableFields();
+        disableDuracaoField();
+        disableDiretorField();
+        disableRoteiroTextArea();
     }
 }

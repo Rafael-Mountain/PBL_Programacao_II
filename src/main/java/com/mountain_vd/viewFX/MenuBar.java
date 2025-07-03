@@ -1,12 +1,16 @@
 package com.mountain_vd.viewFX;
 
-import javafx.geometry.Insets;
-import javafx.scene.Node;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.*;
 import com.mountain_vd.viewFX.commons.Component;
 import com.mountain_vd.viewFX.handlers.MenuBarController;
+import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
 
 public class MenuBar implements Component {
     private VBox vbox;
@@ -35,13 +39,12 @@ public class MenuBar implements Component {
         ToggleGroup mediaToggleGroup = new ToggleGroup();
 
         // Criação dos botões com ações delegadas
-        ToggleButton filmeButton = renderMediaButton("Filme", mediaToggleGroup, controller::onFilmeSelected);
-        ToggleButton serieButton = renderMediaButton("Série", mediaToggleGroup, controller::onSerieSelected);
-        ToggleButton livroButton = renderMediaButton("Livro", mediaToggleGroup, controller::onLivroSelected);
+        ToggleButton filmeButton = renderMediaButton("Filme", mediaToggleGroup, controller::onFilmeSelected, "filme-icon");
+        ToggleButton serieButton = renderMediaButton("Série", mediaToggleGroup, controller::onSerieSelected, "serie-icon");
+        ToggleButton livroButton = renderMediaButton("Livro", mediaToggleGroup, controller::onLivroSelected, "livro-icon");
 
         VBox buttonVbox = new VBox(filmeButton, serieButton, livroButton);
-        buttonVbox.getStyleClass().add("media_vbox");
-        buttonVbox.setId("div_botoes_menu_bar");
+        buttonVbox.getStyleClass().add("div_botoes_menu_bar");
 
         HBox divThemeButton = new HBox(renderThemeButton());
         divThemeButton.setPadding(new Insets(10, 10, 10, 10));
@@ -56,11 +59,26 @@ public class MenuBar implements Component {
         );
 
         vbox.setPadding(new Insets(10, 0, 10, 0));
-        vbox.setId("MenuBar");
+        vbox.getStyleClass().add("menu-bar");
     }
 
-    private ToggleButton renderMediaButton(String label, ToggleGroup group, Runnable action) {
-        ToggleButton button = new ToggleButton(label);
+    private ToggleButton renderMediaButton(String label, ToggleGroup group, Runnable action, String iconStyle) {
+        Label labelNode = new Label(label);
+
+        Region icon = new Region();
+        icon.getStyleClass().addAll(iconStyle,"menu-button-icon");
+        icon.setPrefSize(24, 24);
+
+        Region line = new Region();
+        line.getStyleClass().add("menu-button-line");
+
+        HBox hbox = new HBox(line,icon, labelNode);
+        hbox.getStyleClass().add("menu-bar-button-div");
+
+        ToggleButton button = new ToggleButton();
+        button.setGraphic(hbox);
+
+        button.getStyleClass().add("menu-bar-button");
         button.setMinWidth(width);
         button.setToggleGroup(group);
 

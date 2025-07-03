@@ -1,5 +1,6 @@
 package com.mountain_vd.viewFX;
 
+import com.mountain_vd.viewFX.commons.Displayable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -9,10 +10,11 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import com.mountain_vd.viewFX.commons.Displayable;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+
+import java.util.Objects;
 
 
 public class RootScene implements Displayable {
@@ -32,7 +34,7 @@ public class RootScene implements Displayable {
 
     private void init() {
         setBaseTheme();
-//        setLitghMode();
+        setLightMode();
     }
 
     @Override
@@ -54,19 +56,19 @@ public class RootScene implements Displayable {
     public void setLightMode() {
         scene.getStylesheets().clear();
         setBaseTheme();
-//        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/light-theme.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/light-theme.css")).toExternalForm());
 
     }
 
     public void setDarkMode() {
         scene.getStylesheets().clear();
         setBaseTheme();
-//        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/dark-theme.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/dark-theme.css")).toExternalForm());
     }
 
-    private void setBaseTheme(){
-//        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/reset.css")).toExternalForm());
-//        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/base.css")).toExternalForm());
+    private void setBaseTheme() {
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/reset.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/base.css")).toExternalForm());
     }
 
     public void showError(String message) {
@@ -86,7 +88,8 @@ public class RootScene implements Displayable {
         Region background = new Region();
         background.setStyle("-fx-background-color: rgba(0, 0, 0, 0.4);");
         background.setPrefSize(scene.getWidth(), scene.getHeight());
-        background.setOnMouseClicked(e -> {});
+        background.setOnMouseClicked(e -> {
+        });
         background.setMouseTransparent(false);
 
 
@@ -96,8 +99,8 @@ public class RootScene implements Displayable {
         content.setSpacing(10);
 
         // BotÃ£o de fechar (canto superior direito)
-        Image normalImage = new Image(getClass().getResource("/images/close.png").toExternalForm());
-        Image hoverImage = new Image(getClass().getResource("/images/closeBold.png").toExternalForm());
+        Image normalImage = new Image(Objects.requireNonNull(getClass().getResource("/images/close.png")).toExternalForm());
+        Image hoverImage = new Image(Objects.requireNonNull(getClass().getResource("/images/closeBold.png")).toExternalForm());
         ImageView imageView = new ImageView(normalImage);
         imageView.setFitWidth(16);
         imageView.setFitHeight(16);
@@ -129,6 +132,4 @@ public class RootScene implements Displayable {
 
         closeButton.setOnAction(e -> rootStack.getChildren().remove(overlay));
     }
-
-
 }

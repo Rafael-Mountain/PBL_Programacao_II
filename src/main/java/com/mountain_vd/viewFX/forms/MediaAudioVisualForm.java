@@ -117,26 +117,29 @@ public class MediaAudioVisualForm extends MediaForm {
 
 
     public void disableTituloOriginalField() {
-        if (tituloOriginalField != null) tituloOriginalField.setDisable(true);
+        if (tituloOriginalField != null) {
+            tituloOriginalField.setDisable(true);
+            tituloOriginalField.setOpacity(1);
+        }
     }
 
     public void disableLocalDisponivelField() {
-        if (LocalDisponivelField != null) LocalDisponivelField.setDisable(true);
+        if (LocalDisponivelField != null) {
+            LocalDisponivelField.setDisable(true);
+            LocalDisponivelField.setOpacity(1);
+        }
     }
 
     public void disableElencoList() {
-        if (elencoListPane != null && elencoListPane.getNode() != null)
+        if (elencoListPane != null && elencoListPane.getNode() != null) {
             elencoListPane.getNode().setDisable(true);
+            elencoListPane.getNode().setOpacity(1);
+        }// Manter a opacidade para visualização
     }
 
     @Override
     public void disableFields() {
-        // herdados
-        disableTitleField();
-        disableAnoField();
-        disableConsumerCheckbox();
-        disableGeneroList();
-        // específicos
+        super.disableFields();
         disableTituloOriginalField();
         disableLocalDisponivelField();
         disableElencoList();

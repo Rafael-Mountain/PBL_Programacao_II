@@ -13,7 +13,7 @@ class FilmeTest {
 
     @Test
     void testConstrutorEGetters() {
-        LocalDateTime dataLancamento = LocalDateTime.of(2021, 7, 10, 18, 30);
+        LocalDate dataLancamento = LocalDate.of(2021, 7, 10);
         Genero genero = new Genero("Ação");
         Avaliacao avaliacao = new Avaliacao(LocalDateTime.now(), 5, "Ótimo filme!", LocalDate.of(2021, 7, 11));
 

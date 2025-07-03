@@ -1,7 +1,10 @@
-/* RESET CSS PARA JAVAFX */
+/* ===================================
+   RESET CSS PARA JAVAFX
+   =================================== */
 
-/* Remove bordas, padding e margens padrões */
-.root, .label, .button, .text-field, .combo-box, .list-view, .table-view, .check-box, .radio-button, .tab-pane {
+/* -------- Componentes principais -------- */
+.root, .label, .button, .text-field, .combo-box,
+.list-view, .table-view, .check-box, .radio-button, .tab-pane {
     -fx-padding: 0;
     -fx-border-insets: 0;
     -fx-background-insets: 0;
@@ -10,50 +13,80 @@
     -fx-border-width: 0;
     -fx-background-color: transparent;
     -fx-border-color: transparent;
-    -fx-focus-color: transparent;
+    -fx-focus-color: rgb(246, 125, 38, 0.5);
     -fx-faint-focus-color: transparent;
     -fx-font-size: 12px;
     -fx-font-family: "System";
     -fx-text-fill: black;
 }
 
-/* Zera espaçamentos internos de containers */
+/* -------- Containers -------- */
 .hbox, .vbox, .stack-pane, .anchor-pane, .grid-pane {
     -fx-padding: 0;
     -fx-spacing: 0;
 }
 
-/* Remove estilos de botão */
+/* -------- Botões -------- */
 .button {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
     -fx-text-fill: black;
 }
 
-/* Remove borda e fundo de textfield */
+/* -------- TextField -------- */
 .text-field {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
 }
 
-/* Combobox sem estilo */
+/* -------- ComboBox -------- */
 .combo-box {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
 }
 
-/* ListView e TableView sem bordas */
+/* -------- ListView e TableView -------- */
 .list-view, .table-view {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
 }
 
-/* Tira seleção default */
+/* -------- TitledPane (limpeza total) -------- */
+.titled-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+}
+
+.titled-pane > .title {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+}
+
+.titled-pane > .content {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+}
+
+/* -------- Seleção e foco -------- */
 .selection-bar, .selection-bar-non-focused {
     -fx-background: transparent;
 }
 
-/* Remove sombra de foco */
-.text-input:focused, .button:focused, .combo-box:focused {
+.text-input:focused,
+.button:focused,
+.combo-box:focused {
     -fx-effect: none;
 }

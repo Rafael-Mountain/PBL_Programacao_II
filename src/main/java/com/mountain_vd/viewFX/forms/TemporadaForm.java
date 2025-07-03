@@ -1,10 +1,13 @@
 package com.mountain_vd.viewFX.forms;
 
 import com.mountain_vd.controller.util.TextFieldUtil;
+import com.mountain_vd.controller.util.TitledPaneCollapseListener;
 import com.mountain_vd.model.Avaliacao;
+import com.mountain_vd.model.Serie;
 import com.mountain_vd.model.Temporada;
 import com.mountain_vd.viewFX.RootScene;
 import com.mountain_vd.viewFX.commons.Component;
+import com.mountain_vd.viewFX.handlers.TemporadaFormController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -16,13 +19,16 @@ public class TemporadaForm implements Component {
 
     private final ObservableList<Temporada> temporadas;
     private final RootScene rootScene;
+    private Serie serie;
     private VBox mainContent;
 
     private final VBox listaTemporadasContainer = new VBox(5);
     private TitledPane expandedPane = null;
 
-    public TemporadaForm(RootScene rootScene, ObservableList<Temporada> temporadas) {
-        this.temporadas = temporadas;
+    public TemporadaForm(RootScene rootScene, Serie serie) {
+        this.temporadas = FXCollections.observableArrayList();
+        this.temporadas.addAll(serie.getTemporadas());
+        this.serie = serie;
         this.rootScene = rootScene;
         render();
     }
@@ -35,6 +41,8 @@ public class TemporadaForm implements Component {
     @Override
     public void render() {
         mainContent = new VBox(10);
+        mainContent.setPrefHeight(520);
+        VBox.setVgrow(mainContent, Priority.ALWAYS);
 
         // ==== Linha de entrada com ano, episódios e botão ====
         HBox hBox = new HBox(20);
@@ -66,7 +74,15 @@ public class TemporadaForm implements Component {
         Button addButton = new Button("Adicionar");
         addButton.setPrefHeight(38);
         addButton.setOnAction(e -> {
-            // TODO: implementar lógica de adição
+            TemporadaFormController.addTemporada(
+                    rootScene,
+                    temporadas,
+                    anoField.getText(),
+                    nEpisodesField.getText(),
+                    serie
+            );
+            anoField.clear();
+            nEpisodesField.clear();
         });
 
         hBox.getChildren().addAll(AnoBox, nEpisodesBox, addButton);
@@ -80,6 +96,8 @@ public class TemporadaForm implements Component {
 
     public ScrollPane renderTemporadaList() {
         listaTemporadasContainer.getChildren().clear();
+        listaTemporadasContainer.setFillWidth(true);
+        VBox.setVgrow(listaTemporadasContainer, Priority.ALWAYS);
 
         // Atualiza a lista dinamicamente
         temporadas.addListener((javafx.collections.ListChangeListener<Temporada>) change -> atualizarLista());
@@ -87,7 +105,9 @@ public class TemporadaForm implements Component {
 
         ScrollPane scrollPane = new ScrollPane(listaTemporadasContainer);
         scrollPane.setFitToWidth(true);
+        scrollPane.setFitToHeight(true); // força ocupar o espaço vertical
         scrollPane.setPadding(new Insets(5));
+        VBox.setVgrow(scrollPane, Priority.ALWAYS);
 
         return scrollPane;
     }
@@ -107,13 +127,14 @@ public class TemporadaForm implements Component {
 
             // Painel expansível
             TitledPane pane = new TitledPane();
+            TitledPaneCollapseListener.attach(pane);
             pane.setExpanded(false);
             pane.setGraphic(infoDiv); // infoDiv como cabeçalho
 
             // Conteúdo: lista de avaliações
-            ObservableList<Avaliacao> avaliacoes = FXCollections.observableArrayList(temporada.getAvaliacoes());
             AvaliacaoForm avaliacaoForm = new AvaliacaoForm(rootScene, temporada);
             VBox form = (VBox) avaliacaoForm.getNode();
+            form.setPadding(new Insets(10));
             form.setPrefHeight(350);
             pane.setContent(form);
 

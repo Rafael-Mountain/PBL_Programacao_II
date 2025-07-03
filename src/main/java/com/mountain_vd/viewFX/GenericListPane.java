@@ -2,6 +2,7 @@ package com.mountain_vd.viewFX;
 
 import com.mountain_vd.viewFX.commons.Component;
 import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -10,22 +11,16 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.geometry.Pos;
 
+import java.util.Objects;
 import java.util.function.BiConsumer;
 
 public class GenericListPane<T> implements Component {
     private VBox vbox;
-    private ObservableList<T> items;
+    private final ObservableList<T> items;
     private TextField inputField;
-    private Button addButton;
-    private ListView<T> listView;
-    private BiConsumer<String, ObservableList<T>> controller;
-    private String label;
-
-    public GenericListPane(ObservableList<T> items, BiConsumer<String, ObservableList<T>> controller) {
-        this(items, controller, "Itens");
-    }
+    private final BiConsumer<String, ObservableList<T>> controller;
+    private final String label;
 
     public GenericListPane(ObservableList<T> items, BiConsumer<String, ObservableList<T>> controller, String label) {
         this.items = items;
@@ -50,7 +45,7 @@ public class GenericListPane<T> implements Component {
         inputField.setPromptText("Digite aqui");
         HBox.setHgrow(inputField, Priority.ALWAYS);
 
-        addButton = new Button("Adicionar");
+        Button addButton = new Button("Adicionar");
         addButton.setOnAction(e -> {
             controller.accept(inputField.getText(), items);
             inputField.clear();
@@ -59,7 +54,7 @@ public class GenericListPane<T> implements Component {
         HBox inputBox = new HBox(inputField, addButton);
         inputBox.setSpacing(5);
 
-        listView = renderListView();
+        ListView<T> listView = renderListView();
         VBox.setVgrow(listView, Priority.ALWAYS);
 
         vbox.getChildren().addAll(inputBox, listView);
@@ -87,33 +82,31 @@ public class GenericListPane<T> implements Component {
                     labelWrapper.setAlignment(Pos.CENTER);
                     HBox.setHgrow(labelWrapper, Priority.ALWAYS);
 
-                    Image normalImage = new Image(getClass().getResource("/images/close.png").toExternalForm());
-                    Image hoverImage = new Image(getClass().getResource("/images/closeBold.png").toExternalForm());
+                    Image normalImage = new Image(Objects.requireNonNull(getClass().getResource("/images/close.png")).toExternalForm());
+                    Image hoverImage = new Image(Objects.requireNonNull(getClass().getResource("/images/closeBold.png")).toExternalForm());
 
-                    ImageView imageView = new ImageView(normalImage);
-                    imageView.setFitWidth(16);
-                    imageView.setFitHeight(16);
-
-                    Button removeButton = new Button();
-                    removeButton.setGraphic(imageView);
-                    removeButton.setStyle("-fx-background-color: transparent; -fx-padding: 4;");
-                    removeButton.setOnMouseEntered(e -> imageView.setImage(hoverImage));
-                    removeButton.setOnMouseExited(e -> imageView.setImage(normalImage));
-                    removeButton.setOnAction(event -> items.remove(item));
+                    Button removeButton = getButton(item, normalImage, hoverImage);
 
                     hbox.getChildren().addAll(labelWrapper, removeButton);
                     setGraphic(hbox);
                 }
             }
+
+            private Button getButton(T item, Image normalImage, Image hoverImage) {
+                ImageView imageView = new ImageView(normalImage);
+                imageView.setFitWidth(16);
+                imageView.setFitHeight(16);
+
+                Button removeButton = new Button();
+                removeButton.setGraphic(imageView);
+                removeButton.setStyle("-fx-background-color: transparent; -fx-padding: 4;");
+                removeButton.setOnMouseEntered(e -> imageView.setImage(hoverImage));
+                removeButton.setOnMouseExited(e -> imageView.setImage(normalImage));
+                removeButton.setOnAction(event -> items.remove(item));
+                return removeButton;
+            }
         });
 
         return lv;
-    }
-
-    // ========= MÉTODO PARA DESABILITAR =========
-    public void disable() {
-        if (inputField != null) inputField.setDisable(true);
-        if (addButton != null) addButton.setDisable(true);
-        if (listView != null) listView.setDisable(true);
     }
 }

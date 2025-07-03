@@ -54,6 +54,7 @@ public class MediaForm implements Component {
         Tab tab = new Tab("Avaliações");
         tab.setClosable(false);
 
+        System.out.println(entity);
         avaliacaoForm = new AvaliacaoForm(rootScene, entity);
 
         tab.setContent(avaliacaoForm.getNode());
@@ -170,20 +171,30 @@ public class MediaForm implements Component {
 
     // ======= DISABLE METHODS =======
     public void disableTitleField() {
-        if (titleField != null) titleField.setDisable(true);
+        if (titleField != null) {
+            titleField.setDisable(true);
+            titleField.setOpacity(1); // força a opacidade a 1
+        }
     }
 
     public void disableAnoField() {
-        if (anoField != null) anoField.setDisable(true);
+        if (anoField != null) {
+            anoField.setDisable(true);
+            anoField.setOpacity(1);
+        }
     }
 
     public void disableConsumerCheckbox() {
-        if (consumerCheckbox != null) consumerCheckbox.setDisable(true);
+        if (consumerCheckbox != null) {
+            consumerCheckbox.setDisable(true);
+            consumerCheckbox.setOpacity(1);
+        }
     }
-
     public void disableGeneroList() {
         if (genrePickerPane != null && genrePickerPane.getNode() != null) {
-            genrePickerPane.getNode().setDisable(true);
+            Node node = genrePickerPane.getNode();
+            node.setDisable(true);
+            node.setOpacity(1);
         }
     }
 

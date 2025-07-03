@@ -1,21 +1,204 @@
-.root {
-    -fx-background-color: #f5f5f5;
+.text-field {
+    -fx-background-radius: 5;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5;
+}
+
+/*
+
+Combo Box 
+
+*/
+
+.combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: #e66500;
+    /* laranja escuro */
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #f67d26;
+}
+
+.combo-box {
+    -fx-border-width: 2px;
+    -fx-border-radius: 5;   
+}
+
+/* 
+
+Titled Pane
+
+*/
+
+.titled-pane>.title {
+    -fx-background-radius: 15 15 0 0;
+    -fx-padding: 5 10 5 15;
+}
+
+.titled-pane.titled-pane-collapsed>.title {
+    -fx-background-radius: 15;
+}
+
+.titled-pane {
+    -fx-background-radius: 15;
+}
+
+.titled-pane>.content {
+    -fx-border-color: #bebebe transparent transparent transparent;
+    /* top right bottom left */
+    -fx-border-width: 2px 0 0 0;
+    -fx-background-radius: 0 0 15 15;
 }
 
 
-.media_vbox {
-    -fx-padding:0 10 0 10;
+/* 
+
+Menu Bar
+
+*/
+
+.div_botoes_menu_bar {
+    -fx-padding: 0;
+    -fx-spacing: 10;
 }
 
-.media_vbox .toggle-button {
-    -fx-background-radius: 20;
-    -fx-border-radius: 20;
+.menu-bar-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+
+    -fx-border-color: transparent;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+    -fx-border-insets: 0;
+
+    -fx-padding: 5 10;
 }
 
-/*id da div dos botões laterais*/
-#div_botoes_menu_bar{
-    -fx-spacing: 15;
+.menu-bar-button-div {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+    -fx-border-insets: 0;
+
+    -fx-spacing: 3;
+    -fx-padding: 0 2 0 0;
+    -fx-alignment: center-left;
 }
+
+.menu-button-line {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+    -fx-pref-width: 2;
+}
+
+.menu_bar_button:selected .menu-bar-button-div .menu-button-line {
+    -fx-background-color: #f67d26;
+}
+
+.menu-button-icon {
+    -fx-background-repeat: no-repeat;
+    -fx-size: 24px 24px;
+    -fx-background-size: 16px 16px;
+    -fx-background-position: center;
+}
+
+.menu-bar-button:selected .menu-bar-button-div .filme-icon {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/images/filme-selected-icon.png");
+}
+
+.menu-bar-button:selected .menu-bar-button-div .livro-icon {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/images/livro-selected-icon.png");
+}
+
+.menu-bar-button:selected .menu-bar-button-div .serie-icon {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/images/serie-selected-icon.png");
+}
+
+
+/* 
+
+SearchPane, Table view 
+
+*/
+
+.Search_Container {
+    -fx-spacing: 10;
+    -fx-padding: 15 10 15 10;
+}
+
+.search-button {
+    -fx-background-color: #f67d26;
+    -fx-background-radius: 15 0 0 15;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+    -fx-padding: 5 5 5 10;
+    -fx-size: 24px 24px;
+}
+
+.search-combo-box {
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+    -fx-pref-height: 28px;
+    -fx-border-width: 0;
+}
+
+.search-text-field {
+    -fx-background-radius: 0 15 15 0;
+    -fx-background-insets: 0;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+
+    -fx-pref-height: 28px;
+}
+
+.titled-pane>.content {
+    background-radius: 0 0 15 15;
+}
+
+
+.filter-combo-box {
+    -fx-border-radius: 5 0 0 5;
+    -fx-border-width: 2px 0px 2px 2px;
+    -fx-pref-height: 29px;
+}
+
+.filter-text-field {
+    -fx-border-radius: 0 5 5 0;
+    -fx-border-width: 2px 2px 2px 0px;
+    -fx-pref-height: 29px;
+}
+
+.result-table{
+    -fx-background-radius: 15;
+
+}
+.result-table .column-header {
+    -fx-border-color: #f67d26;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.result-table .column-header-background,
+.result-table .table-row-cell {
+    -fx-background-color: transparent;
+}
+
+.eye-button {
+    -fx-background-repeat: no-repeat;
+    -fx-size: 24px 24px;
+    -fx-background-size: 16px 16px;
+    -fx-background-position: center;
+    -fx-cursor: hand;
+}
+
 
 /*generoLabel.setStyle("-fx-background-color: #FFC0CB; " +  // Rosa claro*/
 /*"-fx-border-radius: 15; " +*/
@@ -23,3 +206,9 @@
 /*"-fx-padding: 5 10; " +*/
 /*"-fx-text-fill: #333333;");*/
 
+
+/* Media */
+
+.displayMediaContainer {
+    -fx-padding: 0, 0, 10, 0;
+}
