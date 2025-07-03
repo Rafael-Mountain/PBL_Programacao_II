@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f647e7e-b96a-4417-bb0b-138eb96722ac" name="Changes" comment="estilizando o sistema">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="9f647e7e-b96a-4417-bb0b-138eb96722ac" name="Changes" comment="commit dos aquivos do sistema">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/confirm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/error.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/SearchPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/SearchPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/SearchTableResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/SearchTableResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/dark-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/dark-theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/light-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/light-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/RootScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mountain_vd/viewFX/RootScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,33 +52,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.DiarioCultural.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in PBL_Programacao_II.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [-x,javafx:run].executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [-x].executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [clean,javafx:run].executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [javafx:run,-x].executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [javafx:run...].executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [javafx:run].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.JavaFX Debug.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/SoftwareDATA/Desktop/Rafael/PBL_Programacao_II/src/main/resources/css&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.40574712&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DiarioCultural.executor": "Run",
+    "JUnit.All in PBL_Programacao_II.executor": "Run",
+    "Maven. [-x,javafx:run].executor": "Run",
+    "Maven. [-x].executor": "Run",
+    "Maven. [clean,javafx:run].executor": "Run",
+    "Maven. [javafx:run,-x].executor": "Run",
+    "Maven. [javafx:run...].executor": "Run",
+    "Maven. [javafx:run].executor": "Run",
+    "Maven.JavaFX Debug.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Merging main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Vitor Dórea/IdeaProjects/pbl",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.40574712",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.mountain_vd.viewFX.handlers.Serie" />
@@ -89,6 +88,7 @@
       <recent name="C:\Users\SoftwareDATA\Desktop\Rafael\PBL_Programacao_II\src\main\resources\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Vitor Dórea\UEFS\Disciplinas\JAVA\PBL_Programacao_II\src\main\resources\images" />
       <recent name="C:\Users\SoftwareDATA\Desktop\Rafael\PBL_Programacao_II\src\main\java" />
       <recent name="C:\Users\SoftwareDATA\Desktop\Rafael\PBL_Programacao_II\src\main\resources\images" />
     </key>
@@ -176,6 +176,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.39" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.39" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -189,7 +197,11 @@
       <workItem from="1749858292079" duration="591000" />
       <workItem from="1749859153154" duration="9088000" />
       <workItem from="1749898869659" duration="41581000" />
-      <workItem from="1751134006112" duration="2202000" />
+      <workItem from="1751134006112" duration="5173000" />
+      <workItem from="1751230770788" duration="2399000" />
+      <workItem from="1751400751538" duration="1348000" />
+      <workItem from="1751486885954" duration="2382000" />
+      <workItem from="1751572350110" duration="1815000" />
     </task>
     <task id="LOCAL-00001" summary="Transformando projeto para Maven">
       <option name="closed" value="true" />
@@ -231,23 +243,7 @@
       <option name="project" value="LOCAL" />
       <updated>1751137754791</updated>
     </task>
-    <task id="LOCAL-00006" summary="Criando as telas">
-      <option name="closed" value="true" />
-      <created>1751336791689</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1751336791689</updated>
-    </task>
-    <task id="LOCAL-00007" summary="estilizando o sistema">
-      <option name="closed" value="true" />
-      <created>1751566867722</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1751566867722</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +269,8 @@
     <MESSAGE value="Merge com o projeto" />
     <MESSAGE value="Criando as telas" />
     <MESSAGE value="estilizando o sistema" />
-    <option name="LAST_COMMIT_MESSAGE" value="estilizando o sistema" />
+    <MESSAGE value="commit dos aquivos do sistema" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit dos aquivos do sistema" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

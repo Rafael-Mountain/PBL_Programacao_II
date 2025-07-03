@@ -72,15 +72,35 @@ public class RootScene implements Displayable {
     }
 
     public void showError(String message) {
+        VBox vbox = new VBox();
+
         Label label = new Label(message);
         label.setWrapText(true);
-        showMessage(label);
+
+        Image image = new Image(getClass().getResource("/images/error.png").toExternalForm());
+        ImageView imageView = new ImageView(image);
+
+        vbox.getChildren().addAll(imageView, label);
+        vbox.setAlignment(Pos.CENTER);
+        vbox.setSpacing(20);
+
+        showMessage(vbox);
     }
 
     public void showSuccess(String message) {
+        VBox vbox = new VBox();
+
         Label label = new Label(message);
         label.setWrapText(true);
-        showMessage(label);
+
+        Image image = new Image(getClass().getResource("/images/confirm.png").toExternalForm());
+        ImageView imageView = new ImageView(image);
+
+        vbox.getChildren().addAll(imageView, label);
+        vbox.setAlignment(Pos.CENTER);
+        vbox.setSpacing(20);
+
+        showMessage(vbox);
     }
 
     private void showMessage(Node messageContent) {
@@ -94,9 +114,9 @@ public class RootScene implements Displayable {
 
 
         VBox content = new VBox(messageContent);
-        content.setAlignment(Pos.CENTER_LEFT);
-        content.setPadding(new Insets(20, 20, 20, 20));
-        content.setSpacing(10);
+        //content.setAlignment(Pos.CENTER_LEFT);
+        //content.setPadding(new Insets(20, 20, 20, 20));
+        //content.setSpacing(10);
 
         // BotÃ£o de fechar (canto superior direito)
         Image normalImage = new Image(Objects.requireNonNull(getClass().getResource("/images/close.png")).toExternalForm());
