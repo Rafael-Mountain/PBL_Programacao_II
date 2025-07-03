@@ -16,22 +16,6 @@ public class LivroForm extends MediaForm {
         super(rootScene);
     }
 
-    public String getAutor() {
-        return autorField.getText();
-    }
-
-    public String getEditora() {
-        return editoraField.getText();
-    }
-
-    public boolean getPossuiCheckbox() {
-        return possuiCheckbox.isSelected();
-    }
-
-    public String getIsbn() {
-        return isbnField.getText();
-    }
-
     @Override
     public void render() {
         tabPane = new TabPane();
@@ -86,15 +70,87 @@ public class LivroForm extends MediaForm {
         Tooltip.install(isbnField, isbnTooltip);
         HBox.setHgrow(isbnField, Priority.ALWAYS);
 
-        possuiCheckbox = new CheckBox("Você possui esse livro?"); // sem texto como solicitado
+        possuiCheckbox = new CheckBox("Você possui esse livro?");
         Tooltip possuiTooltip = new Tooltip("Marque se você possui o livro em formato físico ou digital");
         Tooltip.install(possuiCheckbox, possuiTooltip);
 
-        HBox isbnAndCheckboxBox = new HBox(10,isbnLabel, isbnField, possuiCheckbox);
+        HBox isbnAndCheckboxBox = new HBox(10, isbnLabel, isbnField, possuiCheckbox);
         isbnAndCheckboxBox.setPadding(new Insets(5, 0, 0, 0));
         GridPane.setColumnSpan(isbnAndCheckboxBox, 5);
         gridPane.add(isbnAndCheckboxBox, 0, startRow++);
 
         return content;
+    }
+
+    // ======= GETTERS =======
+    public String getAutor() {
+        return autorField.getText();
+    }
+
+    public String getEditora() {
+        return editoraField.getText();
+    }
+
+    public boolean getPossuiCheckbox() {
+        return possuiCheckbox.isSelected();
+    }
+
+    public String getIsbn() {
+        return isbnField.getText();
+    }
+
+    // ======= SETTERS =======
+    public void setAutor(String autor) {
+        autorField.setText(autor);
+    }
+
+    public void setEditora(String editora) {
+        editoraField.setText(editora);
+    }
+
+    public void setPossuiCheckbox(boolean possui) {
+        possuiCheckbox.setSelected(possui);
+    }
+
+    public void setIsbn(String isbn) {
+        isbnField.setText(isbn);
+    }
+
+    // ======= DISABLE METHODS =======
+    public void disableAutorField() {
+        if (autorField != null) {
+            autorField.setDisable(true);
+            autorField.setOpacity(1);
+        }
+    }
+
+    public void disableEditoraField() {
+        if (editoraField != null) {
+            editoraField.setDisable(true);
+            editoraField.setOpacity(1);
+        }
+    }
+
+    public void disableIsbnField() {
+        if (isbnField != null) {
+            isbnField.setDisable(true);
+            isbnField.setOpacity(1);
+        }
+    }
+
+    public void disablePossuiCheckbox() {
+        if (possuiCheckbox != null) {
+            possuiCheckbox.setDisable(true);
+            possuiCheckbox.setOpacity(1);
+        }
+    }
+
+    @Override
+    public void disableFields() {
+        super.disableFields();
+        disableAutorField();
+        disableEditoraField();
+        disableIsbnField();
+        disablePossuiCheckbox();
     }
 }

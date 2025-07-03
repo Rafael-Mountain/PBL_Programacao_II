@@ -2,9 +2,13 @@ package com.mountain_vd.viewFX;
 
 import com.mountain_vd.viewFX.commons.Component;
 import com.mountain_vd.viewFX.handlers.DisplayMediaController;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 
 
@@ -23,27 +27,31 @@ public class DisplayMediaPane implements Component {
 
     @Override
     public Node getNode() {
-        return container;
+        VBox.setVgrow(container, Priority.ALWAYS);
+        VBox wrapper = new VBox(container);
+        wrapper.setPadding(new Insets(10));// padding efetivo aqui
+        return wrapper;
     }
 
     @Override
     public void render() {
-        container = new VBox(10);
+        container = new VBox();
+        container.getStyleClass().add("displayMediaContainer");
         Node form = controller.getForm();
 
         HBox buttonDiv = new HBox(10);
+        buttonDiv.setAlignment(Pos.CENTER_RIGHT);
         Button salvarButton = new Button("Salvar");
         salvarButton.setOnAction(event -> {controller.update();});
 
-        Button deletarButton = new Button("Deletar");
-        deletarButton.setOnAction( event -> { controller.delete();});
-
-        Button cancelarButton = new Button("Cancelar");
+        Button cancelarButton = new Button("Voltar");
         cancelarButton.setOnAction(event ->{controller.returnPage();});
         buttonDiv.getChildren().addAll(salvarButton, cancelarButton);
 
+        Region spacer = new Region();
+        VBox.setVgrow(spacer, Priority.ALWAYS);
 
-        container.getChildren().addAll(form,buttonDiv);
+        container.getChildren().addAll(form,spacer,buttonDiv);
 
     }
 }

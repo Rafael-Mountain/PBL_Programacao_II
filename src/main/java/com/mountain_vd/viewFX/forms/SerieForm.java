@@ -1,6 +1,7 @@
 package com.mountain_vd.viewFX.forms;
 
 import com.mountain_vd.model.Avaliacao;
+import com.mountain_vd.model.Serie;
 import com.mountain_vd.model.Temporada;
 import com.mountain_vd.viewFX.RootScene;
 import javafx.collections.FXCollections;
@@ -10,7 +11,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 public class SerieForm extends MediaAudioVisualForm {
@@ -20,15 +20,6 @@ public class SerieForm extends MediaAudioVisualForm {
 
     public SerieForm(RootScene rootScene) {
         super(rootScene);
-        this.temporadas = FXCollections.observableArrayList();
-    }
-
-    public LocalDate getDataFim() {
-        return dataFimPicker.getValue();
-    }
-
-    public List<Temporada> getTemporadas() {
-        return temporadas;
     }
 
     @Override
@@ -58,8 +49,6 @@ public class SerieForm extends MediaAudioVisualForm {
 
         dataFimPicker = new DatePicker();
         dataFimPicker.setPromptText("Ex: 20/12/2023");
-        dataFimPicker.getEditor().setDisable(true);
-        dataFimPicker.getEditor().setOpacity(1);
         Tooltip.install(dataFimPicker, dataFimTooltip);
 
         HBox dataFimBox = new HBox(10, dataFimLabel, dataFimPicker);
@@ -74,14 +63,41 @@ public class SerieForm extends MediaAudioVisualForm {
         return content;
     }
 
-    public void addTabTemporada() {
+    public void addTabTemporada(Serie serie) {
         Tab tab = new Tab("Temporadas");
         tab.setClosable(false);
 
-        TemporadaForm temporadaForm = new TemporadaForm(rootScene, temporadas);
+        TemporadaForm temporadaForm = new TemporadaForm(rootScene, serie);
         tab.setContent(temporadaForm.getNode());
 
         tabPane.getTabs().add(tab);
     }
 
+    // ======= GETTERS =======
+    public LocalDate getDataFim() {
+        return dataFimPicker.getValue();
+    }
+
+    public List<Temporada> getTemporadas() {
+        return temporadas;
+    }
+
+    // ======= SETTERS =======
+    public void setDataFim(LocalDate data) {
+        dataFimPicker.setValue(data);
+    }
+
+    // ======= DISABLE METHODS =======
+    public void disableDataFimPicker() {
+        if (dataFimPicker != null) {
+            dataFimPicker.setDisable(true);
+            dataFimPicker.setOpacity(1);
+        }
+    }
+
+    @Override
+    public void disableFields() {
+        super.disableFields();
+        disableDataFimPicker();
+    }
 }

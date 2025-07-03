@@ -13,7 +13,7 @@ class LivroTest {
 
     @Test
     void testConstrutorEGetters() {
-        LocalDateTime dataLancamento = LocalDateTime.of(2021, 5, 15, 10, 0);
+        LocalDate dataLancamento = LocalDate.of(2021, 5, 15);
         Genero genero = new Genero("Ficção Científica");
         Avaliacao avaliacao = new Avaliacao(LocalDateTime.now(), 4, "Interessante e provocante!", LocalDate.of(2021, 5, 16));
 
@@ -55,7 +55,7 @@ class LivroTest {
 
     @Test
     void testAvaliar() {
-        Livro livro = new Livro("O Hobbit", LocalDateTime.of(2018, 4, 12, 15, 30), true,
+        Livro livro = new Livro("O Hobbit", LocalDate.of(2018, 4, 12), true,
                 Arrays.asList(new Genero("Aventura")), "J.R.R. Tolkien", "HarperCollins", true, "978-0261103566");
 
         Avaliacao avaliacao1 = new Avaliacao(LocalDateTime.now(), 5, "Excelente história!", LocalDate.of(2018, 4, 12));

@@ -54,7 +54,7 @@ public class CreateAvaliacaoActionTest {
         Genero generoFiccao = new Genero("Ficção científica");
         filme.setGeneros(Collections.singletonList(generoFiccao));
 
-        filme.setDataLancamento(LocalDateTime.of(2014, 11, 7, 0, 0));
+        filme.setDataLancamento(LocalDate.of(2014, 11, 7));
         filme.setId(0);
 
         FilmeRepository.getInstance().add(filme);
@@ -91,7 +91,7 @@ public class CreateAvaliacaoActionTest {
     void testAvaliacaoComTemporada() {
         Temporada temporada = new Temporada();
         temporada.setqEpisodios(8);
-        temporada.setAno(LocalDateTime.of(2020, 5, 1, 0, 0));
+        temporada.setAno(LocalDate.of(2020, 5, 1));
         temporada.setId(0);
         temporada.setSerieId(0);
 

@@ -5,7 +5,10 @@ import com.mountain_vd.model.commons.IAvaliavel;
 import com.mountain_vd.model.commons.ITemAvaliacao;
 import com.mountain_vd.viewFX.RootScene;
 import com.mountain_vd.viewFX.commons.Component;
+import com.mountain_vd.viewFX.handlers.AvaliacaoFormController;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
@@ -28,6 +31,8 @@ public class AvaliacaoForm implements Component {
 
     public AvaliacaoForm(RootScene rootScene, IAvaliavel entity) {
         this.rootScene = rootScene;
+        this.entity = entity;
+        this.avaliacoes = FXCollections.observableArrayList();
         this.avaliacoes.addAll(entity.getAvaliacoes());
         render();
     }
@@ -40,6 +45,7 @@ public class AvaliacaoForm implements Component {
     @Override
     public void render() {
         content = new VBox(10);
+        content.setPadding(new Insets(10,0,10,0));
 
         // Container dos campos de entrada
         HBox camposBox = new HBox(10);
@@ -55,8 +61,6 @@ public class AvaliacaoForm implements Component {
         dataConsumoPicker = new DatePicker();
         dataConsumoPicker.setPromptText("Ex: 01/01/2024");
         Tooltip.install(dataConsumoPicker, dataTooltip);
-        dataConsumoPicker.getEditor().setDisable(true);
-        dataConsumoPicker.getEditor().setOpacity(1);
 
         // Campo Nota
         Label notaLabel = new Label("Nota");
@@ -80,7 +84,13 @@ public class AvaliacaoForm implements Component {
         // Botão Adicionar Avaliação
         Button addButton = new Button("Adicionar Avaliação");
         addButton.setOnAction(e -> {
-         // todo implementar lógica de adição de avaliação
+            AvaliacaoFormController.adicionarAvaliacao(
+                    rootScene, entity, dataConsumoPicker.getValue(),
+                    notaSpinner.getValue(), comentarioArea.getText(), avaliacoes
+            );
+            dataConsumoPicker.setValue(null);
+            notaSpinner.getValueFactory().setValue(1);
+            comentarioArea.clear();
         });
 
         // Agrupando os campos do lado esquerdo
@@ -119,6 +129,7 @@ public class AvaliacaoForm implements Component {
 
     private ListView<Avaliacao> renderAvaliacaoList() {
         ListView<Avaliacao> listView = new ListView<>(avaliacoes);
+        listView.setMinHeight(100);
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 

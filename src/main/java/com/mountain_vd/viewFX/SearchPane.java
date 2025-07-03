@@ -4,12 +4,15 @@ import com.mountain_vd.controller.filter.GenreFilterType;
 import com.mountain_vd.controller.filter.YearFilterType;
 import com.mountain_vd.controller.util.EnumUtils;
 import com.mountain_vd.controller.util.TextFieldUtil;
-import javafx.scene.Node;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-import javafx.scene.text.Text;
+import com.mountain_vd.controller.util.TitledPaneCollapseListener;
 import com.mountain_vd.viewFX.commons.Component;
 import com.mountain_vd.viewFX.handlers.SearchPaneController;
+import javafx.scene.Node;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
+import javafx.scene.text.Text;
 
 import java.util.List;
 
@@ -45,7 +48,7 @@ public class SearchPane implements Component {
     public void render() {
         pane = new StackPane();
         VBox mainContent = new VBox();
-        mainContent.setId("mainContent");
+        mainContent.getStyleClass().add("Search_Container");
 
         tableResult = new SearchTableResult();
 
@@ -61,7 +64,7 @@ public class SearchPane implements Component {
         AnchorPane.setBottomAnchor(floatingButton, paddingFloatingButton);
         AnchorPane.setRightAnchor(floatingButton, paddingFloatingButton);
 
-        pane.getChildren().addAll(mainContent,floatingPane);
+        pane.getChildren().addAll(mainContent, floatingPane);
     }
 
     private void beginSearch() {
@@ -79,10 +82,10 @@ public class SearchPane implements Component {
                         : "asc");
 
         controller.search();
-        tableResult.setSearchResults(controller.getSearchResults(),controller::goTotDisplayPane);
+        tableResult.setSearchResults(controller.getSearchResults(), controller::goTotDisplayPane);
     }
 
-    private Button getFloatingButton(){
+    private Button getFloatingButton() {
         Button floatingButton = new Button("+");
         floatingButton.setId("floatingButton");
         floatingButton.setOnAction(e -> {
@@ -93,9 +96,17 @@ public class SearchPane implements Component {
 
     private HBox renderSearchBar() {
         HBox searchBar = new HBox();
-        searchBar.setId("searchBar");
+        searchBar.getStyleClass().add("search-bar");
 
-        Button searchButton = new Button("Search");
+        ImageView searchIcon = new ImageView(
+                new Image(getClass().getResource("/images/search.png").toExternalForm())
+        );
+        searchIcon.setFitWidth(18);
+        searchIcon.setFitHeight(18);
+
+        Button searchButton = new Button();
+        searchButton.setGraphic(searchIcon);
+        searchButton.getStyleClass().add("search-button");
         searchButton.setOnAction(e ->
                 beginSearch()
         );
@@ -103,11 +114,13 @@ public class SearchPane implements Component {
         searchBox = new ComboBox<>();
         searchBox.getItems().addAll(controller.getListSearchFields());
         searchBox.setValue(controller.getListSearchFields().getFirst());
+        searchBox.getStyleClass().add("search-combo-box");
         //setando no controle o campo colocado acima como valor padrão
 
         searchField = new TextField();
         searchField.setPromptText("Pesquisar...");
         searchField.setMaxWidth(Double.MAX_VALUE);
+        searchField.getStyleClass().add("search-text-field");
 
         HBox.setHgrow(searchField, Priority.ALWAYS);
         searchBar.getChildren().addAll(searchButton, searchBox, searchField);
@@ -118,19 +131,22 @@ public class SearchPane implements Component {
     private TitledPane renderFilterPane() {
         TitledPane filterPane = new TitledPane();
         filterPane.setText("Filtros");
-        filterPane.setId("filterPane");
-        VBox vbox = new VBox();
+        TitledPaneCollapseListener.attach(filterPane);
+        filterPane.getStyleClass().add("filter-pane");
+        VBox vbox = new VBox(10);
 
         HBox filterBox = new HBox();
         genreFilter = new FilterItem("Genêro", EnumUtils.getDescricoes(GenreFilterType.class));
 
         yearFilter = new FilterItem("Ano", EnumUtils.getDescricoes(YearFilterType.class), TextFieldUtil.numericFormatter(4));
 
-
+        Region spacer = new Region();
         HBox.setHgrow(genreFilter.getNode(), Priority.ALWAYS);
         HBox.setHgrow(yearFilter.getNode(), Priority.ALWAYS);
+        HBox.setHgrow(spacer, Priority.ALWAYS);
         filterBox.getChildren().addAll(
                 genreFilter.getNode(),
+                spacer,
                 yearFilter.getNode());
         filterBox.setId("filterBox");
 
@@ -184,18 +200,21 @@ public class SearchPane implements Component {
         // Construtor com TextFormatter opcional
         FilterItem(String itemName, List<String> operadores, TextFormatter<?> formatter) {
             this.itemName = itemName;
-            root = new VBox();
-            root.setId("filterItem");
+            root = new VBox(5);
+
 
             Text label = new Text(itemName);
+            label.getStyleClass().add("filter-label");
 
             comboBox = new ComboBox<>();
             comboBox.getItems().addAll(operadores);
             comboBox.setValue(operadores.getFirst());
+            comboBox.getStyleClass().add("filter-combo-box");
 
             textField = new TextField();
             textField.setPromptText("Valor...");
             textField.setMaxWidth(Double.MAX_VALUE);
+            textField.getStyleClass().add("filter-text-field");
 
             if (formatter != null) {
                 textField.setTextFormatter(formatter);

@@ -8,7 +8,5 @@ public abstract class DisplayMediaController {
 
     public abstract void update();
 
-    public abstract void delete();
-
     public abstract void returnPage();
 }
