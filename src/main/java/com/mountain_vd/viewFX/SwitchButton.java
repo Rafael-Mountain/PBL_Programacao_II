@@ -1,4 +1,4 @@
-package com.mountain_vd.viewFX.VouVerAinda;
+package com.mountain_vd.viewFX;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;

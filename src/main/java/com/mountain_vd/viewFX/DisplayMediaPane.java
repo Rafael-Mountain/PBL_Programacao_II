@@ -67,9 +67,11 @@ public class DisplayMediaPane implements Component {
         buttonDiv.setAlignment(Pos.CENTER_RIGHT);
 
         Button salvarButton = new Button("Salvar");
+        salvarButton.getStyleClass().add("style-button");
         salvarButton.setOnAction(event -> {controller.update();});
 
         Button cancelarButton = new Button("Voltar");
+        cancelarButton.getStyleClass().add("style-button");
         cancelarButton.setOnAction(event -> {controller.returnPage();});
 
         buttonDiv.getChildren().addAll(salvarButton, cancelarButton);

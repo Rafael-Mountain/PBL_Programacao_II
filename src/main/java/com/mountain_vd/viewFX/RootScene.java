@@ -67,7 +67,7 @@ public class RootScene implements Displayable {
     public void render() {
         borderPane = new BorderPane();
         rootStack = new StackPane(borderPane);
-        scene = new Scene(rootStack, 1000, 600);
+        scene = new Scene(rootStack, 1000, 670);
 
         MenuBar menuBar = new MenuBar(this);
         borderPane.setLeft(menuBar.getNode());
@@ -194,7 +194,8 @@ public class RootScene implements Displayable {
         BorderPane.setAlignment(closeButton, Pos.TOP_RIGHT);
 
         BorderPane.setMargin(closeButton, new Insets(10, 10, 0, 0));
-        card.setStyle("-fx-background-color: white; -fx-background-radius: 8px; -fx-border-radius: 8px;");
+        card.setStyle("-fx-background-radius: 8px; -fx-border-radius: 8px;");
+        card.getStyleClass().add("message-container");
         card.setMaxWidth(300);
         card.setMaxHeight(200);
 

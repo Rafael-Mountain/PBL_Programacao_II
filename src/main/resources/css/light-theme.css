@@ -13,6 +13,8 @@
     -fx-border-color: #bebebe;
 }
 
+
+
 .list-view {
     -fx-border-color: #bebebe;
 }
@@ -51,6 +53,11 @@ Combo Box
 
 .combo-box .list-cell {
     -fx-text-fill: #000000;
+}
+
+
+.message-container{
+    -fx-background-color: #ffffff;
 }
 
 /*
@@ -178,4 +185,15 @@ search Pane
 .scroll-pane{
     -fx-background-color: #bbbabb;
 }
+
+.generic-list-view {
+    -fx-background-color: #ffffff;
+    -fx-control-inner-background: #ffffff; /* para áreas internas */
+    -fx-cell-hover-color: transparent; /* opcional: remove destaque ao passar o mouse */
+}
+
+.generic-list-view .list-cell {
+    -fx-background-color: #ffffff;
+}
+
 

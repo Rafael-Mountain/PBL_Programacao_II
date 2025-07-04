@@ -74,6 +74,7 @@ public class TemporadaForm implements Component {
     public void render() {
         mainContent = new VBox(10);
         mainContent.setPrefHeight(520);
+        mainContent.setPadding(new Insets(0 ,0,10,0));
         VBox.setVgrow(mainContent, Priority.ALWAYS);
 
         // Linha de entrada: Ano, nº de episódios e botão adicionar
@@ -104,6 +105,7 @@ public class TemporadaForm implements Component {
 
         // Botão Adicionar
         Button addButton = new Button("Adicionar");
+        addButton.getStyleClass().add("style-button");
         addButton.setPrefHeight(38);
         addButton.setOnAction(e -> {
             TemporadaFormController.addTemporada(

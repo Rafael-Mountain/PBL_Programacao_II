@@ -307,14 +307,8 @@ SearchPane, Table view
     /* Laranja claro */
     -fx-background-radius: 100;
     -fx-padding: 10;
+    -fx-font-size: 20px;
 }
-
-
-/*generoLabel.setStyle("-fx-background-color: #FFC0CB; " +  // Rosa claro*/
-/*"-fx-border-radius: 15; " +*/
-/*"-fx-background-radius: 15; " +*/
-/*"-fx-padding: 5 10; " +*/
-/*"-fx-text-fill: #333333;");*/
 
 
 /* Media */
@@ -365,7 +359,7 @@ SearchPane, Table view
     -fx-border-radius: 2 2 0 0;
 }
 
-.generic-list .list-cell:selected {
+.generic-list-view .list-cell:selected {
     -fx-background-color: #f67d26;
     -fx-text-fill: white;
 }
@@ -374,4 +368,21 @@ SearchPane, Table view
     -fx-background-radius: 15;
     -fx-border-width:0 ;
     -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar,
+.scroll-pane .scroll-bar .track,
+.scroll-pane .scroll-bar .increment-button,
+.scroll-pane .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.style-button {
+    -fx-background-color: #f67d26;
+    -fx-text-fill: black;
+    -fx-background-radius: 20;
+    -fx-border-color: transparent;
+    -fx-border-width: 0; 
+    -fx-padding: 8 16;   /* opcional: espaço interno */
+    -fx-cursor: hand;
 }

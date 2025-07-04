@@ -66,9 +66,11 @@ public class CreateMediaPane implements Component {
         buttonDiv.setAlignment(Pos.CENTER_RIGHT);
 
         Button salvarButton = new Button("Salvar");
+        salvarButton.getStyleClass().add("style-button");
         salvarButton.setOnAction(event -> controller.save());
 
         Button cancelarButton = new Button("Cancelar");
+        cancelarButton.getStyleClass().add("style-button");
         cancelarButton.setOnAction(event -> controller.returnPage());
 
         buttonDiv.getChildren().addAll(salvarButton, cancelarButton);

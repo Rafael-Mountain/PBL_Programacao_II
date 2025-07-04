@@ -73,7 +73,7 @@ public class GenericListPane<T> implements Component {
         vbox = new VBox();
         vbox.getStyleClass().add("generic-list");
         vbox.getChildren().add(new Label(label));
-        vbox.setPrefHeight(140);
+        vbox.setMinHeight(80);
         vbox.setSpacing(5);
 
         inputField = new TextField();
@@ -81,6 +81,7 @@ public class GenericListPane<T> implements Component {
         HBox.setHgrow(inputField, Priority.ALWAYS);
 
         Button addButton = new Button("Adicionar");
+        addButton.getStyleClass().add("style-button");
         addButton.setOnAction(e -> {
             controller.accept(inputField.getText(), items);
             inputField.clear();

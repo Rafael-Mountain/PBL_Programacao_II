@@ -52,7 +52,9 @@ Combo Box
     -fx-text-fill: #e3e3e3;
 }
 
-
+.message-container{
+    -fx-background-color: #1e1e1e;
+}
 
 /*
  
@@ -179,4 +181,14 @@ search Pane
 
 .scroll-pane {
     -fx-background-color: #121212;
+}
+
+.generic-list-view {
+    -fx-background-color: #1e1e1e;
+    -fx-control-inner-background: #1e1e1e; /* para áreas internas */
+    -fx-cell-hover-color: transparent; /* opcional: remove destaque ao passar o mouse */
+}
+
+.generic-list-view .list-cell {
+    -fx-background-color: #1e1e1e;
 }

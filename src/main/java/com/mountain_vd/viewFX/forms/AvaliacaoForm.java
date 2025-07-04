@@ -115,6 +115,7 @@ public class AvaliacaoForm implements Component {
 
         // Botão para adicionar avaliação
         Button addButton = new Button("Adicionar Avaliação");
+        addButton.getStyleClass().add("style-button");
         addButton.setOnAction(e -> {
             AvaliacaoFormController.adicionarAvaliacao(
                     rootScene, entity, dataConsumoPicker.getValue(),
@@ -167,7 +168,7 @@ public class AvaliacaoForm implements Component {
      */
     private ListView<Avaliacao> renderAvaliacaoList() {
         ListView<Avaliacao> listView = new ListView<>(avaliacoes);
-        listView.getStyleClass().add("generic-list");
+        listView.getStyleClass().add("generic-list-view");
         listView.setMinHeight(100);
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
