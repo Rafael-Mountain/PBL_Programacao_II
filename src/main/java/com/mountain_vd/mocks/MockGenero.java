@@ -25,4 +25,8 @@ public class MockGenero {
             action.execute(new Genero(nome));
         }
     }
+
+    public static void main(String[] args) {
+        rodar();
+    }
 }

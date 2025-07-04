@@ -36,4 +36,8 @@ public class MockLivro {
             action.execute(livro);
         }
     }
+
+    public static void main(String[] args) {
+        rodar();
+    }
 }

@@ -112,4 +112,7 @@ public class MockSerie {
             updateSerieAction.execute(serie);
         }
     }
+    public static void main(String[] args) {
+        rodar();
+    }
 }
