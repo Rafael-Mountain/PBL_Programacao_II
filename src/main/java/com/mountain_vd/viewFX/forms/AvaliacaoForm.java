@@ -129,6 +129,7 @@ public class AvaliacaoForm implements Component {
 
     private ListView<Avaliacao> renderAvaliacaoList() {
         ListView<Avaliacao> listView = new ListView<>(avaliacoes);
+        listView.getStyleClass().add("generic-list");
         listView.setMinHeight(100);
         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");

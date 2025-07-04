@@ -37,6 +37,7 @@ public class GenericListPane<T> implements Component {
     @Override
     public void render() {
         vbox = new VBox();
+        vbox.getStyleClass().add("generic-list");
         vbox.getChildren().add(new Label(label));
         vbox.setPrefHeight(140);
         vbox.setSpacing(5);
@@ -62,6 +63,7 @@ public class GenericListPane<T> implements Component {
 
     public ListView<T> renderListView() {
         ListView<T> lv = new ListView<>(items);
+        lv.getStyleClass().add("generic-list-view");
 
         lv.setCellFactory(param -> new ListCell<>() {
             @Override
@@ -108,5 +110,26 @@ public class GenericListPane<T> implements Component {
         });
 
         return lv;
+    }
+
+    public void disableAllFields() {
+        if (inputField != null) {
+            inputField.setDisable(true);
+            inputField.setOpacity(1.0);
+        }
+
+        for (Node node : vbox.getChildren()) {
+            if (node instanceof HBox hbox) {
+                for (Node child : hbox.getChildren()) {
+                    if (child instanceof Button button) {
+                        button.setDisable(true);
+                        button.setOpacity(1.0);
+                    }
+                }
+            } else if (node instanceof ListView<?> listView) {
+                listView.setDisable(true);
+                listView.setOpacity(1.0);
+            }
+        }
     }
 }

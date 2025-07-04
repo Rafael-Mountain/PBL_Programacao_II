@@ -27,6 +27,7 @@ public class CreateMediaPane implements Component {
     public Node getNode() {
         VBox.setVgrow(container, Priority.ALWAYS);
         VBox wrapper = new VBox(container);
+        wrapper.getStyleClass().add("media-container");
         wrapper.setPadding(new Insets(5)); // padding efetivo aqui
         return wrapper;
     }
@@ -35,6 +36,7 @@ public class CreateMediaPane implements Component {
     public void render() {
         container = new VBox(5);
         Node form = controller.getForm();
+        container.getStyleClass().add("media-content");
 
         HBox buttonDiv = new HBox(10);
         buttonDiv.setAlignment(Pos.CENTER_RIGHT);

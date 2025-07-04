@@ -28,15 +28,18 @@ public class DisplayMediaPane implements Component {
     @Override
     public Node getNode() {
         VBox.setVgrow(container, Priority.ALWAYS);
-        VBox wrapper = new VBox(container);
-        wrapper.setPadding(new Insets(10));// padding efetivo aqui
-        return wrapper;
+        VBox wrapper1 = new VBox(container);
+        wrapper1.getStyleClass().add("media-content");
+        wrapper1.setPadding(new Insets(10));
+        VBox wrapper2 = new VBox(wrapper1);
+        wrapper2.getStyleClass().add("media-container");
+        return wrapper2;
     }
+
 
     @Override
     public void render() {
         container = new VBox();
-        container.getStyleClass().add("displayMediaContainer");
         Node form = controller.getForm();
 
         HBox buttonDiv = new HBox(10);

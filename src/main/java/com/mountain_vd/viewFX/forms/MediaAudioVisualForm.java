@@ -132,8 +132,7 @@ public class MediaAudioVisualForm extends MediaForm {
 
     public void disableElencoList() {
         if (elencoListPane != null && elencoListPane.getNode() != null) {
-            elencoListPane.getNode().setDisable(true);
-            elencoListPane.getNode().setOpacity(1);
+           elencoListPane.disableAllFields();
         }// Manter a opacidade para visualização
     }
 

@@ -2,6 +2,41 @@
     -fx-background-radius: 5;
     -fx-border-width: 2px;
     -fx-border-radius: 5;
+    -fx-padding: 0 0 0 5;
+    -fx-min-height: 28px;
+    -fx-max-height: 28px;
+}
+
+.text-area:focused{
+    -fx-background-radius: 5;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5;
+}
+
+.text-area{
+    -fx-background-radius: 5;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5;
+}
+
+.date-picker {
+    -fx-max-height: 28px;
+    -fx-min-height: 28px;
+}
+
+.date-picker>.text-field {
+    -fx-border-radius: 0;
+}
+
+
+.generic-list .text-field {
+    -fx-max-height: 28px;
+    -fx-min-height: 28px;
+}
+
+.list-view{
+    -fx-border-radius: 5;
+    -fx-border-width: 2px;
 }
 
 /*
@@ -168,13 +203,15 @@ SearchPane, Table view
 .filter-combo-box {
     -fx-border-radius: 5 0 0 5;
     -fx-border-width: 2px 0px 2px 2px;
-    -fx-pref-height: 29px;
+    -fx-max-height: 29px;
+    -fx-min-height: 29px;
 }
 
 .filter-text-field {
     -fx-border-radius: 0 5 5 0;
     -fx-border-width: 2px 2px 2px 0px;
-    -fx-pref-height: 29px;
+    -fx-max-height: 29px;
+    -fx-min-height: 29px;
 }
 
 
@@ -232,23 +269,25 @@ SearchPane, Table view
 }
 
 .rounded-label {
-    -fx-background-color: #ff9a52; /* Laranja claro */
+    -fx-background-color: #ff9a52;
+    /* Laranja claro */
     -fx-border-radius: 15;
     -fx-background-radius: 15;
     -fx-padding: 5 10;
-    -fx-text-fill: #000000; /* Cor do texto */
+    -fx-text-fill: #000000;
+    /* Cor do texto */
 }
 
-.pontuacao-baixa{
-    -fx-background-color: #dc1d1d; 
+.pontuacao-baixa {
+    -fx-background-color: #dc1d1d;
 }
 
-.pontuacao-media{
-    -fx-background-color: #fff200;  
+.pontuacao-media {
+    -fx-background-color: #fff200;
 }
 
-.pontuacao-alta{
-    -fx-background-color: #23ce10; 
+.pontuacao-alta {
+    -fx-background-color: #23ce10;
 }
 
 .eye-button {
@@ -259,12 +298,14 @@ SearchPane, Table view
     -fx-cursor: hand;
 }
 
-.floating-button > .hbox{
-    -fx-background-color: #f67d26; /* Laranja claro */
-    -fx-background-radius: 15;
-    -fx-pref-width: 100;
-    -fx-border-radius: 50;
-    -fx-border-width: 0;
+.floating-button> {
+    -fx-min-width: 70px;
+    -fx-min-height: 70px;
+    -fx-max-width: 70px;
+    -fx-max-height: 70px;
+    -fx-background-color: #f67d26;
+    /* Laranja claro */
+    -fx-background-radius: 100;
     -fx-padding: 10;
 }
 
@@ -278,6 +319,59 @@ SearchPane, Table view
 
 /* Media */
 
-.displayMediaContainer {
-    -fx-padding: 0, 0, 10, 0;
+.media-content {
+    -fx-padding: 10, 0, 10, 0;
+    -fx-background-radius: 15;
+}
+
+.media-container {
+    -fx-padding: 15 10 15 10;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #ff9a52 transparent;
+}
+
+
+.roteiro-text-area {
+    -fx-max-height: 60;
+    -fx-min-height: 60;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: transparent;
+    -fx-border-color: #f67d26;
+
+    -fx-border-width: 0 0 1 0;
+}
+
+.tab-pane {
+    -fx-tab-min-width: 90px;
+    -fx-focus-color: transparent;
+}
+
+.tab {
+    -fx-background-insets: 0 1 0 1, 0, 0;
+    -fx-border-color: #f67d26;
+    -fx-border-width: 0 0 1 0;
+
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #f67d26 #f67d26 transparent #f67d26;
+    -fx-border-width: 1 1 0 1;
+    -fx-border-radius: 2 2 0 0;
+}
+
+.generic-list .list-cell:selected {
+    -fx-background-color: #f67d26;
+    -fx-text-fill: white;
+}
+
+.scroll-pane{
+    -fx-background-radius: 15;
+    -fx-border-width:0 ;
+    -fx-background-color: transparent;
 }

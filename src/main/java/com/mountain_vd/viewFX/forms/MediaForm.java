@@ -192,9 +192,7 @@ public class MediaForm implements Component {
     }
     public void disableGeneroList() {
         if (genrePickerPane != null && genrePickerPane.getNode() != null) {
-            Node node = genrePickerPane.getNode();
-            node.setDisable(true);
-            node.setOpacity(1);
+            genrePickerPane.disableAllFields();
         }
     }
 

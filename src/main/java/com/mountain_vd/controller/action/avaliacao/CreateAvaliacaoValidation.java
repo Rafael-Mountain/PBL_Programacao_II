@@ -31,6 +31,10 @@ public class CreateAvaliacaoValidation implements Validation<Avaliacao> {
             errorMessage = "Avaliacao está nula";
             return false;
         }
+        if (model.getDataConsumo() == null){
+            errorMessage = "Erro! Coloque uma data valida";
+            return false;
+        }
 
         if (model.getPontuacao() < 1 || model.getPontuacao() > 5) {
             errorMessage = "Pontuação inválida: deve estar entre 1 e 5.";

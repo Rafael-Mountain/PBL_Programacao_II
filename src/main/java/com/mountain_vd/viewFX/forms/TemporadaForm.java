@@ -83,6 +83,7 @@ public class TemporadaForm implements Component {
             );
             anoField.clear();
             nEpisodesField.clear();
+            atualizarLista();
         });
 
         hBox.getChildren().addAll(AnoBox, nEpisodesBox, addButton);

@@ -63,6 +63,7 @@ public class FilmeForm extends MediaAudioVisualForm {
         Label roteiroLabel = new Label("Roteiro");
         roteiroTextArea = new TextArea();
         roteiroTextArea.setWrapText(true);
+        roteiroTextArea.getStyleClass().add("roteiro-text-area");
         roteiroTextArea.setPromptText("Digite detalhes do roteiro, créditos ou outras observações");
         Tooltip roteiroTooltip = new Tooltip("Inclua detalhes sobre o roteiro, observações ou autoria");
         Tooltip.install(roteiroLabel, roteiroTooltip);

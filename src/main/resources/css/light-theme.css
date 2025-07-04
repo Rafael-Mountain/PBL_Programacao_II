@@ -13,6 +13,25 @@
     -fx-border-color: #bebebe;
 }
 
+.list-view {
+    -fx-border-color: #bebebe;
+}
+
+
+.text-area:focused {
+    -fx-border-color: #bebebe;
+}
+
+.text-area {
+     -fx-control-inner-background:  #ffffff;
+    -fx-border-color: #bebebe;
+}
+
+.text-area .content{
+    -fx-background-color: #ffffff;
+    
+}
+
 /*
 
 Combo Box 
@@ -118,7 +137,8 @@ search Pane
 
 
 .rounded-label {
-    -fx-text-fill: #000000; /* Cor do texto */
+    -fx-text-fill: #000000;
+    /* Cor do texto */
 }
 
 .eye-button {
@@ -129,3 +149,33 @@ search Pane
 .eye-button:hover {
     -fx-background-image: url("/images/light_eye_hover.png");
 }
+
+.media-container {
+    -fx-background-color: #bbbaba;
+}
+
+.media-content {
+    -fx-background-color: #ffffff;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #bebebe;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #ffffff;
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #000000;
+}
+
+.scroll-pane .viewport{
+    -fx-background-color: #bbbabb;
+}
+
+.scroll-pane{
+    -fx-background-color: #bbbabb;
+}
+
