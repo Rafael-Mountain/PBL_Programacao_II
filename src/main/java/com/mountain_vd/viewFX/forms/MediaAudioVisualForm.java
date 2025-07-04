@@ -13,16 +13,28 @@ import javafx.scene.layout.Priority;
 
 import java.util.List;
 
+/**
+ * Formulário específico para mídias audiovisuais, estendendo {@link MediaForm}.
+ * Fornece campos adicionais como título original, local disponível e elenco.
+ */
 public class MediaAudioVisualForm extends MediaForm {
     private TextField tituloOriginalField;
     private TextField LocalDisponivelField;
     private ObservableList<String> elenco;
     private GenericListPane<String> elencoListPane;
 
+    /**
+     * Construtor que recebe a cena raiz para controle de interface.
+     *
+     * @param rootScene Cena raiz da aplicação.
+     */
     public MediaAudioVisualForm(RootScene rootScene) {
         super(rootScene);
     }
 
+    /**
+     * Renderiza o formulário, criando a aba principal "Mídia".
+     */
     @Override
     public void render() {
         tabPane = new TabPane();
@@ -32,6 +44,13 @@ public class MediaAudioVisualForm extends MediaForm {
         tabPane.getTabs().add(tab);
     }
 
+    /**
+     * Renderiza o conteúdo principal do formulário audiovisual, incluindo campos:
+     * título original, local disponível e lista de elenco.
+     *
+     * @return Um {@link HBox} com os elementos do formulário.
+     * @throws IllegalStateException se o GridPane esperado não for encontrado.
+     */
     protected HBox renderMidiaAudioVisual() {
         this.elenco = FXCollections.observableArrayList();
         HBox content = renderMidia();
@@ -83,14 +102,29 @@ public class MediaAudioVisualForm extends MediaForm {
     //          GETTERS
     // =============================
 
+    /**
+     * Obtém o título original preenchido no formulário.
+     *
+     * @return Título original da mídia.
+     */
     public String getTituloOriginal() {
         return tituloOriginalField.getText();
     }
 
+    /**
+     * Obtém o local onde a mídia está disponível.
+     *
+     * @return Local disponível da mídia.
+     */
     public String getLocalDisponivel() {
         return LocalDisponivelField.getText();
     }
 
+    /**
+     * Obtém a lista de atores/participantes do elenco.
+     *
+     * @return Lista de nomes do elenco.
+     */
     public List<String> getElenco() {
         return elenco;
     }
@@ -99,14 +133,29 @@ public class MediaAudioVisualForm extends MediaForm {
     //          SETTERS
     // =============================
 
+    /**
+     * Define o título original no campo correspondente.
+     *
+     * @param tituloOriginal Texto com o título original.
+     */
     public void setTituloOriginal(String tituloOriginal) {
         this.tituloOriginalField.setText(tituloOriginal);
     }
 
+    /**
+     * Define o local disponível no campo correspondente.
+     *
+     * @param localDisponivel Texto com o local onde a mídia pode ser acessada.
+     */
     public void setLocalDisponivel(String localDisponivel) {
         this.LocalDisponivelField.setText(localDisponivel);
     }
 
+    /**
+     * Define a lista de elenco a partir de uma lista externa.
+     *
+     * @param elenco Lista com nomes do elenco.
+     */
     public void setElenco(List<String> elenco) {
         this.elenco.setAll(elenco);
     }
@@ -115,7 +164,9 @@ public class MediaAudioVisualForm extends MediaForm {
     //          DISABLE
     // =============================
 
-
+    /**
+     * Desabilita o campo de título original para edição, mantendo a opacidade para visualização.
+     */
     public void disableTituloOriginalField() {
         if (tituloOriginalField != null) {
             tituloOriginalField.setDisable(true);
@@ -123,6 +174,9 @@ public class MediaAudioVisualForm extends MediaForm {
         }
     }
 
+    /**
+     * Desabilita o campo de local disponível para edição, mantendo a opacidade para visualização.
+     */
     public void disableLocalDisponivelField() {
         if (LocalDisponivelField != null) {
             LocalDisponivelField.setDisable(true);
@@ -130,12 +184,18 @@ public class MediaAudioVisualForm extends MediaForm {
         }
     }
 
+    /**
+     * Desabilita a lista de elenco para edição, mantendo a opacidade para visualização.
+     */
     public void disableElencoList() {
         if (elencoListPane != null && elencoListPane.getNode() != null) {
            elencoListPane.disableAllFields();
         }// Manter a opacidade para visualização
     }
 
+    /**
+     * Desabilita todos os campos do formulário audiovisual.
+     */
     @Override
     public void disableFields() {
         super.disableFields();

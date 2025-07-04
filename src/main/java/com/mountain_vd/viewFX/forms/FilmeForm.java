@@ -5,16 +5,28 @@ import com.mountain_vd.viewFX.RootScene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 
+/**
+ * Formulário específico para mídias do tipo filme, estendendo {@link MediaAudioVisualForm}.
+ * Adiciona campos para duração, diretor e roteiro.
+ */
 public class FilmeForm extends MediaAudioVisualForm {
     private TextField duracaoField;
     private TextField diretorField;
     private TextArea roteiroTextArea;
 
+    /**
+     * Construtor que recebe a cena raiz para controle de interface.
+     *
+     * @param rootScene Cena raiz da aplicação.
+     */
     public FilmeForm(RootScene rootScene) {
         super(rootScene);
         render();
     }
 
+    /**
+     * Renderiza o formulário criando a aba "Filme" e seu conteúdo.
+     */
     @Override
     public void render() {
         tabPane = new TabPane();
@@ -24,6 +36,13 @@ public class FilmeForm extends MediaAudioVisualForm {
         tabPane.getTabs().add(tab);
     }
 
+    /**
+     * Renderiza o conteúdo do formulário do filme, incluindo campos específicos como duração,
+     * diretor e roteiro.
+     *
+     * @return Um {@link HBox} contendo o formulário completo.
+     * @throws IllegalStateException se o GridPane esperado não for encontrado.
+     */
     public HBox renderFilme() {
         HBox content = renderMidiaAudioVisual();
         content.setMaxHeight(520);
@@ -78,32 +97,68 @@ public class FilmeForm extends MediaAudioVisualForm {
     }
 
     // ========= GETTERS =========
+
+    /**
+     * Obtém o valor preenchido no campo duração.
+     *
+     * @return Duração do filme em minutos.
+     */
     public String getDuracao() {
         return duracaoField.getText();
     }
 
+    /**
+     * Obtém o nome do diretor preenchido no formulário.
+     *
+     * @return Nome do diretor.
+     */
     public String getDiretor() {
         return diretorField.getText();
     }
 
+    /**
+     * Obtém o texto do roteiro ou observações relacionadas.
+     *
+     * @return Conteúdo do roteiro.
+     */
     public String getRoteiro() {
         return roteiroTextArea.getText();
     }
 
     // ========= SETTERS =========
+
+    /**
+     * Define o valor do campo duração.
+     *
+     * @param duracao Duração do filme em minutos.
+     */
     public void setDuracao(String duracao) {
         duracaoField.setText(duracao);
     }
 
+    /**
+     * Define o nome do diretor.
+     *
+     * @param diretor Nome completo do diretor.
+     */
     public void setDiretor(String diretor) {
         diretorField.setText(diretor);
     }
 
+    /**
+     * Define o conteúdo do roteiro.
+     *
+     * @param roteiro Texto com detalhes ou observações do roteiro.
+     */
     public void setRoteiro(String roteiro) {
         roteiroTextArea.setText(roteiro);
     }
 
     // ========= DISABLE METHODS =========
+
+    /**
+     * Desabilita o campo duração para edição, mantendo a opacidade para visualização.
+     */
     public void disableDuracaoField() {
         if (duracaoField != null) {
             duracaoField.setDisable(true);
@@ -111,6 +166,9 @@ public class FilmeForm extends MediaAudioVisualForm {
         }
     }
 
+    /**
+     * Desabilita o campo diretor para edição, mantendo a opacidade para visualização.
+     */
     public void disableDiretorField() {
         if (diretorField != null) {
             diretorField.setDisable(true);
@@ -118,6 +176,9 @@ public class FilmeForm extends MediaAudioVisualForm {
         }
     }
 
+    /**
+     * Desabilita a área de texto do roteiro para edição, mantendo a opacidade para visualização.
+     */
     public void disableRoteiroTextArea() {
         if (roteiroTextArea != null) {
             roteiroTextArea.setDisable(true);
@@ -125,6 +186,9 @@ public class FilmeForm extends MediaAudioVisualForm {
         }
     }
 
+    /**
+     * Desabilita todos os campos do formulário do filme.
+     */
     @Override
     public void disableFields() {
         super.disableFields();

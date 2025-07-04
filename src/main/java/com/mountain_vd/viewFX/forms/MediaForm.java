@@ -17,6 +17,11 @@ import javafx.scene.layout.*;
 
 import java.util.List;
 
+/**
+ * Formulário base para mídias, contendo campos comuns como título, ano de lançamento,
+ * gêneros e status de consumo.
+ * Possui suporte para abas e integração com avaliações.
+ */
 public class MediaForm implements Component {
     RootScene rootScene;
     protected TabPane tabPane;
@@ -27,20 +32,32 @@ public class MediaForm implements Component {
 
     private AvaliacaoForm avaliacaoForm;
 
-
     private GenericListPane<Genero> genrePickerPane;
 
+    /**
+     * Construtor que inicializa o formulário com referência à cena raiz da aplicação.
+     *
+     * @param rootScene Cena raiz da aplicação.
+     */
     public MediaForm(RootScene rootScene) {
         this.rootScene = rootScene;
         this.generos = FXCollections.observableArrayList();
         render();
     }
 
+    /**
+     * Retorna o nó raiz do componente, neste caso o TabPane.
+     *
+     * @return Nó raiz {@link Node} contendo o formulário.
+     */
     @Override
     public Node getNode() {
         return tabPane;
     }
 
+    /**
+     * Renderiza o formulário inicializando a aba "Mídia" e seus componentes.
+     */
     @Override
     public void render() {
         tabPane = new TabPane();
@@ -50,6 +67,11 @@ public class MediaForm implements Component {
         tabPane.getTabs().add(tab);
     }
 
+    /**
+     * Adiciona uma aba para avaliações vinculadas a uma entidade avaliada.
+     *
+     * @param entity Objeto que implementa a interface {@link IAvaliavel}.
+     */
     public void addTabAvailable(IAvaliavel entity) {
         Tab tab = new Tab("Avaliações");
         tab.setClosable(false);
@@ -61,6 +83,12 @@ public class MediaForm implements Component {
         tabPane.getTabs().add(tab);
     }
 
+    /**
+     * Renderiza a parte do formulário relacionada à mídia com campos de título, ano,
+     * gêneros e checkbox de consumo.
+     *
+     * @return Um {@link HBox} contendo os campos do formulário.
+     */
     protected HBox renderMidia() {
         HBox hbox = new HBox();
         hbox.setPadding(new Insets(10));
@@ -134,42 +162,86 @@ public class MediaForm implements Component {
     }
 
     // ======= GETTERS =======
+
+    /**
+     * Obtém o título da mídia informado no formulário.
+     *
+     * @return Título da mídia.
+     */
     public String getTitle() {
         return titleField.getText();
     }
 
+    /**
+     * Obtém o ano de lançamento informado no formulário.
+     *
+     * @return Ano de lançamento (string com 4 dígitos).
+     */
     public String getAnoLancamento() {
         return anoField.getText().trim();
     }
 
+    /**
+     * Verifica se a mídia foi marcada como já consumida.
+     *
+     * @return true se marcada como consumida, false caso contrário.
+     */
     public boolean getConsumer() {
         return consumerCheckbox.isSelected();
     }
 
-
+    /**
+     * Obtém a lista de gêneros selecionados.
+     *
+     * @return Lista de {@link Genero} selecionados.
+     */
     public List<Genero> getGeneros() {
         return generos;
     }
 
     // ======= SETTERS =======
+
+    /**
+     * Define o título da mídia.
+     *
+     * @param title Título a ser definido.
+     */
     public void setTitle(String title) {
         titleField.setText(title);
     }
 
+    /**
+     * Define o ano de lançamento da mídia.
+     *
+     * @param ano Ano a ser definido (string com 4 dígitos).
+     */
     public void setAnoLancamento(String ano) {
         anoField.setText(ano);
     }
 
+    /**
+     * Define o estado da checkbox de mídia consumida.
+     *
+     * @param value true para marcada, false para desmarcada.
+     */
     public void setConsumer(boolean value) {
         consumerCheckbox.setSelected(value);
     }
 
+    /**
+     * Define a lista de gêneros selecionados.
+     *
+     * @param generosList Lista de gêneros para setar.
+     */
     public void setGeneros(List<Genero> generosList) {
         this.generos.setAll(generosList);
     }
 
-
     // ======= DISABLE METHODS =======
+
+    /**
+     * Desabilita o campo do título para edição, mantendo a opacidade.
+     */
     public void disableTitleField() {
         if (titleField != null) {
             titleField.setDisable(true);
@@ -177,6 +249,9 @@ public class MediaForm implements Component {
         }
     }
 
+    /**
+     * Desabilita o campo do ano para edição, mantendo a opacidade.
+     */
     public void disableAnoField() {
         if (anoField != null) {
             anoField.setDisable(true);
@@ -184,18 +259,28 @@ public class MediaForm implements Component {
         }
     }
 
+    /**
+     * Desabilita a checkbox de mídia consumida, mantendo a opacidade.
+     */
     public void disableConsumerCheckbox() {
         if (consumerCheckbox != null) {
             consumerCheckbox.setDisable(true);
             consumerCheckbox.setOpacity(1);
         }
     }
+
+    /**
+     * Desabilita a lista de gêneros para seleção, mantendo a opacidade.
+     */
     public void disableGeneroList() {
         if (genrePickerPane != null && genrePickerPane.getNode() != null) {
             genrePickerPane.disableAllFields();
         }
     }
 
+    /**
+     * Desabilita todos os campos do formulário.
+     */
     public void disableFields() {
         disableTitleField();
         disableAnoField();
